@@ -1,0 +1,27 @@
+uuid: 0a5c3329-f75f-463c-9d56-40e7c79f38f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_description
+  module:
+    - text
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

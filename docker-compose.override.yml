@@ -1,6 +1,9 @@
 services:
   phpfpm:
     image: itkdev/php8.4-fpm:latest
+    environment:
+      - DRUSH_OPTIONS_URI=https://${COMPOSE_DOMAIN}
+      - PHP_SENDMAIL_PATH=/usr/bin/msmtp --host=mail --port=1025 --read-recipients
 
   nginx:
     labels:
