@@ -7,4 +7,3 @@ services:
   Drupal\filmfolk_fixtures\Fixture\FunktionTermFixture:
 
   Drupal\filmfolk_fixtures\Fixture\UserFixture:
-

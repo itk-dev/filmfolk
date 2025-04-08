@@ -1,6 +1,6 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
+    "name": "itk-dev/filmfolk",
+    "description": "Filmfolk",
     "license": "GPL-2.0-or-later",
     "type": "project",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -9,6 +9,7 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html"
     },
     "require": {
+        "php": "^8.4",
         "composer/installers": "^2.3",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/core-composer-scaffold": "^11.1",
@@ -20,6 +21,7 @@
         "drush/drush": "^13.5"
     },
     "require-dev": {
+        "drupal/coder": "^8.3",
         "drupal/content_fixtures": "^3.2",
         "ergebnis/composer-normalize": "^2.45",
         "vincentlanglet/twig-cs-fixer": "^3.5"

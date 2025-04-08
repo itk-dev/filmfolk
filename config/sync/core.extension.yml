@@ -13,6 +13,7 @@ module:
   editor: 0
   field: 0
   file: 0
+  filmfolk: 0
   filmfolk_fixtures: 0
   filter: 0
   mysql: 0

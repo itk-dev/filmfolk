@@ -10,8 +10,11 @@ use Drupal\user\Entity\User;
  * User fixture.
  */
 final class UserFixture extends AbstractFixture implements DependentFixtureInterface {
-  public function load()
-  {
+
+  /**
+   *
+   */
+  public function load() {
     $user = User::create([
       'mail' => 'user@example.com',
       'field_navn' => 'Navn Navnesen',
@@ -20,7 +23,7 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
         $this->getReference('funktion:Runner'),
         $this->getReference('funktion:Scenograf'),
       ],
-    'field_description' => [
+      'field_description' => [
         'value' => '<strong>Hej</strong> med dig',
         'format' => 'simple',
       ],
@@ -51,11 +54,14 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
     $user->save();
   }
 
-  public function getDependencies()
-  {
-   return [
-     KommuneTermFixture::class,
-     FunktionTermFixture::class,
-   ];
+  /**
+   *
+   */
+  public function getDependencies() {
+    return [
+      KommuneTermFixture::class,
+      FunktionTermFixture::class,
+    ];
   }
+
 }

@@ -3,7 +3,6 @@
 namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\taxonomy\Entity\Term;
-use Drupal\taxonomy\TermInterface;
 
 /**
  * Kommune term fixture.
@@ -17,7 +16,9 @@ class KommuneTermFixture extends AbstractTaxonomyTermFixture {
   /**
    * {@inheritdoc}
    */
-  // curl https://api.dataforsyningen.dk/kommuner | jq '.[].navn' --raw-output | sort | sed "s/^.*$/'\\0',/" | pbcopy
+  /**
+   * Curl https://api.dataforsyningen.dk/kommuner | jq '.[].navn' --raw-output | sort | sed "s/^.*$/'\\0',/" | pbcopy.
+   */
   protected static array $terms = [
     'Aabenraa',
     'Aalborg',
@@ -124,13 +125,15 @@ class KommuneTermFixture extends AbstractTaxonomyTermFixture {
     'Aarhus',
   ];
 
-  protected function createTerm(string $name, int $weight, ?Term $parent = null)
-  {
-    /** @var TermInterface $term */
+  /**
+   *
+   */
+  protected function createTerm(string $name, int $weight, ?Term $parent = NULL) {
+    /** @var \Drupal\taxonomy\Entity\TermInterface $term */
     $term = parent::createTerm($name, $weight, $parent);
 
     if (in_array($term->getName(), $this->dvfMembers)) {
-      $term->set('field_medlem_af_dvf', true);
+      $term->set('field_medlem_af_dvf', TRUE);
       $term->save();
     }
 

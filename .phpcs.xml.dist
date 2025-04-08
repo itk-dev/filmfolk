@@ -1,11 +1,12 @@
+<?xml version="1.0"?>
 <!-- This file is copied from config/drupal/php/.phpcs.xml.dist in https://github.com/itk-dev/devops_itkdev-docker. -->
 <!-- Feel free to edit the file, but consider making a pull request if you find a general issue with the file. -->
 
-<?xml version="1.0"?>
 <ruleset name="PHP_CodeSniffer">
   <description>The coding standard.</description>
 
-  <file>web/*/custom/</file>
+  <file>web/modules/custom/</file>
+  <file>web/themes/custom/</file>
 
   <!-- Exclude generated files -->
   <exclude-pattern>node_modules</exclude-pattern>
