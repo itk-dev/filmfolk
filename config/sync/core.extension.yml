@@ -7,6 +7,7 @@ module:
   ckeditor5: 0
   content_fixtures: 0
   contextual: 0
+  core_event_dispatcher: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
@@ -16,6 +17,7 @@ module:
   filmfolk: 0
   filmfolk_fixtures: 0
   filter: 0
+  hook_event_dispatcher: 0
   mysql: 0
   node: 0
   page_cache: 0

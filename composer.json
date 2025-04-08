@@ -11,10 +11,12 @@
     "require": {
         "php": "^8.4",
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^1.7",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
+        "drupal/hook_event_dispatcher": "^4.2",
         "drupal/password_strength": "^2.0@beta",
         "drupal/remove_username": "^1.5",
         "drupal/search_api": "^1.38",
@@ -40,6 +42,7 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
@@ -107,6 +110,11 @@
             "recipes/{$name}": [
                 "type:drupal-recipe"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3223302": "patches/drupal/core/term-name.patch"
+            }
         }
     }
 }

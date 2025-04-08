@@ -12,8 +12,9 @@ use Drupal\user\Entity\User;
 final class UserFixture extends AbstractFixture implements DependentFixtureInterface {
 
   /**
-   *
+   * {@inheritdoc}
    */
+  #[\Override]
   public function load() {
     $user = User::create([
       'mail' => 'user@example.com',
@@ -55,8 +56,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
   }
 
   /**
-   *
+   * {@inheritdoc}
    */
+  #[\Override]
   public function getDependencies() {
     return [
       KommuneTermFixture::class,
