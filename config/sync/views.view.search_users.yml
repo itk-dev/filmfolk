@@ -26,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'search users'
+      title: Search
       fields:
         field_navn:
           id: field_navn
@@ -429,18 +429,29 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-                  hide_label: false
+                  hide_label: true
               field_kommune:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
+                    filter_rewrite_values: 'All|Alle kommuner'
+                    filter_rewrite_values_key: true
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-                  hide_label: false
+                  hide_label: true
+              field_funktion:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: 'All|Alle funktioner'
+                    filter_rewrite_values_key: true
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: true
       access:
         type: none
         options: {  }
