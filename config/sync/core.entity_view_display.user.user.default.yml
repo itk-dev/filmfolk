@@ -4,6 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_description
+    - field.field.user.user.field_funktion
+    - field.field.user.user.field_kommune
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_navn
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
   module:
     - text
     - user
@@ -14,14 +20,38 @@ mode: default
 content:
   field_description:
     type: text_default
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     weight: 6
     region: content
-  member_for:
-    settings: {  }
+  field_funktion:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
-hidden: {  }
+  field_kommune:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_navn:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  field_last_password_reset: true
+  field_password_expiration: true
+  field_pending_expire_sent: true
+  member_for: true
+  search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: 8a611f98-003e-4851-acaa-9708b834a869
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - filmfolk_theme
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: filmfolk_theme_site_branding
+theme: filmfolk_theme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

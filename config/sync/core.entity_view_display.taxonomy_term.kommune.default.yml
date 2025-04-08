@@ -1,0 +1,33 @@
+uuid: 0ca12b32-c123-4bfa-b633-3124a81f7e59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.kommune.field_medlem_af_dvf
+    - taxonomy.vocabulary.kommune
+  module:
+    - text
+id: taxonomy_term.kommune.default
+targetEntityType: taxonomy_term
+bundle: kommune
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_medlem_af_dvf:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

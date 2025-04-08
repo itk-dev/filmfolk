@@ -16,9 +16,12 @@
     ],
     "require": {
         "composer/installers": "^2.3",
+        "drupal/better_exposed_filters": "^7.0",
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
+        "drupal/password_strength": "^2.0@beta",
+        "drupal/remove_username": "^1.5",
         "drupal/search_api": "^1.38",
         "drush/drush": "^13.5"
     },
@@ -97,5 +100,9 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/content_fixtures": "^3.2",
+        "vincentlanglet/twig-cs-fixer": "^3.5"
     }
 }

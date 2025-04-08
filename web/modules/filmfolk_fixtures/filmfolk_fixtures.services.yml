@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    tags: {name: content_fixture}
+
+  Drupal\filmfolk_fixtures\Fixture\KommuneTermFixture:
+  Drupal\filmfolk_fixtures\Fixture\FunktionTermFixture:
+
+  Drupal\filmfolk_fixtures\Fixture\UserFixture:
+

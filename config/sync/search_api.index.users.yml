@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.storage.user.field_description
+    - field.storage.user.field_funktion
+    - field.storage.user.field_kommune
+    - field.storage.user.field_navn
     - search_api.server.local
   module:
     - user
@@ -12,6 +15,31 @@ name: users
 description: ''
 read_only: false
 field_settings:
+  field_funktion:
+    label: funktion
+    datasource_id: 'entity:user'
+    property_path: field_funktion
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_funktion
+  field_kommune:
+    label: kommune
+    datasource_id: 'entity:user'
+    property_path: field_kommune
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_kommune
+  field_navn:
+    label: navn
+    datasource_id: 'entity:user'
+    property_path: field_navn
+    type: text
+    boost: 2.0
+    dependencies:
+      config:
+        - field.storage.user.field_navn
   processed:
     label: 'description » Processed text'
     datasource_id: 'entity:user'

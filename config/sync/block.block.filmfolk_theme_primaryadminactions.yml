@@ -1,0 +1,18 @@
+uuid: 6fd51420-1382-429d-9152-42662d9e5e91
+langcode: en
+status: true
+dependencies:
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_primaryadminactions
+theme: filmfolk_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
