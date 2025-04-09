@@ -2,7 +2,7 @@
 # github/workflows/drupal/php.yaml in
 # https://github.com/itk-dev/devops_itkdev-docker if need be.
 
-### Drupal PHP
+### ### Drupal PHP
 ###
 ### Checks that PHP code adheres to the [Drupal coding
 ### standards](https://www.drupal.org/docs/develop/standards).
@@ -24,7 +24,12 @@
 ###    docker compose run --rm phpfpm vendor/bin/phpcbf
 ###    docker compose run --rm phpfpm vendor/bin/phpcs
 ###    ```
-
+###
+### > [!NOTE]
+### > The template adds `.phpcs.xml.dist` as [a configuration file for
+### > PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file)
+### > and this makes it possible to override the actual configuration used in a
+### > project by adding a more important configuration file, e.g. `.phpcs.xml`.
 
 name: PHP
 

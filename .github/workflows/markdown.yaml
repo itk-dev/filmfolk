@@ -7,8 +7,10 @@
 ### Uses [itkdev/markdownlint](https://hub.docker.com/r/itkdev/markdownlint) to
 ### link all Markdown files (`**/*.md`) in the project.
 ###
-### [markdownlint-cli configuration ### files](https://github.com/igorshubovych/markdownlint-cli?tab=readme-ov-file#configuration),
-### `.markdownlint.jsonc` and `.markdownlintignore` control what is actually linted and how.
+### [markdownlint-cli configuration
+### files](https://github.com/igorshubovych/markdownlint-cli?tab=readme-ov-file#configuration),
+### `.markdownlint.jsonc` and `.markdownlintignore`, control what is actually
+### linted and how.
 
 name: Markdown
 
