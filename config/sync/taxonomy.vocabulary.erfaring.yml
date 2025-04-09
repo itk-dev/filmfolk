@@ -1,0 +1,9 @@
+uuid: 0e5299e4-368f-4eb7-a2fc-df5e272c0334
+langcode: da
+status: true
+dependencies: {  }
+name: erfaring
+vid: erfaring
+description: null
+weight: 0
+new_revision: false
