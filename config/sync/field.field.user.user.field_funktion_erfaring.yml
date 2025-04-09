@@ -1,0 +1,21 @@
+uuid: 79c0cf9f-061d-4e96-ba2d-ad8923c21939
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_funktion_erfaring
+  module:
+    - filmfolk
+    - user
+id: user.user.field_funktion_erfaring
+field_name: field_funktion_erfaring
+entity_type: user
+bundle: user
+label: funktion_erfaring
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: filmfolk_funktion_erfaring

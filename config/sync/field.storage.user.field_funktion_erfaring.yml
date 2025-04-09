@@ -1,0 +1,19 @@
+uuid: 24392455-be42-4668-adb1-77f1ed677edb
+langcode: da
+status: true
+dependencies:
+  module:
+    - filmfolk
+    - user
+id: user.field_funktion_erfaring
+field_name: field_funktion_erfaring
+entity_type: user
+type: filmfolk_funktion_erfaring
+settings: {  }
+module: filmfolk
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

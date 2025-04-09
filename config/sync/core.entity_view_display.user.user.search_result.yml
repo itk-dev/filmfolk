@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.user.search_result
     - field.field.user.user.field_description
     - field.field.user.user.field_funktion
+    - field.field.user.user.field_funktion_erfaring
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
     - field.field.user.user.field_navn
@@ -51,6 +52,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_funktion_erfaring: true
   field_last_password_reset: true
   field_password_expiration: true
   field_pending_expire_sent: true
