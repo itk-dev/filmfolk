@@ -16,7 +16,7 @@ class ErfaringTermFixture extends AbstractTaxonomyTermFixture {
    */
   protected static array $terms = [
     '0 produktioner',
-    '1 produktioner',
+    '1 produktion',
     '2 produktioner',
     '3 produktioner',
     '4 produktioner',

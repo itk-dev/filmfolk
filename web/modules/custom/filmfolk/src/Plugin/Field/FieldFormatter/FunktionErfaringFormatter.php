@@ -8,7 +8,6 @@ use Drupal\Core\Field\Attribute\FieldFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 
 /**
  * Plugin implementation of the 'funktion_erfaring' formatter.
@@ -25,12 +24,13 @@ final class FunktionErfaringFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode): array {
     $element = [];
+    /** @var \Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem $item  */
     foreach ($items as $delta => $item) {
       $element[$delta] = [
         '#markup' => sprintf(
-          '%s/%s',
-          $item->get(FunktionErfaringItem::PROPERTY_FUNKTION)->getString(),
-          $item->get(FunktionErfaringItem::PROPERTY_ERFARING)->getString()
+          '%s (%s)',
+          $item->getFunktion()?->label() ?? '-',
+          $item->getErfaring()?->label() ?? '-',
         ),
       ];
     }

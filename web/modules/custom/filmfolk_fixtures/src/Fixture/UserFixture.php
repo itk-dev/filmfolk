@@ -4,6 +4,7 @@ namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
+use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\user\Entity\User;
 
 /**
@@ -39,6 +40,17 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       'field_funktion' => [
         $this->getReference('funktion:Runner'),
         $this->getReference('funktion:Scenograf'),
+      ],
+      'field_funktion_erfaring' => [
+        [
+          // Important: We must use “…_TARGET_ID” to make this work.
+          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+        ],
+        [
+          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+        ],
       ],
       'field_description' => [
         'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
