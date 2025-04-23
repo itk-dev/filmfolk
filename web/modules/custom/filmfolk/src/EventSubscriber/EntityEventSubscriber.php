@@ -17,6 +17,7 @@ final class EntityEventSubscriber implements EventSubscriberInterface {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function getSubscribedEvents(): array {
     return [
       EntityHookEvents::ENTITY_TYPE_ALTER => 'entityTypeAlter',

@@ -49,6 +49,7 @@ abstract class AbstractTaxonomyTermFixture extends AbstractFixture {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public function load() {
     $this->createTerms(static::$terms);
   }

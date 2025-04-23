@@ -47,6 +47,7 @@ final class FunktionErfaringItem extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition): array {
     $targetType = \Drupal::entityTypeManager()->getDefinition('taxonomy_term');
 
@@ -84,6 +85,7 @@ final class FunktionErfaringItem extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function schema(FieldStorageDefinitionInterface $field_definition): array {
     $columns = [
       self::PROPERTY_FUNKTION_TARGET_ID => [
@@ -111,13 +113,13 @@ final class FunktionErfaringItem extends FieldItemBase {
    *
    * @see EntityReferenceItem::isEmpty()
    */
+  #[\Override]
   public function isEmpty() {
     return !((($this->{self::PROPERTY_FUNKTION_TARGET_ID}
         || ($this->{self::PROPERTY_FUNKTION} && $this->{self::PROPERTY_FUNKTION} instanceof Term))
       && ($this->{self::PROPERTY_ERFARING_TARGET_ID}
         || ($this->{self::PROPERTY_ERFARING} && $this->{self::PROPERTY_ERFARING} instanceof Term))));
   }
-
 
   /**
    * {@inheritdoc}
@@ -126,6 +128,7 @@ final class FunktionErfaringItem extends FieldItemBase {
    *
    * @see EntityReferenceItem::onChange()
  */
+  #[\Override]
   public function onChange($property_name, $notify = TRUE) {
     // Make sure that the target ID and the target property stay in sync.
     if (self::PROPERTY_FUNKTION === $property_name) {
@@ -143,33 +146,18 @@ final class FunktionErfaringItem extends FieldItemBase {
     parent::onChange($property_name, $notify);
   }
 
-
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public function setValue($values, $notify = TRUE) {
-    /*
-    parent::setValue($values, $notify);
-    return;
-//*/
-
     if (isset($values[self::PROPERTY_FUNKTION_TARGET_ID]) && !is_array($values[self::PROPERTY_FUNKTION_TARGET_ID])) {
       $this->set(self::PROPERTY_FUNKTION, $values[self::PROPERTY_FUNKTION_TARGET_ID], $notify);
       $this->set(self::PROPERTY_ERFARING, $values[self::PROPERTY_ERFARING_TARGET_ID], $notify);
     }
-    else
-    {
-      parent::setValue($values, true);
+    else {
+      parent::setValue($values, TRUE);
     }
-//    elseif (isset($values[self::PROPERTY_FUNKTION]) && $values[self::PROPERTY_FUNKTION] instanceof Term) {
-//      $this->set(self::PROPERTY_FUNKTION, $values[self::PROPERTY_FUNKTION], $notify);
-//    }
-//    if (isset($values[self::PROPERTY_ERFARING_TARGET_ID]) && !is_array($values[self::PROPERTY_ERFARING_TARGET_ID])) {
-//      $this->set(self::PROPERTY_ERFARING, $values[self::PROPERTY_ERFARING_TARGET_ID], $notify);
-//    }
-//    elseif (isset($values[self::PROPERTY_ERFARING]) && $values[self::PROPERTY_ERFARING] instanceof Term) {
-//      $this->set(self::PROPERTY_ERFARING, $values[self::PROPERTY_ERFARING], $notify);
-//    }
   }
 
 }

@@ -41,6 +41,7 @@ final class FunktionErfaringWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
     $plugin_id,
@@ -55,6 +56,7 @@ final class FunktionErfaringWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $element[FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID] = [
       '#type' => 'select',

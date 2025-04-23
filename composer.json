@@ -28,6 +28,7 @@
         "drupal/examples": "^4.0",
         "drupal/twig_xdebug": "^1.4",
         "ergebnis/composer-normalize": "^2.45",
+        "palantirnet/drupal-rector": "^0.20.3",
         "vincentlanglet/twig-cs-fixer": "^3.5"
     },
     "conflict": {

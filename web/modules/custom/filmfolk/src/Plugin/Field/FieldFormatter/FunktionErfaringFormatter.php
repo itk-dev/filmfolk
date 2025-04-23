@@ -22,6 +22,7 @@ final class FunktionErfaringFormatter extends FormatterBase {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public function viewElements(FieldItemListInterface $items, $langcode): array {
     $element = [];
     /** @var \Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem $item  */
