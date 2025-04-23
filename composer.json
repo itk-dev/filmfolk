@@ -25,6 +25,8 @@
     "require-dev": {
         "drupal/coder": "^8.3",
         "drupal/content_fixtures": "^3.2",
+        "drupal/examples": "^4.0",
+        "drupal/twig_xdebug": "^1.4",
         "ergebnis/composer-normalize": "^2.45",
         "vincentlanglet/twig-cs-fixer": "^3.5"
     },

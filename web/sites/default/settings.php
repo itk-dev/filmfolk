@@ -871,7 +871,8 @@ $settings['skip_permissions_hardening'] = TRUE;
 $settings['config_exclude_modules'] = [
   'field_ui',
   'views_ui',
-  'mail_debugger',
+  // https://www.drupal.org/project/twig_xdebug
+  'twig_xdebug',
 ];
 
 /**
