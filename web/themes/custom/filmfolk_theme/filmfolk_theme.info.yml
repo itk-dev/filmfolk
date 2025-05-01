@@ -4,8 +4,8 @@ base theme: olivero
 description: A flexible theme with a responsive, mobile-first layout.
 package: Custom
 core_version_requirement: ^10 || ^11
-#libraries:
-#  - filmfolk_theme/global
+libraries:
+  - filmfolk_theme/global
 regions:
   header: Header
   primary_menu: Primary menu
