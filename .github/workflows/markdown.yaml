@@ -17,6 +17,9 @@ name: Markdown
 on:
   pull_request:
   push:
+    branches:
+      - main
+      - develop
 
 jobs:
   markdown-lint:

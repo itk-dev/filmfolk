@@ -7,4 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-3](https://github.com/itk-dev/filmfolk/pull/3)
+  Development setup
+
 [Unreleased]: https://github.com/rimi-itk/filmfolk
