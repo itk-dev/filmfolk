@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-12](https://github.com/itk-dev/filmfolk/pull/12)
+  Cleaned up styles
 * [PR-4](https://github.com/itk-dev/filmfolk/pull/4)
   * Add blocks and views UI
   * Create page title block, to show info on search page
