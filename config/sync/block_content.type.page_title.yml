@@ -1,0 +1,8 @@
+uuid: 08716230-0f48-4858-a2d3-74db754ae35f
+langcode: da
+status: true
+dependencies: {  }
+id: page_title
+label: 'Page title'
+revision: false
+description: 'Used to place a block with a title for a page'
