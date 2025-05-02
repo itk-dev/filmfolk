@@ -1,3 +1,15 @@
-{{ dump() }}
-<pre>{{ user.field_navn.value }}</pre>
-[{{ path('entity.user.canonical', {user: user.id}) }}]
+<div class="user-search-result">
+  <div class="user-search-result-image-wrapper">
+    <img src="https://placehold.co/600x400" alt="Profile photo of {{ user.field_navn.value }}">
+  </div>
+
+  <div class="user-search-result-content-wrapper">
+    {% if user.field_navn.value %}
+      <h3 class="user-search-result-name">{{ user.field_navn.value }}</h3>
+    {% endif %}
+    {{ content.field_kommune }}
+    {{ content.field_funktion }}
+    <a href="{{ path('entity.user.canonical', {user: user.id}) }}" class="button user-search-result-profile-button">View Profile</a>
+  </div>
+
+</div>

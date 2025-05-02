@@ -1,0 +1,6 @@
+/* Use more of the available width on the page */
+@media (min-width: 62.5rem) {
+  .path-frontpage  .block-system-main-block {
+    grid-column: 1 / 14;
+  }
+}

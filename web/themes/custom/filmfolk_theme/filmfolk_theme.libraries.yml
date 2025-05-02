@@ -14,6 +14,7 @@ global:
       css/component/menu.css: {}
       css/component/messages.css: {}
       css/component/node.css: {}
+      css/component/search.css: {}
       css/component/sidebar.css: {}
       css/component/table.css: {}
       css/component/tabs.css: {}

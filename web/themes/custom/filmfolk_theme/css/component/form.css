@@ -1,5 +1,22 @@
+/* Inline form */
+.views-exposed-form.form--inline {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: var(--sp1);
 
-.views-exposed-form {
-  display: flex;
-  background-color: #f5f5f5;
+  .form-item {
+    margin: 0;
+    input, select {
+      width: 100%;
+    }
+  }
+
+  .form-actions {
+    margin-top: 0;
+
+    .button {
+      margin-block: 0;
+    }
+  }
 }

@@ -1,0 +1,57 @@
+.view-search-users {
+  .view-content {
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--sp1);
+
+    grid-template-columns: repeat(1, 1fr); /* for mobile devices */
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr); /* for desktop devices */
+    }
+  }
+}
+
+.user-search-result {
+  height: 100%;
+  border: 1px solid var(--color--gray-60);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+}
+
+.user-search-result-image-wrapper {
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: auto;
+  }
+}
+
+.user-search-result-content-wrapper {
+  padding: var(--sp1);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-search-result-name {
+  margin-top: var(--sp1);
+  margin-bottom: 0;
+}
+
+.user-search-result-kommune {
+  margin-top: 0;
+  margin-bottom: var(--sp1);
+}
+
+.user-search-result-profile-button {
+  margin-top: auto;
+}
+
+.field--name-field-funktion {
+  font-size: smaller;
+}
