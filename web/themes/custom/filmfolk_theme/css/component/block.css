@@ -1,23 +1,24 @@
 .block {
-    .block__title {
-        margin-block: 0 var(--sp);
-        letter-spacing: 0.02em;
-        color: var(--color-text-neutral-medium);
-        font-size: calc(var(--font-size-l)*2);
-        line-height: var(--sp);
+  .block__title {
+    margin-block: 0 var(--sp);
+    letter-spacing: 0.02em;
+    color: var(--color-text-neutral-medium);
+    font-size: calc(var(--font-size-l) * 2);
+    line-height: var(--sp);
+  }
+
+  .block__content {
+    .text-content,
+    .cke_editable {
+      color: var(--color-text-neutral-medium);
+      font-family: var(--font-serif);
+      line-height: var(--sp1-5);
     }
 
-    .block__content {
-
-        .text-content, .cke_editable {
-            color: var(--color-text-neutral-medium);
-            font-family: var(--font-serif);
-            line-height: var(--sp1-5);
-        }
-
-        .text-content p, .cke_editable p {
-            margin-block-start: var(--sp1);
-            margin-block-end: var(--sp1);
-        }
+    .text-content p,
+    .cke_editable p {
+      margin-block-start: var(--sp1);
+      margin-block-end: var(--sp1);
     }
+  }
 }

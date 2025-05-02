@@ -3,15 +3,11 @@
  * filmfolk_theme behaviors.
  */
 (function (Drupal) {
-
-  'use strict';
+  "use strict";
 
   Drupal.behaviors.filmfolkTheme = {
-    attach (context, settings) {
-
-      console.log('It works!');
-
-    }
+    attach(context, settings) {
+      console.log("It works!");
+    },
   };
-
-} (Drupal));
+})(Drupal);
