@@ -4,7 +4,7 @@
     letter-spacing: 0.02em;
     color: var(--color-text-neutral-medium);
     font-size: calc(var(--font-size-l) * 2);
-    line-height: var(--sp);
+    line-height: var(--sp2);
   }
 
   .block__content {
