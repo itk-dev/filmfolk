@@ -19,10 +19,12 @@
   text-decoration: none;
 }
 
-.user-search-result-image-wrapper {
+.user-search-result-image-wrapper,
+.field--name-field-profile-picture {
   height: auto;
   overflow: hidden;
   aspect-ratio: 1/1;
+  background-color: var(--color--gray-90);
 
   img {
     object-fit: cover;

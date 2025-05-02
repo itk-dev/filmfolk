@@ -20,8 +20,11 @@ module:
   filmfolk_fixtures: 0
   filter: 0
   hook_event_dispatcher: 0
+  image: 0
   language: 0
   locale: 0
+  media: 0
+  media_library: 0
   mysql: 0
   node: 0
   page_cache: 0

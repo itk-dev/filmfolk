@@ -1,6 +1,12 @@
 <div class="user-search-result">
+
   <div class="user-search-result-image-wrapper">
-    <img src="https://placehold.co/600x400" alt="Profile photo of {{ user.field_navn.value }}">
+    {% if not user.field_profile_picture.isEmpty() %}
+          {{ content.field_profile_picture }}
+        {# <img src="https://placehold.co/600x400" alt="Profile photo of {{ user.field_navn.value }}"> #}
+    {% else %}
+      <p>No image is available</p>
+    {% endif %}
   </div>
 
   <div class="user-search-result-content-wrapper">
