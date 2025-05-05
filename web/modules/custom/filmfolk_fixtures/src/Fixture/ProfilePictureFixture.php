@@ -40,7 +40,8 @@ final class ProfilePictureFixture extends AbstractFixture {
 
     \Drupal::logger('filmfolk_fixtures')->notice('Image file found at: @path', ['@path' => $source_image_path]);
 
-    // Define where the file should be copied within Drupal's public file system.
+    // Define where the file should be copied within Drupal's public file
+    // system.
     $destination_directory = 'public://fixtures/profile_pictures/';
     // Ensure the destination directory exists.
     $file_system->prepareDirectory($destination_directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
