@@ -4,8 +4,9 @@ namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\File\FileRepositoryInterface;
 use Drupal\Core\File\FileSystemInterface;
+// Changed to file module namespace.
+use Drupal\file\FileRepositoryInterface;
 use Drupal\file\FileInterface;
 
 /**
@@ -23,7 +24,7 @@ final class ProfilePictureFixture extends AbstractFixture {
   /**
    * The file repository service.
    *
-   * @var \Drupal\Core\File\FileRepositoryInterface
+   * @var \Drupal\file\FileRepositoryInterface
    */
   private FileRepositoryInterface $fileRepository;
 
@@ -39,7 +40,7 @@ final class ProfilePictureFixture extends AbstractFixture {
    *
    * @param \Drupal\Core\File\FileSystemInterface $fileSystem
    *   The file system service.
-   * @param \Drupal\Core\File\FileRepositoryInterface $fileRepository
+   * @param \Drupal\file\FileRepositoryInterface $fileRepository
    *   The file repository service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity type manager.
