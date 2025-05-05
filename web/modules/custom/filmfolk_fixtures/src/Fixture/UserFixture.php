@@ -6,6 +6,7 @@ use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\user\Entity\User;
+use Drupal\filmfolk_fixtures\Fixture\ProfilePictureFixture;
 
 /**
  * User fixture.
@@ -17,6 +18,10 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
    */
   #[\Override]
   public function load() {
+
+    // Get the pre-created media entity using the reference key we set
+    $default_profile_picture_media = $this->getReference('media:profile_picture:default');
+
     $user = User::create([
       'mail' => 'user@example.com',
       'field_navn' => 'Navn Navnesen',
@@ -29,6 +34,10 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
         'value' => '<strong>Hej</strong> med dig',
         'format' => 'simple',
       ],
+      // Reference the media entity here
+        'field_profile_picture' => [
+          'target_id' => $default_profile_picture_media->id(),
+        ],
     ])
       ->activate();
     $user->save();
@@ -181,6 +190,7 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
   #[\Override]
   public function getDependencies() {
     return [
+      ProfilePictureFixture::class,
       KommuneTermFixture::class,
       FunktionTermFixture::class,
     ];
