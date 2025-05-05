@@ -5,7 +5,6 @@ namespace Drupal\filmfolk_fixtures\Fixture;
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
-// Changed to file module namespace.
 use Drupal\file\FileRepositoryInterface;
 use Drupal\file\FileInterface;
 
@@ -13,27 +12,6 @@ use Drupal\file\FileInterface;
  * Creates profile picture media entities for fixtures.
  */
 final class ProfilePictureFixture extends AbstractFixture {
-
-  /**
-   * The file system service.
-   *
-   * @var \Drupal\Core\File\FileSystemInterface
-   */
-  private FileSystemInterface $fileSystem;
-
-  /**
-   * The file repository service.
-   *
-   * @var \Drupal\file\FileRepositoryInterface
-   */
-  private FileRepositoryInterface $fileRepository;
-
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * Constructs a new ProfilePictureFixture.
@@ -46,13 +24,10 @@ final class ProfilePictureFixture extends AbstractFixture {
    *   The entity type manager.
    */
   public function __construct(
-    FileSystemInterface $fileSystem,
-    FileRepositoryInterface $fileRepository,
-    EntityTypeManagerInterface $entityTypeManager,
+    private readonly FileSystemInterface $fileSystem,
+    private readonly FileRepositoryInterface $fileRepository,
+    private readonly EntityTypeManagerInterface $entityTypeManager,
   ) {
-    $this->fileSystem = $fileSystem;
-    $this->fileRepository = $fileRepository;
-    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
