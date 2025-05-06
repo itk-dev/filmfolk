@@ -12,7 +12,10 @@ dependencies:
     - field.field.user.user.field_navn
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_profile_picture
+    - image.style.large
   module:
+    - media
     - text
     - user
 id: user.user.search_result
@@ -50,6 +53,17 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_profile_picture:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
   field_funktion_erfaring: true

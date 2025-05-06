@@ -11,9 +11,11 @@ dependencies:
     - field.field.user.user.field_navn
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_profile_picture
   module:
     - datetime
     - filmfolk
+    - media_library
     - text
     - user
 id: user.user.default
@@ -72,6 +74,13 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_profile_picture:
+    type: media_library_widget
+    weight: 10
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   language:
     weight: 1

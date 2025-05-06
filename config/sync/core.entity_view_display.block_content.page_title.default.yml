@@ -1,0 +1,24 @@
+uuid: c1768f29-cca5-4d75-bedb-606139c8c67b
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.page_title
+    - field.field.block_content.page_title.body
+  module:
+    - text
+id: block_content.page_title.default
+targetEntityType: block_content
+bundle: page_title
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

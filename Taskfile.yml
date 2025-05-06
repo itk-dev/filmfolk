@@ -126,13 +126,13 @@ tasks:
   coding-standards:assets:apply:
     desc: "Apply coding standards for assets"
     cmds:
-      - task compose -- run --rm prettier web/themes/custom/*/assets --write
+      - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --write
 
   coding-standards:assets:check:
     desc: "Apply and check coding standards for assets"
     cmds:
       - task: coding-standards:assets:apply
-      - task compose -- run --rm prettier web/themes/custom/*/assets --check
+      - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --check
 
   coding-standards:markdown:apply:
     desc: "Apply coding standards for Markdown"

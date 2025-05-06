@@ -1,0 +1,30 @@
+uuid: 596b0639-da6b-4f95-ac6a-e22d4c5a8c0d
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:page_title:b545798f-83eb-44e6-8bce-68c1bcea702e'
+  module:
+    - block_content
+    - system
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_findjyskefilmressourcer
+theme: filmfolk_theme
+region: content_above
+weight: 0
+provider: null
+plugin: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
+settings:
+  id: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
+  label: 'Find jyske filmressourcer'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/search/*"

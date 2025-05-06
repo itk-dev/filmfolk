@@ -13,5 +13,5 @@ third_party_settings:
   shortcut:
     module_link: true
 mobile_menu_all_widths: 0
-site_branding_bg_color: default
-base_primary_color: '#dd485d'
+site_branding_bg_color: white
+base_primary_color: '#DF4126'
