@@ -60,6 +60,10 @@ processor_settings:
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
+  role_filter:
+    default: false
+    roles:
+      - person
 tracker_settings:
   default:
     indexing_order: fifo
