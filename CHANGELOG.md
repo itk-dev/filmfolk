@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Updated workflow files
 * [PR-17](https://github.com/itk-dev/filmfolk/pull/17)
   Added JavaScript workflow
+* [PR-14](https://github.com/itk-dev/filmfolk/pull/14)
+  Add profile picture
 * [PR-12](https://github.com/itk-dev/filmfolk/pull/12)
   Cleaned up styles
 * [PR-4](https://github.com/itk-dev/filmfolk/pull/4)

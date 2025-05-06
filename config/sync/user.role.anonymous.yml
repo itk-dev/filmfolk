@@ -6,6 +6,7 @@ dependencies:
     - filter.format.simple
   module:
     - filter
+    - media
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -17,3 +18,4 @@ permissions:
   - 'access content'
   - 'access user profiles'
   - 'use text format simple'
+  - 'view media'

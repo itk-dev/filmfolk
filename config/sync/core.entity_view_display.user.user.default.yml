@@ -11,6 +11,7 @@ dependencies:
     - field.field.user.user.field_navn
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_profile_picture
   module:
     - filmfolk
     - text
@@ -57,6 +58,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_profile_picture:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 11
     region: content
 hidden:
   field_last_password_reset: true
