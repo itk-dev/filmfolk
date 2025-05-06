@@ -18,6 +18,7 @@
         "drupal/core-recommended": "^11.1",
         "drupal/hook_event_dispatcher": "^4.2",
         "drupal/password_strength": "^2.0@beta",
+        "drupal/registration_role": "^2.0",
         "drupal/remove_username": "^1.5",
         "drupal/search_api": "^1.38",
         "drush/drush": "^13.5"
