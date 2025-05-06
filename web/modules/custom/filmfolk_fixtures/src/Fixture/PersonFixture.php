@@ -4,13 +4,28 @@ namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\AbstractFixture;
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\user\Entity\User;
+use Drupal\user\UserInterface;
+use Drupal\user\UserStorageInterface;
 
 /**
  * User fixture.
  */
-final class UserFixture extends AbstractFixture implements DependentFixtureInterface {
+final class PersonFixture extends AbstractFixture implements DependentFixtureInterface {
+  private const ROLE_PERSON = 'person';
+
+  /**
+   * The user storage.
+   */
+  private readonly UserStorageInterface $userStorage;
+
+  public function __construct(
+    EntityTypeManagerInterface $entityTypeManager,
+  ) {
+    $this->userStorage = $entityTypeManager->getStorage('user');
+  }
 
   /**
    * {@inheritdoc}
@@ -21,7 +36,7 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
     // Get the pre-created media entity using the reference key we set.
     $default_profile_picture_media = $this->getReference('media:profile_picture:default');
 
-    $user = User::create([
+    $person = $this->createPerson([
       'mail' => 'user@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Aarhus'),
@@ -39,9 +54,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = $this->userStorage->create([
       'mail' => 'user002@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
@@ -66,9 +81,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = User::create([
       'mail' => 'user003@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
@@ -93,9 +108,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = $this->createPerson([
       'mail' => 'user004@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
@@ -120,9 +135,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = $this->createPerson([
       'mail' => 'user005@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
@@ -147,9 +162,9 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = $this->createPerson([
       'mail' => 'user006@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
@@ -174,13 +189,21 @@ final class UserFixture extends AbstractFixture implements DependentFixtureInter
       ],
     ])
       ->activate();
-    $user->save();
+    $person->save();
 
-    $user = User::create([
+    $person = $this->createPerson([
       'mail' => 'user1@example.com',
       'field_kommune' => $this->getReference('kommune:Aarhus'),
     ]);
-    $user->save();
+    $person->save();
+  }
+
+  /**
+   * Create a person.
+   */
+  private function createPerson(array $values): UserInterface {
+    return $this->userStorage->create($values)
+      ->addRole(self::ROLE_PERSON);
   }
 
   /**
