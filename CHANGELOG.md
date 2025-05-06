@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-22](https://github.com/itk-dev/filmfolk/pull/22)
+  * Added "Person" role
+  * Updated (user) search index to only include persons
 * [PR-19](https://github.com/itk-dev/filmfolk/pull/19)
   Updated markdown workflow
 * [PR-18](https://github.com/itk-dev/filmfolk/pull/18)
