@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-19](https://github.com/itk-dev/filmfolk/pull/19)
+  Updated markdown workflow
 * [PR-18](https://github.com/itk-dev/filmfolk/pull/18)
   Updated workflow files
 * [PR-17](https://github.com/itk-dev/filmfolk/pull/17)
