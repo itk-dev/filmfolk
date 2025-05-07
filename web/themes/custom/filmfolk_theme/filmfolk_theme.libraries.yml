@@ -3,9 +3,11 @@ global:
   js:
     js/filmfolk-theme.js: {}
   css:
+    base:
+      css/base/base.css: { weight: 1 }
     component:
-      css/component/block.css: {}
-      css/component/form.css: {}
-      css/component/search.css: {}
+      css/component/block.css: { weight: 1 }
+      css/component/form.css: { weight: 1 }
+      css/component/search.css: { weight: 1 }
     layout:
-      css/layout/layout.css: {}
+      css/layout/layout.css: { weight: 1 }
