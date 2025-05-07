@@ -4,22 +4,10 @@ global:
     js/filmfolk-theme.js: {}
   css:
     base:
-      css/base/elements.css: {}
+      css/base/base.css: { weight: 1 }
     component:
-      css/component/block.css: {}
-      css/component/breadcrumb.css: {}
-      css/component/field.css: {}
-      css/component/form.css: {}
-      css/component/header.css: {}
-      css/component/menu.css: {}
-      css/component/messages.css: {}
-      css/component/node.css: {}
-      css/component/search.css: {}
-      css/component/sidebar.css: {}
-      css/component/table.css: {}
-      css/component/tabs.css: {}
-      css/component/buttons.css: {}
+      css/component/block.css: { weight: 1 }
+      css/component/form.css: { weight: 1 }
+      css/component/search.css: { weight: 1 }
     layout:
-      css/layout/layout.css: {}
-    theme:
-      css/theme/print.css: { media: print }
+      css/layout/layout.css: { weight: 1 }
