@@ -1,0 +1,14 @@
+uuid: be5ca060-2b84-4b2a-9d71-e707fca12311
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.person
+  module:
+    - user
+id: user_add_role_action.person
+label: 'Add the Person role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: person

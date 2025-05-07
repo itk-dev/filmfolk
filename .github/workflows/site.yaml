@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install site
+      - name: Start docker and install dependencies
         run: |
           docker network create frontend
           docker compose pull
@@ -71,7 +71,7 @@ jobs:
         with:
           ref: ${{ github.base_ref }}
 
-      - name: setup-docker-and-composer
+      - name: Start docker and install dependencies
         run: |
           docker network create frontend
           docker compose pull
@@ -109,8 +109,9 @@ jobs:
           # https://github.com/actions/checkout?tab=readme-ov-file#usage)
           clean: false
 
-      - name: setup-docker-and-composer
+      - name: Start docker and install dependencies
         run: |
+          docker network create frontend || true
           docker compose pull
           docker compose up --detach
 

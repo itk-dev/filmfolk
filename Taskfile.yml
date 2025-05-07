@@ -198,7 +198,7 @@ tasks:
     silent: true
 
   search-index:update:
-    desc: "Update search index"
+    desc: "Clear and rebuild search index"
     cmds:
-      - task drush -- search-api:reset-tracker
+      - task drush -- search-api:clear
       - task drush -- search-api:index --limit=1000
