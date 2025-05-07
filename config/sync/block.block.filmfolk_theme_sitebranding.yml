@@ -1,0 +1,23 @@
+uuid: a5742619-9faa-4e6d-93f8-a36e2962031d
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_sitebranding
+theme: filmfolk_theme
+region: footer_top
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: true
+visibility: {  }

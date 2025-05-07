@@ -12,8 +12,10 @@ dependencies:
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
     - field.field.user.user.field_profile_picture
+    - image.style.large
   module:
     - filmfolk
+    - media
     - text
     - user
 id: user.user.default
@@ -23,10 +25,10 @@ mode: default
 content:
   field_description:
     type: text_default
-    label: visually_hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_funktion:
     type: entity_reference_label
@@ -34,14 +36,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 4
     region: content
   field_funktion_erfaring:
     type: filmfolk_funktion_erfaring
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 5
     region: content
   field_kommune:
     type: entity_reference_label
@@ -49,7 +51,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 3
     region: content
   field_navn:
     type: string
@@ -57,16 +59,18 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 9
+    weight: 1
     region: content
   field_profile_picture:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 11
+    weight: 0
     region: content
 hidden:
   field_last_password_reset: true

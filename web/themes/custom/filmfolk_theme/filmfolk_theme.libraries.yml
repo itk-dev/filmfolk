@@ -7,6 +7,7 @@ global:
       css/base/base.css: { weight: 1 }
     component:
       css/component/block.css: { weight: 1 }
+      css/component/footer.css: { weight: 1 }
       css/component/form.css: { weight: 1 }
       css/component/search.css: { weight: 1 }
     layout:

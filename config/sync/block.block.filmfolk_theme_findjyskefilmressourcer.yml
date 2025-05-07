@@ -1,9 +1,9 @@
-uuid: 596b0639-da6b-4f95-ac6a-e22d4c5a8c0d
+uuid: d855e96e-6375-4d4a-88ac-e51025fd9bee
 langcode: da
 status: true
 dependencies:
   content:
-    - 'block_content:page_title:b545798f-83eb-44e6-8bce-68c1bcea702e'
+    - 'block_content:page_title:b45da67d-608c-4ed0-8da4-61d6b9d1e04b'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: filmfolk_theme
 region: content_above
 weight: 0
 provider: null
-plugin: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
+plugin: 'block_content:b45da67d-608c-4ed0-8da4-61d6b9d1e04b'
 settings:
-  id: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
+  id: 'block_content:b45da67d-608c-4ed0-8da4-61d6b9d1e04b'
   label: 'Find jyske filmressourcer'
   label_display: visible
   provider: block_content
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "<front>\r\n/search/*"
+    pages: "<front>\r\n/search"

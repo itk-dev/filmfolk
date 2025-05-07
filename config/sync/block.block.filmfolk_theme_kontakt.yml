@@ -1,0 +1,25 @@
+uuid: 9c90a2f4-f2ce-43d9-be13-1680d6aec1a6
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:page_title:0a768fc2-8abe-43d8-9ed6-25728bdb33d8'
+  module:
+    - block_content
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_kontakt
+theme: filmfolk_theme
+region: footer_top
+weight: -5
+provider: null
+plugin: 'block_content:0a768fc2-8abe-43d8-9ed6-25728bdb33d8'
+settings:
+  id: 'block_content:0a768fc2-8abe-43d8-9ed6-25728bdb33d8'
+  label: Kontakt
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
