@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-28](https://github.com/itk-dev/filmfolk/pull/28)
+  * Rearrange user profile page
+  * Add info to footer
+  * Update the use of content blocks
+  * Add social media menu for footer
+  * Adjust alignment of mobile menu
 * [PR-24](https://github.com/itk-dev/filmfolk/pull/24)
   * Cleanup theme library
   * Change repeated background symbol
