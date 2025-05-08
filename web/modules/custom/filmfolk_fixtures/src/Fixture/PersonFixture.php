@@ -10,7 +10,7 @@ use Drupal\user\UserInterface;
  * Person fixture.
  */
 final class PersonFixture extends UserFixture implements DependentFixtureInterface {
-  private const ROLE_PERSON = 'person';
+  const ROLE_PERSON_ID = 'person';
 
   /**
    * {@inheritdoc}
@@ -188,7 +188,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
    */
   protected function createUser(array $values = []): UserInterface {
     return parent::createUser($values)
-      ->addRole(self::ROLE_PERSON);
+      ->addRole(self::ROLE_PERSON_ID);
   }
 
   /**

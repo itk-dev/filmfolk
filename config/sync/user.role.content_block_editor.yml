@@ -3,22 +3,20 @@ langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.page_title
-    - filter.format.simple
+    - block_content.type.content
   module:
     - block_content
     - contextual
-    - filter
     - system
     - toolbar
-id: editor
-label: Editor
-weight: 3
+id: content_block_editor
+label: 'content block editor'
+weight: 5
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access block library'
   - 'access contextual links'
   - 'access toolbar'
-  - 'edit any page_title block content'
-  - 'use text format simple'
+  - 'edit any content block content'
   - 'view the administration theme'
