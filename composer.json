@@ -12,6 +12,7 @@
         "php": "^8.4",
         "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
+        "drupal/administerusersbyrole": "^3.5",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",

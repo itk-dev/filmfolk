@@ -1,0 +1,24 @@
+uuid: 396a5b46-d9f9-4dc8-9296-b99ac6e96ab1
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.page_title
+    - filter.format.simple
+  module:
+    - block_content
+    - contextual
+    - filter
+    - system
+    - toolbar
+id: editor
+label: Editor
+weight: 3
+is_admin: false
+permissions:
+  - 'access block library'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'edit any page_title block content'
+  - 'use text format simple'
+  - 'view the administration theme'
