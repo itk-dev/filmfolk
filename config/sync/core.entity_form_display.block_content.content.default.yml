@@ -1,15 +1,15 @@
-uuid: 7e6ea240-318c-44e6-97c0-a0250d234495
+uuid: 7d121651-1091-4ac1-bc08-7df0e192b94b
 langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.page_title
-    - field.field.block_content.page_title.body
+    - block_content.type.content
+    - field.field.block_content.content.body
   module:
     - text
-id: block_content.page_title.default
+id: block_content.content.default
 targetEntityType: block_content
-bundle: page_title
+bundle: content
 mode: default
 content:
   body:

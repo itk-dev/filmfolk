@@ -1,11 +1,11 @@
-uuid: a84a7b40-6130-4517-b23b-0b5a4a505cdb
+uuid: 95932a50-4aac-4217-a33a-16c0d2d07b8f
 langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.page_title
-id: block_content.page_title
+    - block_content.type.content
+id: block_content.content
 target_entity_type_id: block_content
-target_bundle: page_title
+target_bundle: content
 default_langcode: site_default
 language_alterable: false

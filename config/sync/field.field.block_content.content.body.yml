@@ -1,16 +1,16 @@
-uuid: 057f65ae-a468-4d5b-9928-77455c0cb568
+uuid: d685f3ff-72a8-4c90-b372-760076c49fd6
 langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.page_title
+    - block_content.type.content
     - field.storage.block_content.body
   module:
     - text
-id: block_content.page_title.body
+id: block_content.content.body
 field_name: body
 entity_type: block_content
-bundle: page_title
+bundle: content
 label: Body
 description: ''
 required: false

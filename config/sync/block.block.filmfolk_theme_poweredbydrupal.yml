@@ -9,7 +9,7 @@ dependencies:
 id: filmfolk_theme_poweredbydrupal
 theme: filmfolk_theme
 region: footer_bottom
-weight: 0
+weight: -5
 provider: null
 plugin: system_powered_by_block
 settings:

@@ -3,9 +3,8 @@
   <div class="user-search-result-image-wrapper">
     {% if not user.field_profile_picture.isEmpty() %}
           {{ content.field_profile_picture }}
-        {# <img src="https://placehold.co/600x400" alt="Profile photo of {{ user.field_navn.value }}"> #}
     {% else %}
-      <p>No image is available</p>
+      <p>{{ "Profile picture not uploaded"|t }}</p>
     {% endif %}
   </div>
 
