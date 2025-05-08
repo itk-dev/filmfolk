@@ -31,6 +31,7 @@ module:
   page_cache: 0
   password_strength: 0
   path_alias: 0
+  recreate_block_content: 0
   registration_role: 0
   remove_username: 0
   search_api: 0
