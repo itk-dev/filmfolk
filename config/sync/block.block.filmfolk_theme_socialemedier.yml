@@ -11,7 +11,7 @@ dependencies:
 id: filmfolk_theme_socialemedier
 theme: filmfolk_theme
 region: footer_bottom
-weight: -6
+weight: -4
 provider: null
 plugin: 'system_menu_block:social-media'
 settings:
