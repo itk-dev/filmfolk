@@ -56,19 +56,17 @@
           #}
           {% set aria_id = (item.title ~ '-submenu-' ~ loop.index)|clean_id %}
 
-
-          {% if item.title == "Facebook" %}
+          {% if item.title == 'Facebook' %}
             <a href="{{ item.url }}">{{ source('@filmfolk_theme/img/square-facebook-brands.svg') }}<span class="visually-hidden">{{ item.title }}</span></a>
-          {% elseif item.title == "LinkedIN" %}
+          {% elseif item.title == 'LinkedIN' %}
             <a href="{{ item.url }}">{{ source('@filmfolk_theme/img/linkedin-brands.svg') }}<span class="visually-hidden">{{ item.title }}</span></a>
           {% else %}
-            {{ link(item.title, item.url, {'class': link_classes}) }}
+            {{ link(item.title, item.url, {class: link_classes}) }}
           {% endif %}
 
           {% if item.below %}
             {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
           {% endif %}
-
 
         </li>
       {% endfor %}
