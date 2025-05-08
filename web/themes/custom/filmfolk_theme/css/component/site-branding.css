@@ -1,0 +1,3 @@
+.site-branding:has(.site-header) {
+  border: 1px solid #0f0;
+}

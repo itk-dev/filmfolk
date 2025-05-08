@@ -11,7 +11,7 @@ id: user.user.field_profile_picture
 field_name: field_profile_picture
 entity_type: user
 bundle: user
-label: 'Profile picture'
+label: 'Profil billede'
 description: 'Used to add an image to use for profile picture'
 required: false
 translatable: false

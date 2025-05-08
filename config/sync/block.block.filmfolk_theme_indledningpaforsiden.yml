@@ -1,24 +1,24 @@
-uuid: 596b0639-da6b-4f95-ac6a-e22d4c5a8c0d
+uuid: 3097a4fa-4dca-42b8-9e7c-88e50864f63f
 langcode: da
 status: true
 dependencies:
   content:
-    - 'block_content:page_title:b545798f-83eb-44e6-8bce-68c1bcea702e'
+    - 'block_content:content:81c166c9-60f4-456a-9e36-73ab3663f2bf'
   module:
     - block_content
     - system
   theme:
     - filmfolk_theme
-id: filmfolk_theme_findjyskefilmressourcer
+id: filmfolk_theme_indledningpaforsiden
 theme: filmfolk_theme
 region: content_above
 weight: 0
 provider: null
-plugin: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
+plugin: 'block_content:81c166c9-60f4-456a-9e36-73ab3663f2bf'
 settings:
-  id: 'block_content:b545798f-83eb-44e6-8bce-68c1bcea702e'
-  label: 'Find jyske filmressourcer'
-  label_display: visible
+  id: 'block_content:81c166c9-60f4-456a-9e36-73ab3663f2bf'
+  label: 'Indledning på forsiden'
+  label_display: '0'
   provider: block_content
   status: true
   info: ''

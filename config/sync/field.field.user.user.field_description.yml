@@ -12,7 +12,7 @@ id: user.user.field_description
 field_name: field_description
 entity_type: user
 bundle: user
-label: description
+label: Beskrivelse
 description: ''
 required: true
 translatable: false

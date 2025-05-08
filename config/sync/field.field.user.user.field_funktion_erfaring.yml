@@ -11,7 +11,7 @@ id: user.user.field_funktion_erfaring
 field_name: field_funktion_erfaring
 entity_type: user
 bundle: user
-label: funktion_erfaring
+label: 'Funktion erfaring'
 description: ''
 required: true
 translatable: false
