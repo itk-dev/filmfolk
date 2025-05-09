@@ -3,7 +3,9 @@
 namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
+use Drupal\taxonomy\TermStorageInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -11,6 +13,16 @@ use Drupal\user\UserInterface;
  */
 final class PersonFixture extends UserFixture implements DependentFixtureInterface {
   const ROLE_PERSON_ID = 'person';
+
+  /**
+   * The term storage.
+   */
+  private TermStorageInterface $taxonomyTermStorage;
+
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+    parent::__construct($entityTypeManager);
+    $this->taxonomyTermStorage = $entityTypeManager->getStorage('taxonomy_term');
+  }
 
   /**
    * {@inheritdoc}
@@ -181,6 +193,8 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'field_kommune' => $this->getReference('kommune:Aarhus'),
     ]);
     $user->save();
+
+    $this->createPersonsWithAllFunktionerAndExperiences();
   }
 
   /**
@@ -201,6 +215,33 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       KommuneTermFixture::class,
       FunktionTermFixture::class,
     ];
+  }
+
+  /**
+   * Create persons with all funktioner and experiences.
+   */
+  private function createPersonsWithAllFunktionerAndExperiences() {
+    /** @var \Drupal\taxonomy\TermInterface[] $funktions */
+    $funktions = $this->taxonomyTermStorage->loadTree(FunktionTermFixture::$vocabularyId, load_entities: TRUE);
+    /** @var \Drupal\taxonomy\TermInterface[] $erfarings */
+    $erfarings = $this->taxonomyTermStorage->loadTree(ErfaringTermFixture::$vocabularyId, load_entities: TRUE);
+    foreach ($funktions as $funktion) {
+      foreach ($erfarings as $erfaring) {
+        $this->createUser([
+          'mail' => sprintf('person-f%d-e%d@example.com', $funktion->id(), $erfaring->id()),
+          'field_navn' => sprintf('Person %s %s', $funktion->label(), $erfaring->label()),
+          'field_kommune' => $this->getReference('kommune:Aarhus'),
+          'field_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $funktion->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $erfaring->id(),
+            ],
+          ],
+        ])
+          ->save();
+      }
+    }
   }
 
 }

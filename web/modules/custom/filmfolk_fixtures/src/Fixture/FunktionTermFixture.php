@@ -9,7 +9,7 @@ class FunktionTermFixture extends AbstractTaxonomyTermFixture {
   /**
    * {@inheritdoc}
    */
-  protected static string $vocabularyId = 'funktion';
+  public static string $vocabularyId = 'funktion';
 
   /**
    * {@inheritdoc}

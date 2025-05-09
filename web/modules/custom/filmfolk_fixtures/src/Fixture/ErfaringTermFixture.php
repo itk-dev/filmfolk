@@ -9,7 +9,7 @@ class ErfaringTermFixture extends AbstractTaxonomyTermFixture {
   /**
    * {@inheritdoc}
    */
-  protected static string $vocabularyId = 'erfaring';
+  public static string $vocabularyId = 'erfaring';
 
   /**
    * {@inheritdoc}
