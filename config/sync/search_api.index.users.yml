@@ -4,25 +4,28 @@ status: true
 dependencies:
   config:
     - field.storage.user.field_description
-    - field.storage.user.field_funktion
+    - field.storage.user.field_funktion_erfaring
     - field.storage.user.field_kommune
     - field.storage.user.field_navn
     - search_api.server.local
   module:
+    - taxonomy
     - user
 id: users
 name: users
 description: ''
 read_only: false
 field_settings:
-  field_funktion:
-    label: funktion
+  erfaring_id:
+    label: 'Funktion erfaring » Erfaring » Term ID'
     datasource_id: 'entity:user'
-    property_path: field_funktion
+    property_path: 'field_funktion_erfaring:erfaring:tid'
     type: integer
     dependencies:
       config:
-        - field.storage.user.field_funktion
+        - field.storage.user.field_funktion_erfaring
+      module:
+        - taxonomy
   field_kommune:
     label: kommune
     datasource_id: 'entity:user'
@@ -40,6 +43,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_navn
+  funktion_id:
+    label: 'Funktion erfaring » Funktion » Term ID'
+    datasource_id: 'entity:user'
+    property_path: 'field_funktion_erfaring:funktion:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_funktion_erfaring
+      module:
+        - taxonomy
   processed:
     label: 'description » Processed text'
     datasource_id: 'entity:user'

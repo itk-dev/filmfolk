@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_description
-    - field.field.user.user.field_funktion
     - field.field.user.user.field_funktion_erfaring
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
@@ -35,12 +34,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_funktion:
-    type: options_buttons
-    weight: 7
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_funktion_erfaring:
     type: filmfolk_funktion_erfaring

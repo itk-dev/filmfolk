@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.user.search_result
     - field.field.user.user.field_description
-    - field.field.user.user.field_funktion
     - field.field.user.user.field_funktion_erfaring
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
@@ -29,14 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_funktion:
-    type: entity_reference_label
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_kommune:
     type: entity_reference_label
