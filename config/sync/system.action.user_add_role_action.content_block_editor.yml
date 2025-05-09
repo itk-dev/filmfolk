@@ -1,0 +1,14 @@
+uuid: e896640b-9fab-4950-97d2-0ad1fd008d38
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.content_block_editor
+  module:
+    - user
+id: user_add_role_action.content_block_editor
+label: 'Add the content block editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_block_editor

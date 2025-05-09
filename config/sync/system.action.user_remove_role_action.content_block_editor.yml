@@ -1,0 +1,14 @@
+uuid: a44bac1d-3ccc-44a5-b99c-3bad7b0f4d3a
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.content_block_editor
+  module:
+    - user
+id: user_remove_role_action.content_block_editor
+label: 'Remove the content block editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_block_editor

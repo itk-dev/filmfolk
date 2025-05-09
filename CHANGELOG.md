@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-29](https://github.com/itk-dev/filmfolk/pull/29)
+  * Added person manager and editor roles
 * [PR-28](https://github.com/itk-dev/filmfolk/pull/28)
   * Rearrange user profile page
   * Add info to footer

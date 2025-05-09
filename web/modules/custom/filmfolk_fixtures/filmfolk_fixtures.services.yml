@@ -12,3 +12,5 @@ services:
   Drupal\filmfolk_fixtures\Fixture\ProfilePictureFixture:
 
   Drupal\filmfolk_fixtures\Fixture\PersonFixture:
+
+  Drupal\filmfolk_fixtures\Fixture\UserFixture:
