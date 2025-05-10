@@ -363,13 +363,18 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: true
-              field_funktion:
+              funktion_target_id:
                 plugin_id: default
                 advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: 'All|Alle funktioner'
-                    filter_rewrite_values_key: true
+                  placeholder_text: ''
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: true
+              erfaring_target_id:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
@@ -490,6 +495,109 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+        funktion_target_id:
+          id: funktion_target_id
+          table: search_api_index_users
+          field: funktion_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: '='
+          value:
+            min: null
+            max: null
+            value: null
+          group: 1
+          exposed: true
+          expose:
+            operator_id: funktion_target_id_op
+            label: Funktion
+            description: ''
+            use_operator: false
+            operator: funktion_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: funktion_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        erfaring_target_id:
+          id: erfaring_target_id
+          table: search_api_index_users
+          field: erfaring_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: erfaring_target_id_op
+            label: Erfaring
+            description: ''
+            use_operator: false
+            operator: erfaring_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: erfaring_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Funktion erfaring » Erfaring Ord i ordforråd ID'
+            description: null
+            identifier: erfaring_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
