@@ -239,6 +239,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             ],
           ],
         ])
+          ->activate()
           ->save();
       }
     }

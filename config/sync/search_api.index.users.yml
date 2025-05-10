@@ -9,7 +9,6 @@ dependencies:
     - field.storage.user.field_navn
     - search_api.server.local
   module:
-    - filmfolk
     - user
 id: users
 name: users
@@ -66,8 +65,8 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   custom_value: {  }
+  entity_status: {  }
   entity_type: {  }
-  filmfolk_user_funktion_erfaring: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   role_filter:

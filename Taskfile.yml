@@ -201,4 +201,4 @@ tasks:
     desc: "Clear and rebuild search index"
     cmds:
       - task drush -- search-api:clear
-      - task drush -- search-api:index --limit=1000
+      - task drush -- search-api:index
