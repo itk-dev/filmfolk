@@ -12,6 +12,7 @@ use Drupal\core_event_dispatcher\Event\Form\FormAlterEvent;
 use Drupal\core_event_dispatcher\FormHookEvents;
 use Drupal\filmfolk\Entity\Term;
 use Drupal\filmfolk\Helper;
+use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\taxonomy\TermStorageInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -59,20 +60,22 @@ final class EntityEventSubscriber implements EventSubscriberInterface {
   public function formAlter(FormAlterEvent $event): void {
     if ('views_exposed_form' === $event->getFormId()) {
       $form = &$event->getForm();
-      if (isset($form['funktion_target_id'])) {
+      if (isset($form[FunktionErfaringItem::PROPERTY_FUNKTION])) {
+        $element = &$form[FunktionErfaringItem::PROPERTY_FUNKTION];
         $options = $this->getTermOptions('funktion', $this->t('All functions'));
-        unset($form['funktion_target_id']['#size']);
-        $form['funktion_target_id']['#type'] = 'select';
-        $form['funktion_target_id']['#options'] = $options;
+        unset($element['#size']);
+        $element['#type'] = 'select';
+        $element['#options'] = $options;
 
-        if (isset($form['erfaring_target_id'])) {
+        if (isset($form[FunktionErfaringItem::PROPERTY_ERFARING])) {
+          $element = &$form[FunktionErfaringItem::PROPERTY_ERFARING];
           $options = $this->getTermOptions('erfaring', $this->t('All experiences'));
-          unset($form['erfaring_target_id']['#size']);
-          $form['erfaring_target_id']['#type'] = 'select';
-          $form['erfaring_target_id']['#options'] = $options;
-          $form['erfaring_target_id']['#states'] = [
+          unset($element['#size']);
+          $element['#type'] = 'select';
+          $element['#options'] = $options;
+          $element['#states'] = [
             'enabled' => [
-              ':input[name="funktion_target_id"]' => ['empty' => FALSE],
+              ':input[name="'.FunktionErfaringItem::PROPERTY_FUNKTION.'"]' => ['empty' => FALSE],
             ],
           ];
         }

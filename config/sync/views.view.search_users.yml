@@ -420,13 +420,16 @@ display:
             operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_fulltext
+            identifier: search
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
@@ -463,19 +466,22 @@ display:
           exposed: true
           expose:
             operator_id: field_kommune_op
-            label: kommune
+            label: Kommune
             description: ''
             use_operator: false
             operator: field_kommune_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_kommune
+            identifier: kommune
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -518,7 +524,7 @@ display:
             operator: funktion_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: funktion_target_id
+            identifier: funktion
             required: false
             remember: false
             multiple: false
@@ -566,7 +572,7 @@ display:
             operator: erfaring_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: erfaring_target_id
+            identifier: erfaring
             required: false
             remember: false
             multiple: false
