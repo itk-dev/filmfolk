@@ -8,6 +8,8 @@ namespace Drupal\filmfolk;
  * Helper for filmfolk.
  */
 class Helper {
+  const string TAXONOMY_FUNKTION = 'funktion';
+  const string TAXONOMY_ERFARING = 'erfaring';
 
   /**
    * Load terms from a vocabulary.

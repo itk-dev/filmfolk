@@ -37,6 +37,7 @@ tasks:
       - task assets-build
       - task drush -- deploy
       # - task: translations:import
+      - task: search-index:update
       - task drush -- --yes cache:rebuild
     silent: true
 

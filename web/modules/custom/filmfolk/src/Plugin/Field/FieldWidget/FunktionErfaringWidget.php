@@ -63,7 +63,7 @@ final class FunktionErfaringWidget extends WidgetBase {
       '#title' => $this->t('Funktion'),
       '#required' => $element['#required'],
       '#empty_value' => '',
-      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms('funktion')),
+      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms(Helper::TAXONOMY_FUNKTION)),
       '#default_value' => $items[$delta]->get(FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID)?->getString() ?: NULL,
     ];
 
@@ -72,7 +72,7 @@ final class FunktionErfaringWidget extends WidgetBase {
       '#title' => $this->t('Erfaring'),
       '#required' => $element['#required'],
       '#empty_value' => '',
-      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms('erfaring')),
+      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms(Helper::TAXONOMY_ERFARING)),
       '#default_value' => $items[$delta]->get(FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID)?->getString() ?: NULL,
     ];
 

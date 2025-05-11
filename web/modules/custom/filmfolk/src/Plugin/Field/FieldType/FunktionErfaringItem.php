@@ -11,6 +11,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataReferenceDefinition;
 use Drupal\Core\TypedData\DataReferenceTargetDefinition;
+use Drupal\filmfolk\Helper;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -24,11 +25,11 @@ use Drupal\taxonomy\Entity\Term;
   default_formatter: 'filmfolk_funktion_erfaring',
 )]
 final class FunktionErfaringItem extends FieldItemBase {
-  const string PROPERTY_FUNKTION_TARGET_ID = 'funktion_target_id';
-  const string PROPERTY_ERFARING_TARGET_ID = 'erfaring_target_id';
+  const string PROPERTY_FUNKTION = Helper::TAXONOMY_FUNKTION;
+  const string PROPERTY_ERFARING = Helper::TAXONOMY_ERFARING;
 
-  const string PROPERTY_FUNKTION = 'funktion';
-  const string PROPERTY_ERFARING = 'erfaring';
+  const string PROPERTY_FUNKTION_TARGET_ID = self::PROPERTY_FUNKTION . '_target_id';
+  const string PROPERTY_ERFARING_TARGET_ID = self::PROPERTY_ERFARING . '_target_id';
 
   /**
    * Get funktion.
