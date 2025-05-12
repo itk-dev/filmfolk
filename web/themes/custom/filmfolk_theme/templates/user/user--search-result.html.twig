@@ -2,7 +2,7 @@
 
   <div class="user-search-result-image-wrapper">
     {% if not user.field_profile_picture.isEmpty() %}
-          {{ content.field_profile_picture }}
+          <a href="{{ path('entity.user.canonical', {user: user.id}) }}">{{ content.field_profile_picture }}</a>
     {% else %}
       <p>{{ 'Profile picture not uploaded'|t }}</p>
     {% endif %}

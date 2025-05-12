@@ -1,0 +1,10 @@
+.user-profile {
+  display: grid;
+  gap: var(--sp3);
+  grid-template-columns: 1fr;
+
+  /* Use more of the available width on the page */
+  @media (min-width: 62.5rem) {
+    grid-template-columns: 4fr 8fr;
+  }
+}
