@@ -6,6 +6,10 @@ dependencies:
     - field.storage.user.field_funktion_erfaring
     - field.storage.user.field_kommune
     - field.storage.user.field_navn
+    - field.storage.user.field_profile_about
+    - field.storage.user.field_profile_additional_info
+    - field.storage.user.field_profile_education_interest
+    - field.storage.user.field_profiletitle
     - search_api.server.local
   module:
     - user
@@ -39,6 +43,38 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_navn
+  field_profile_about:
+    label: 'Profil  - Om dig'
+    datasource_id: 'entity:user'
+    property_path: field_profile_about
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_profile_about
+  field_profile_additional_info:
+    label: 'Profil andet info'
+    datasource_id: 'entity:user'
+    property_path: field_profile_additional_info
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_profile_additional_info
+  field_profile_education_interest:
+    label: 'Profil - Uddannelse og interesser'
+    datasource_id: 'entity:user'
+    property_path: field_profile_education_interest
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_profile_education_interest
+  field_profiletitle:
+    label: Profiloverskrift
+    datasource_id: 'entity:user'
+    property_path: field_profiletitle
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_profiletitle
   funktion_target_id:
     label: 'Funktion erfaring » Funktion Ord i ordforråd ID'
     datasource_id: 'entity:user'
@@ -47,14 +83,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_funktion_erfaring
-  processed:
-    label: 'description » Processed text'
-    datasource_id: 'entity:user'
-    property_path: 'field_description:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.user.field_description
 datasource_settings:
   'entity:user':
     languages:
@@ -73,7 +101,10 @@ processor_settings:
     all_fields: true
     fields:
       - field_navn
-      - processed
+      - field_profile_about
+      - field_profile_additional_info
+      - field_profile_education_interest
+      - field_profiletitle
   language_with_fallback: {  }
   rendered_item: {  }
   role_filter:

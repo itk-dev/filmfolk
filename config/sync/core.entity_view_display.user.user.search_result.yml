@@ -29,7 +29,6 @@ targetEntityType: user
 bundle: user
 mode: search_result
 content:
-
   field_funktion:
     type: entity_reference_label
     label: visually_hidden
