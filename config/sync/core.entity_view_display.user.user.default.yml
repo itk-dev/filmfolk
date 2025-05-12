@@ -18,7 +18,7 @@ dependencies:
     - field.field.user.user.field_profile_additional_info
     - field.field.user.user.field_profile_education_interest
     - field.field.user.user.field_profile_picture
-    - field.field.user.user.field_profiletitle
+    - field.field.user.user.field_profile_title
     - image.style.large
   module:
     - filmfolk
