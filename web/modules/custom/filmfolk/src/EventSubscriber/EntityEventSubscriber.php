@@ -4,15 +4,24 @@ declare(strict_types=1);
 
 namespace Drupal\filmfolk\EventSubscriber;
 
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\core_event_dispatcher\EntityHookEvents;
 use Drupal\core_event_dispatcher\Event\Entity\EntityTypeAlterEvent;
 use Drupal\filmfolk\Entity\Term;
+use Drupal\filmfolk\Helper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Entity event subscriber.
  */
 final class EntityEventSubscriber implements EventSubscriberInterface {
+
+  use StringTranslationTrait;
+
+  public function __construct(
+    private readonly Helper $helper,
+  ) {
+  }
 
   /**
    * {@inheritdoc}

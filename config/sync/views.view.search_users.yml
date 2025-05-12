@@ -3,11 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_funktion
     - field.storage.user.field_kommune
     - field.storage.user.field_navn
     - search_api.index.users
-    - taxonomy.vocabulary.funktion
     - taxonomy.vocabulary.kommune
   module:
     - better_exposed_filters
@@ -229,82 +227,6 @@ display:
               kommune:
                 display_method: label
                 view_mode: default
-        field_funktion:
-          id: field_funktion
-          table: search_api_index_users
-          field: field_funktion
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_entity
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            display_methods:
-              funktion:
-                display_method: label
-              kommune:
-                display_method: label
-                view_mode: default
         mail:
           id: mail
           table: search_api_datasource_users_entity_user
@@ -441,13 +363,18 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: true
-              field_funktion:
+              funktion_target_id:
                 plugin_id: default
                 advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: 'All|Alle funktioner'
-                    filter_rewrite_values_key: true
+                  placeholder_text: ''
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: true
+              erfaring_target_id:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
@@ -493,13 +420,16 @@ display:
             operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_fulltext
+            identifier: search
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
@@ -536,19 +466,22 @@ display:
           exposed: true
           expose:
             operator_id: field_kommune_op
-            label: kommune
+            label: Kommune
             description: ''
             use_operator: false
             operator: field_kommune_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_kommune
+            identifier: kommune
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -568,34 +501,42 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        field_funktion:
-          id: field_funktion
+        funktion_target_id:
+          id: funktion_target_id
           table: search_api_index_users
-          field: field_funktion
+          field: funktion_target_id
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api_term
-          operator: or
-          value: {  }
+          operator: '='
+          value:
+            min: null
+            max: null
+            value: null
           group: 1
           exposed: true
           expose:
-            operator_id: field_funktion_op
-            label: funktion
+            operator_id: funktion_target_id_op
+            label: Funktion
             description: ''
             use_operator: false
-            operator: field_funktion_op
+            operator: funktion_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_funktion
+            identifier: funktion
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-            reduce: false
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -608,12 +549,61 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: funktion
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
+        erfaring_target_id:
+          id: erfaring_target_id
+          table: search_api_index_users
+          field: erfaring_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: erfaring_target_id_op
+            label: Erfaring
+            description: ''
+            use_operator: false
+            operator: erfaring_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: erfaring
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              person: '0'
+              person_manager: '0'
+              content_block_editor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Funktion erfaring » Erfaring Ord i ordforråd ID'
+            description: null
+            identifier: erfaring_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -646,7 +636,6 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.user.field_funktion'
         - 'config:field.storage.user.field_kommune'
         - 'config:field.storage.user.field_navn'
         - 'config:search_api.index.users'
@@ -672,7 +661,6 @@ display:
         - 'languages:language_interface'
         - url
       tags:
-        - 'config:field.storage.user.field_funktion'
         - 'config:field.storage.user.field_kommune'
         - 'config:field.storage.user.field_navn'
         - 'config:search_api.index.users'
@@ -693,7 +681,6 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.user.field_funktion'
         - 'config:field.storage.user.field_kommune'
         - 'config:field.storage.user.field_navn'
         - 'config:search_api.index.users'

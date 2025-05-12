@@ -37,6 +37,7 @@ tasks:
       - task assets-build
       - task drush -- deploy
       # - task: translations:import
+      - task: search-index:update
       - task drush -- --yes cache:rebuild
     silent: true
 
@@ -201,4 +202,4 @@ tasks:
     desc: "Clear and rebuild search index"
     cmds:
       - task drush -- search-api:clear
-      - task drush -- search-api:index --limit=1000
+      - task drush -- search-api:index

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_description
-    - field.field.user.user.field_funktion
     - field.field.user.user.field_funktion_erfaring
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
@@ -29,14 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_funktion:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
     region: content
   field_funktion_erfaring:
     type: filmfolk_funktion_erfaring

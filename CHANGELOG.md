@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-43](https://github.com/itk-dev/filmfolk/pull/43)
+  Updated search index configuration and filters
 * [PR-45](https://github.com/itk-dev/filmfolk/pull/45)
   Issue 30: Web accessibility statement
 * [PR-29](https://github.com/itk-dev/filmfolk/pull/29)

@@ -1,7 +1,8 @@
 services:
   _defaults:
     autowire: true
-    tags: { name: content_fixture }
+    tags:
+      - { name: content_fixture }
 
   Drupal\filmfolk_fixtures\Fixture\KommuneTermFixture:
 

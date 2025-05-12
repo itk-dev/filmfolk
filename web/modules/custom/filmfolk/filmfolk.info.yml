@@ -1,8 +1,9 @@
 name: 'Filmfolk'
 type: module
-description: '@todo Add description.'
-package: '@todo Add package'
-core_version_requirement: ^10 || ^11
+description: 'Filmfolk'
+package: 'Filmfolk'
+core_version_requirement: ^11
 
 dependencies:
   - core_event_dispatcher:core_event_dispatcher
+  - drupal:taxonomy

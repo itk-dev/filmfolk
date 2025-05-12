@@ -2,6 +2,12 @@ services:
   _defaults:
     autowire: true
 
+  Drupal\filmfolk\Helper:
+
   Drupal\filmfolk\EventSubscriber\EntityEventSubscriber:
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\filmfolk\EventSubscriber\FormEventSubscriber:
     tags:
       - { name: event_subscriber }

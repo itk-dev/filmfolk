@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drupal\filmfolk\Plugin\Field\FieldWidget;
 
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\Attribute\FieldWidget;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -12,6 +11,7 @@ use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\filmfolk\Helper;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -33,7 +33,7 @@ final class FunktionErfaringWidget extends WidgetBase {
     FieldDefinitionInterface $field_definition,
     array $settings,
     array $third_party_settings,
-    EntityTypeManagerInterface $entityTypeManager,
+    private readonly Helper $helper,
   ) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
   }
@@ -49,7 +49,7 @@ final class FunktionErfaringWidget extends WidgetBase {
     $configuration['field_definition'],
     $configuration['settings'],
     $configuration['third_party_settings'],
-    $container->get('entity_type.manager')
+    $container->get(Helper::class),
     );
   }
 
@@ -63,7 +63,7 @@ final class FunktionErfaringWidget extends WidgetBase {
       '#title' => $this->t('Funktion'),
       '#required' => $element['#required'],
       '#empty_value' => '',
-      '#options' => array_map(static fn (Term $term) => $term->label(), $this->loadTerms('funktion')),
+      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms(Helper::TAXONOMY_FUNKTION)),
       '#default_value' => $items[$delta]->get(FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID)?->getString() ?: NULL,
     ];
 
@@ -72,29 +72,11 @@ final class FunktionErfaringWidget extends WidgetBase {
       '#title' => $this->t('Erfaring'),
       '#required' => $element['#required'],
       '#empty_value' => '',
-      '#options' => array_map(static fn (Term $term) => $term->label(), $this->loadTerms('erfaring')),
+      '#options' => array_map(static fn (Term $term) => $term->label(), $this->helper->loadTerms(Helper::TAXONOMY_ERFARING)),
       '#default_value' => $items[$delta]->get(FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID)?->getString() ?: NULL,
     ];
 
     return $element;
-  }
-
-  /**
-   * Load terms from a vocabulary..
-   *
-   * @return array<int, Term>
-   *   The terms.
-   */
-  private function loadTerms(string $vocabulary): array {
-    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
-    $ids = $storage
-      ->getQuery()
-      ->accessCheck()
-      ->condition('vid', $vocabulary)
-      ->sort('weight')
-      ->execute();
-
-    return $storage->loadMultiple($ids);
   }
 
 }
