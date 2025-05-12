@@ -12,7 +12,7 @@ id: user.user.field_profile_additional_info
 field_name: field_profile_additional_info
 entity_type: user
 bundle: user
-label: 'Profil andet info'
+label: 'Profil - Andet info'
 description: 'Er der noget som ikke undlades på din profil?'
 required: false
 translatable: false

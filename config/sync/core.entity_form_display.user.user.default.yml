@@ -139,9 +139,9 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_profiletitle:
+  field_profile_title:
     type: string_textarea
-    weight: 13
+    weight: 19
     region: content
     settings:
       rows: 5

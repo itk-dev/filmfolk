@@ -41,15 +41,10 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
         $this->getReference('funktion:Runner'),
         $this->getReference('funktion:Scenograf'),
       ],
-      'field_description' => [
-        'value' => '<strong>Hej</strong> med dig',
-        'format' => 'simple',
-      ],
-          // Reference the media entity here.
       'field_profile_picture' => [
         'target_id' => $default_profile_picture_media->id(),
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
@@ -84,7 +79,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
             ],
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
@@ -119,7 +114,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
             ],
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
@@ -154,7 +149,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
             ],
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
@@ -189,7 +184,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
             ],
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
@@ -224,7 +219,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
             ],
       ],
-      'field_profiletitle' => [
+      'field_profile_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],

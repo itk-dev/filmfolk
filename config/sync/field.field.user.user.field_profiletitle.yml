@@ -1,13 +1,13 @@
-uuid: fc2d3f8b-429b-42d2-8dd4-39984358044a
+uuid: 01249cb1-0923-40cb-8441-178dcca93125
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_profiletitle
+    - field.storage.user.field_profile_title
   module:
     - user
-id: user.user.field_profiletitle
-field_name: field_profiletitle
+id: user.user.field_profile_title
+field_name: field_profile_title
 entity_type: user
 bundle: user
 label: Profiloverskrift

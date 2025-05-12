@@ -9,7 +9,7 @@ dependencies:
     - field.storage.user.field_profile_about
     - field.storage.user.field_profile_additional_info
     - field.storage.user.field_profile_education_interest
-    - field.storage.user.field_profiletitle
+    - field.storage.user.field_profile_title
     - search_api.server.local
   module:
     - user
@@ -67,14 +67,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_profile_education_interest
-  field_profiletitle:
+  field_profile_title:
     label: Profiloverskrift
     datasource_id: 'entity:user'
-    property_path: field_profiletitle
+    property_path: field_profile_title
     type: text
     dependencies:
       config:
-        - field.storage.user.field_profiletitle
+        - field.storage.user.field_profile_title
   funktion_target_id:
     label: 'Funktion erfaring » Funktion Ord i ordforråd ID'
     datasource_id: 'entity:user'
@@ -104,7 +104,7 @@ processor_settings:
       - field_profile_about
       - field_profile_additional_info
       - field_profile_education_interest
-      - field_profiletitle
+      - field_profile_title
   language_with_fallback: {  }
   rendered_item: {  }
   role_filter:

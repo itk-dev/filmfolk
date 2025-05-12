@@ -1,11 +1,11 @@
-uuid: f3bcd031-7654-4104-b886-ddf379fc47be
+uuid: 787129a2-2f3c-4417-9a1e-d36210ff8980
 langcode: da
 status: true
 dependencies:
   module:
     - user
-id: user.field_profiletitle
-field_name: field_profiletitle
+id: user.field_profile_title
+field_name: field_profile_title
 entity_type: user
 type: string_long
 settings:
