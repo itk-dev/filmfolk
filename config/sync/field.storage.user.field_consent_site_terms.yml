@@ -1,0 +1,18 @@
+uuid: d6118f30-2703-49a5-ad71-107479e9aec9
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_consent_site_terms
+field_name: field_consent_site_terms
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 787129a2-2f3c-4417-9a1e-d36210ff8980
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_profile_title
+field_name: field_profile_title
+entity_type: user
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

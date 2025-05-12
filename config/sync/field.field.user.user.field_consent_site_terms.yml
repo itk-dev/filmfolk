@@ -1,0 +1,22 @@
+uuid: 7ad8529a-560e-4282-a30a-14b82fd13d82
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_consent_site_terms
+  module:
+    - user
+id: user.user.field_consent_site_terms
+field_name: field_consent_site_terms
+entity_type: user
+bundle: user
+label: 'Jeg giver tilladelse/samtykke til, at mine oplysninger må bruges af Den Vestdanske Filmpulje til deres databaseformål'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Accepteret
+  off_label: Afvist
+field_type: boolean

@@ -1,12 +1,12 @@
-uuid: 2e269b49-1062-4652-8ce1-ad0d731ed26f
-langcode: en
+uuid: 2a659b1a-6c6d-4c3e-ab55-4ffaa715a72b
+langcode: da
 status: true
 dependencies:
   module:
     - text
     - user
-id: user.field_description
-field_name: field_description
+id: user.field_profile_about
+field_name: field_profile_about
 entity_type: user
 type: text_long
 settings: {  }

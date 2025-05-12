@@ -41,13 +41,24 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
         $this->getReference('funktion:Runner'),
         $this->getReference('funktion:Scenograf'),
       ],
-      'field_description' => [
-        'value' => '<strong>Hej</strong> med dig',
-        'format' => 'simple',
-      ],
-      // Reference the media entity here.
       'field_profile_picture' => [
         'target_id' => $default_profile_picture_media->id(),
+      ],
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
       ],
     ])
       ->activate();
@@ -57,23 +68,31 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person002@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
-      ],
       'field_funktion_erfaring' => [
-        [
-          // Important: We must use “…_TARGET_ID” to make this work.
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-        ],
-        [
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-        ],
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
       ],
-      'field_description' => [
-        'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
     ])
@@ -84,23 +103,31 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person003@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
-      ],
       'field_funktion_erfaring' => [
-        [
-          // Important: We must use “…_TARGET_ID” to make this work.
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-        ],
-        [
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-        ],
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
       ],
-      'field_description' => [
-        'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
     ])
@@ -111,23 +138,31 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person004@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
-      ],
       'field_funktion_erfaring' => [
-        [
-          // Important: We must use “…_TARGET_ID” to make this work.
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-        ],
-        [
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-        ],
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
       ],
-      'field_description' => [
-        'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
     ])
@@ -138,23 +173,31 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person005@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
-      ],
       'field_funktion_erfaring' => [
-        [
-          // Important: We must use “…_TARGET_ID” to make this work.
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-        ],
-        [
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-        ],
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
       ],
-      'field_description' => [
-        'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
     ])
@@ -165,23 +208,31 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person006@example.com',
       'field_navn' => 'Navn Navnesen',
       'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
-      ],
       'field_funktion_erfaring' => [
-        [
-          // Important: We must use “…_TARGET_ID” to make this work.
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-        ],
-        [
-          FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-          FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-        ],
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
       ],
-      'field_description' => [
-        'value' => 'Hvor\' du fra? Jeg\' fra <strong>Baune!</strong>',
+      'field_profile_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_profile_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_profile_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_profile_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
     ])
