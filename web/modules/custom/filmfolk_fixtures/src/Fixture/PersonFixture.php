@@ -3,6 +3,7 @@
 namespace Drupal\filmfolk_fixtures\Fixture;
 
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
 use Drupal\taxonomy\TermStorageInterface;
@@ -246,6 +247,26 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
     $user->save();
 
     $this->createPersonsWithAllFunktionerAndExperiences();
+
+    // Create the first user.
+    $this->createUser([
+      'mail' => 'first@example.com',
+      'field_navn' => 'The first person',
+      'field_kommune' => $this->getReference('kommune:Aarhus'),
+      'created' => new DrupalDateTime('1980-01-01')->getTimestamp(),
+    ])
+      ->activate()
+      ->save();
+
+    // Create the latest user.
+    $this->createUser([
+      'mail' => 'latest@example.com',
+      'field_navn' => 'The latest person',
+      'field_kommune' => $this->getReference('kommune:Aarhus'),
+      'created' => new DrupalDateTime('2030-01-01')->getTimestamp(),
+    ])
+      ->activate()
+      ->save();
   }
 
   /**

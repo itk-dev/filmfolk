@@ -18,6 +18,14 @@ name: users
 description: ''
 read_only: false
 field_settings:
+  created:
+    label: Oprettet
+    datasource_id: 'entity:user'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - user
   erfaring_target_id:
     label: 'Funktion erfaring » Erfaring Ord i ordforråd ID'
     datasource_id: 'entity:user'
