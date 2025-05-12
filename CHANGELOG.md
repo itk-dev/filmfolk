@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Issue 30: Web accessibility statement
 * [PR-41](https://github.com/itk-dev/filmfolk/pull/41)
   * Profile page enhancements
+* [PR-42](https://github.com/itk-dev/filmfolk/pull/42)
+  * Add favicon
 * [PR-29](https://github.com/itk-dev/filmfolk/pull/29)
   * Added person manager and editor roles
 * [PR-28](https://github.com/itk-dev/filmfolk/pull/28)
