@@ -1,0 +1,19 @@
+uuid: 4d8aa0b8-b757-402f-991c-337c389c5672
+langcode: da
+status: true
+dependencies:
+  module:
+    - link
+    - user
+id: user.field_imdb_link
+field_name: field_imdb_link
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

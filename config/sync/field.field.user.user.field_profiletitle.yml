@@ -1,0 +1,20 @@
+uuid: fc2d3f8b-429b-42d2-8dd4-39984358044a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profiletitle
+  module:
+    - user
+id: user.user.field_profiletitle
+field_name: field_profiletitle
+entity_type: user
+bundle: user
+label: Profiloverskrift
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

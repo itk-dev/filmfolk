@@ -3,17 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_description
+    - field.field.user.user.field_consent_site_terms
+    - field.field.user.user.field_facebook_link
     - field.field.user.user.field_funktion_erfaring
+    - field.field.user.user.field_imdb_link
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_linkedin_link
     - field.field.user.user.field_navn
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_profile_about
+    - field.field.user.user.field_profile_additional_info
+    - field.field.user.user.field_profile_education_interest
     - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_profiletitle
     - image.style.large
   module:
     - filmfolk
+    - link
     - media
     - text
     - user
@@ -22,12 +31,27 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_description:
-    type: text_default
+  field_consent_site_terms:
+    type: boolean
     label: above
-    settings: {  }
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 14
+    region: content
+  field_facebook_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_funktion_erfaring:
     type: filmfolk_funktion_erfaring
@@ -35,6 +59,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_imdb_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_kommune:
     type: entity_reference_label
@@ -44,6 +80,18 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_linkedin_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_navn:
     type: string
     label: above
@@ -51,6 +99,35 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_profile_about:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_profile_additional_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_profile_education_interest:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_profile_picture:
     type: media_thumbnail
@@ -62,6 +139,13 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_profiletitle:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
     region: content
 hidden:
   field_last_password_reset: true

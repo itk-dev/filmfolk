@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_description
     - field.storage.user.field_funktion_erfaring
     - field.storage.user.field_kommune
     - field.storage.user.field_navn

@@ -4,30 +4,39 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.search_result
-    - field.field.user.user.field_description
+    - field.field.user.user.field_consent_site_terms
+    - field.field.user.user.field_facebook_link
     - field.field.user.user.field_funktion_erfaring
+    - field.field.user.user.field_imdb_link
     - field.field.user.user.field_kommune
     - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_linkedin_link
     - field.field.user.user.field_navn
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_profile_about
+    - field.field.user.user.field_profile_additional_info
+    - field.field.user.user.field_profile_education_interest
     - field.field.user.user.field_profile_picture
+    - field.field.user.user.field_profiletitle
     - image.style.large
   module:
     - media
-    - text
     - user
 id: user.user.search_result
 targetEntityType: user
 bundle: user
 mode: search_result
 content:
-  field_description:
-    type: text_default
+
+  field_funktion:
+    type: entity_reference_label
     label: visually_hidden
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_kommune:
     type: entity_reference_label
@@ -57,10 +66,19 @@ content:
     weight: 4
     region: content
 hidden:
+  field_consent_site_terms: true
+  field_facebook_link: true
   field_funktion_erfaring: true
+  field_imdb_link: true
   field_last_password_reset: true
+  field_linkedin_link: true
   field_password_expiration: true
   field_pending_expire_sent: true
+  field_phone: true
+  field_profile_about: true
+  field_profile_additional_info: true
+  field_profile_education_interest: true
+  field_profiletitle: true
   langcode: true
   member_for: true
   search_api_excerpt: true
