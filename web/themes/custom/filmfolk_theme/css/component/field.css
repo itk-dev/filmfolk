@@ -1,0 +1,5 @@
+.field__label {
+  color: var(--color-text-neutral-medium);
+  font-size: initial;
+  font-family: var(--font-sans);
+}
