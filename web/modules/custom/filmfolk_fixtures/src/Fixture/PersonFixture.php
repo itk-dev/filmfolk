@@ -33,7 +33,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
     // Get the pre-created media entity using the reference key we set.
     $default_profile_picture_media = $this->getReference('media:profile_picture:default');
 
-    // Person 1: Mette Larsen - kulturformidler
+    // Person 1: Mette Larsen - kulturformidler.
     $user1 = $this->createUser([
       'mail' => 'mette.larsen@example.com',
       'field_navn' => 'Mette Larsen',
@@ -76,7 +76,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       ->activate();
     $user1->save();
 
-    // Person 2: Anders Jensen - fotograf og belyser
+    // Person 2: Anders Jensen - fotograf og belyser.
     $user2 = $this->createUser([
       'mail' => 'anders.jensen@example.com',
       'field_navn' => 'Anders Jensen',
@@ -128,7 +128,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       ->activate();
     $user2->save();
 
-    // Person 3: Sofie Pedersen - skuespiller
+    // Person 3: Sofie Pedersen - skuespiller.
     $user3 = $this->createUser([
       'mail' => 'sofie.pedersen@example.com',
       'field_navn' => 'Sofie Pedersen',
@@ -171,7 +171,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       ->activate();
     $user3->save();
 
-    // Person 4: Lars Nielsen - lydtekniker og komponist
+    // Person 4: Lars Nielsen - lydtekniker og komponist.
     $user4 = $this->createUser([
       'mail' => 'lars.nielsen@example.com',
       'field_navn' => 'Lars Nielsen',
@@ -219,7 +219,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       ->activate();
     $user4->save();
 
-    // Person 5: Nikolaj Hansen - location manager
+    // Person 5: Nikolaj Hansen - location manager.
     $user5 = $this->createUser([
       'mail' => 'nikolaj.hansen@example.com',
       'field_navn' => 'Nikolaj Hansen',
