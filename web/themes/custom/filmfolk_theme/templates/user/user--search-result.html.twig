@@ -1,6 +1,5 @@
 <div class="user-search-result">
 
-  {#{ dump() }#}
   <div class="user-search-result-image-wrapper">
     {% if not user.field_profile_picture.isEmpty() %}
           <a href="{{ path('entity.user.canonical', {user: user.id}) }}">{{ content.field_profile_picture }}</a>

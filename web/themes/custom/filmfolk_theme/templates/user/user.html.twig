@@ -19,14 +19,25 @@
  */
 #}
 <article{{ attributes.addClass('user-profile') }}>
+  {% set profile_id = content.person_profiles['#items'].target_id|default(null) %}
   <div class="user-image-wrapper">
+    {# #https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md#drupal-field #}
+    {{ drupal_field('field_person_image', 'profile', profile_id) }}
+
+{#
     {% if not user.field_profile_picture.isEmpty() %}
-          {{ content.field_profile_picture }}
+      {{ content.field_profile_picture }}
     {% else %}
       <p>{{ 'Profile picture not uploaded'|t }}</p>
     {% endif %}
+    #}
   </div>
   <div class="user-info-wrapper">
+    {% if profile_id %}
+      {# https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md#drupal-entity #}
+      {{ drupal_entity('profile', profile_id) }}
+    {% endif %}
+
     {% if content %}
       {{- content|without('field_profile_picture') -}}
     {% endif %}
