@@ -48,8 +48,8 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
     ], [
       'field_person_name' => 'Navn Navnesen',
       'field_person_kommune' => $this->getReference('kommune:Aarhus'),
-      'field_person_persom_image' => [
-        'target_id' => $default_person_picture_media->id(),
+      'field_person_image' => [
+        $this->getReference(ImageFileFixture::getImageReferenceName(0)),
       ],
       'field_person_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
@@ -311,18 +311,6 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
   }
 
   /**
-   * {@inheritdoc}
-   */
-  #[\Override]
-  public function getDependencies() {
-    return [
-      ProfilePictureFixture::class,
-      KommuneTermFixture::class,
-      FunktionTermFixture::class,
-    ];
-  }
-
-  /**
    * Create persons with all funktioner and experiences.
    */
   private function createPersonsWithAllFunktionerAndExperiences() {
@@ -330,6 +318,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
     $funktions = $this->taxonomyTermStorage->loadTree(FunktionTermFixture::$vocabularyId, load_entities: TRUE);
     /** @var \Drupal\taxonomy\TermInterface[] $erfarings */
     $erfarings = $this->taxonomyTermStorage->loadTree(ErfaringTermFixture::$vocabularyId, load_entities: TRUE);
+    $counter = 0;
     foreach ($funktions as $funktion) {
       foreach ($erfarings as $erfaring) {
         $this->createPerson([
@@ -344,9 +333,26 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $erfaring->id(),
             ],
           ],
+          'field_person_image' => [
+            $this->getReference(ImageFileFixture::getImageReferenceName($counter)),
+          ],
         ]);
+
+        $counter++;
       }
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  #[\Override]
+  public function getDependencies() {
+    return [
+      ImageFileFixture::class,
+      KommuneTermFixture::class,
+      FunktionTermFixture::class,
+    ];
   }
 
 }
