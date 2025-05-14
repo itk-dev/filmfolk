@@ -12,6 +12,7 @@ use Drupal\file\FileStorageInterface;
  * Image file fixture.
  */
 final class ImageFileFixture extends AbstractFixture {
+  static int $numberOfImages = 0;
 
   /**
    * The file storage.
