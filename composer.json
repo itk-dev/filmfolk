@@ -24,6 +24,7 @@
         "drupal/registration_role": "^2.0",
         "drupal/remove_username": "^1.5",
         "drupal/search_api": "^1.38",
+        "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.5",
         "itk-dev/web_accessibility_statement": "^1.3"
     },

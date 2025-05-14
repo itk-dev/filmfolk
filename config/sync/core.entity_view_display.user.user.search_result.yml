@@ -22,11 +22,19 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  person_profiles:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_last_password_reset: true
   field_password_expiration: true
   field_pending_expire_sent: true
   langcode: true
   member_for: true
-  person_profiles: true
   search_api_excerpt: true

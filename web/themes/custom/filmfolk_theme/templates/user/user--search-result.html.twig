@@ -1,5 +1,6 @@
 <div class="user-search-result">
 
+  {#{ dump() }#}
   <div class="user-search-result-image-wrapper">
     {% if not user.field_profile_picture.isEmpty() %}
           <a href="{{ path('entity.user.canonical', {user: user.id}) }}">{{ content.field_profile_picture }}</a>
@@ -9,12 +10,19 @@
   </div>
 
   <div class="user-search-result-content-wrapper">
-    {% if user.field_navn.value %}
-      <h3 class="user-search-result-name">{{ user.field_navn.value }}</h3>
+    {% set profile_id = content.person_profiles['#items'].target_id|default(null) %}
+    {% if profile_id %}
+      {# https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md#drupal-entity #}
+      {{ drupal_entity('profile', profile_id, 'search_result') }}
+    {% endif %}
+
+    {{ dump() }}
+    {% if user.field_person_name.value %}
+      <h3 class="user-search-result-name">{{ user.field_person_name.value }}</h3>
     {% endif %}
     {{ content.field_kommune }}
     {{ content.field_funktion }}
-    <a href="{{ path('entity.user.canonical', {user: user.id}) }}" class="button user-search-result-profile-button">View Profile</a>
+    <a href="{{ path('entity.user.canonical', {user: user.id}) }}" class="button user-search-result-profile-button">{{ 'View Profile'|t }}</a>
   </div>
 
 </div>
