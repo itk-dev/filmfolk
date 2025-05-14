@@ -1,0 +1,148 @@
+uuid: b2985fcc-310f-44c4-9531-33e17fd7e69f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.profile.person.field_person_about
+    - field.field.profile.person.field_person_additional_info
+    - field.field.profile.person.field_person_consent_site_terms
+    - field.field.profile.person.field_person_education_interest
+    - field.field.profile.person.field_person_facebook_link
+    - field.field.profile.person.field_person_funktion_erfaring
+    - field.field.profile.person.field_person_image
+    - field.field.profile.person.field_person_imdb_link
+    - field.field.profile.person.field_person_kommune
+    - field.field.profile.person.field_person_linkedin_link
+    - field.field.profile.person.field_person_name
+    - field.field.profile.person.field_person_phone
+    - field.field.profile.person.field_person_title
+    - profile.type.person
+  module:
+    - filmfolk
+    - image
+    - link
+    - text
+id: profile.person.default
+targetEntityType: profile
+bundle: person
+mode: default
+content:
+  field_person_about:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_person_additional_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_person_consent_site_terms:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_person_education_interest:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_person_facebook_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_person_funktion_erfaring:
+    type: filmfolk_funktion_erfaring
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_person_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_person_imdb_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_person_kommune:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_person_linkedin_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_person_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_person_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_person_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

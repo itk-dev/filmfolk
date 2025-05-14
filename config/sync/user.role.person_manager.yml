@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - administerusersbyrole
+    - profile
     - system
     - toolbar
 id: person_manager
@@ -16,8 +17,12 @@ permissions:
   - 'access users overview'
   - 'cancel users by role'
   - 'cancel users with role person'
+  - 'create person profile'
+  - 'create users'
   - 'edit users by role'
   - 'edit users with role person'
   - 'role-assign users by role'
   - 'role-assign users with role person'
+  - 'update any person profile'
+  - 'view any person profile'
   - 'view the administration theme'

@@ -1,18 +1,20 @@
-uuid: 2d1c1e9c-dcb3-49d1-bfc8-ca838906fa83
+uuid: e895d8dc-d38d-431c-b73a-a8070f6c777c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.user.register
     - field.field.user.user.field_last_password_reset
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
   module:
     - datetime
+    - profile
     - user
-id: user.user.default
+id: user.user.register
 targetEntityType: user
 bundle: user
-mode: default
+mode: register
 content:
   account:
     weight: 0
@@ -37,6 +39,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  person_profiles:
+    type: profile_form
+    weight: 90
+    region: content
+    settings:
+      form_mode: default
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
@@ -45,4 +54,3 @@ content:
 hidden:
   field_pending_expire_sent: true
   langcode: true
-  person_profiles: true

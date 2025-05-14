@@ -5,7 +5,9 @@ namespace Drupal\filmfolk_fixtures\Fixture;
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\filmfolk\Helper;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
+use Drupal\profile\ProfileStorage;
 use Drupal\taxonomy\TermStorageInterface;
 use Drupal\user\UserInterface;
 
@@ -20,9 +22,15 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
    */
   private TermStorageInterface $taxonomyTermStorage;
 
+  /**
+   * The profile storage.
+   */
+  private ProfileStorage $profileStorage;
+
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($entityTypeManager);
     $this->taxonomyTermStorage = $entityTypeManager->getStorage('taxonomy_term');
+    $this->profileStorage = $entityTypeManager->getStorage('profile');
   }
 
   /**
@@ -32,241 +40,250 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
   public function load() {
 
     // Get the pre-created media entity using the reference key we set.
-    $default_profile_picture_media = $this->getReference('media:profile_picture:default');
+    $default_person_picture_media = $this->getReference('media:profile_picture:default');
 
-    $user = $this->createUser([
+    $this->createPerson([
       'mail' => 'person@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Aarhus'),
-      'field_funktion' => [
-        $this->getReference('funktion:Runner'),
-        $this->getReference('funktion:Scenograf'),
+      'status' => 1,
+    ], [
+      'field_person_name' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Aarhus'),
+      'field_person_persom_image' => [
+        'target_id' => $default_person_picture_media->id(),
       ],
-      'field_profile_picture' => [
-        'target_id' => $default_profile_picture_media->id(),
-      ],
-      'field_profile_title' => [
+      'field_person_title' => [
         'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
         'format' => 'simple',
       ],
-      'field_profile_education_interest' => [
+      'field_person_education_interest' => [
         'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
         'format' => 'simple',
       ],
-      'field_profile_about' => [
+      'field_person_about' => [
         'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
         'format' => 'simple',
       ],
-      'field_profile_additional_info' => [
+      'field_person_additional_info' => [
         'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
         'format' => 'simple',
       ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person002@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion_erfaring' => [
-            [
-              // Important: We must use “…_TARGET_ID” to make this work.
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-            ],
-            [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-            ],
-      ],
-      'field_profile_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
-        'format' => 'simple',
-      ],
-      'field_profile_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
-        'format' => 'simple',
-      ],
-      'field_profile_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
-        'format' => 'simple',
-      ],
-      'field_profile_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
-        'format' => 'simple',
-      ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person003@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion_erfaring' => [
-            [
-              // Important: We must use “…_TARGET_ID” to make this work.
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-            ],
-            [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-            ],
-      ],
-      'field_profile_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
-        'format' => 'simple',
-      ],
-      'field_profile_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
-        'format' => 'simple',
-      ],
-      'field_profile_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
-        'format' => 'simple',
-      ],
-      'field_profile_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
-        'format' => 'simple',
-      ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person004@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion_erfaring' => [
-            [
-              // Important: We must use “…_TARGET_ID” to make this work.
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-            ],
-            [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-            ],
-      ],
-      'field_profile_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
-        'format' => 'simple',
-      ],
-      'field_profile_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
-        'format' => 'simple',
-      ],
-      'field_profile_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
-        'format' => 'simple',
-      ],
-      'field_profile_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
-        'format' => 'simple',
-      ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person005@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion_erfaring' => [
-            [
-              // Important: We must use “…_TARGET_ID” to make this work.
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-            ],
-            [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-            ],
-      ],
-      'field_profile_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
-        'format' => 'simple',
-      ],
-      'field_profile_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
-        'format' => 'simple',
-      ],
-      'field_profile_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
-        'format' => 'simple',
-      ],
-      'field_profile_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
-        'format' => 'simple',
-      ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person006@example.com',
-      'field_navn' => 'Navn Navnesen',
-      'field_kommune' => $this->getReference('kommune:Herning'),
-      'field_funktion_erfaring' => [
-            [
-              // Important: We must use “…_TARGET_ID” to make this work.
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
-            ],
-            [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
-            ],
-      ],
-      'field_profile_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
-        'format' => 'simple',
-      ],
-      'field_profile_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
-        'format' => 'simple',
-      ],
-      'field_profile_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
-        'format' => 'simple',
-      ],
-      'field_profile_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
-        'format' => 'simple',
-      ],
-    ])
-      ->activate();
-    $user->save();
-
-    $user = $this->createUser([
-      'mail' => 'person1@example.com',
-      'field_kommune' => $this->getReference('kommune:Aarhus'),
     ]);
-    $user->save();
+
+    $this->createPerson([
+      'mail' => 'person002@example.com',
+      'status' => 1,
+    ], [
+      'field_person_navn' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Herning'),
+      'field_person_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
+      ],
+      'field_person_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_person_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_person_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_person_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
+      ],
+    ]);
+
+    $this->createPerson([
+      'mail' => 'person003@example.com',
+      'status' => 1,
+    ], [
+      'field_person_navn' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Herning'),
+      'field_person_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
+      ],
+      'field_person_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_person_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_person_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_person_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
+      ],
+    ]);
+
+    $this->createPerson([
+      'mail' => 'person004@example.com',
+      'status' => 1,
+    ], [
+      'field_person_navn' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Herning'),
+      'field_person_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
+      ],
+      'field_person_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_person_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_person_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_person_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
+      ],
+    ]);
+
+    $this->createPerson([
+      'mail' => 'person005@example.com',
+    ], [
+      'field_person_navn' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Herning'),
+      'field_person_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
+      ],
+      'field_person_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_person_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_person_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_person_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
+      ],
+    ]);
+
+    $this->createPerson([
+      'mail' => 'person006@example.com',
+    ], [
+      'field_person_navn' => 'Navn Navnesen',
+      'field_person_kommune' => $this->getReference('kommune:Herning'),
+      'field_person_funktion_erfaring' => [
+            [
+              // Important: We must use “…_TARGET_ID” to make this work.
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+            ],
+            [
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+            ],
+      ],
+      'field_person_title' => [
+        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'format' => 'simple',
+      ],
+      'field_person_education_interest' => [
+        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'format' => 'simple',
+      ],
+      'field_person_about' => [
+        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'format' => 'simple',
+      ],
+      'field_person_additional_info' => [
+        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'format' => 'simple',
+      ],
+    ]);
+
+    $this->createPerson([
+      'mail' => 'person1@example.com',
+      'status' => 0,
+    ], [
+      'field_person_kommune' => $this->getReference('kommune:Aarhus'),
+    ]);
 
     $this->createPersonsWithAllFunktionerAndExperiences();
 
     // Create the first user.
-    $this->createUser([
+    $this->createPerson([
       'mail' => 'first@example.com',
-      'field_navn' => 'The first person',
-      'field_kommune' => $this->getReference('kommune:Aarhus'),
       'created' => new DrupalDateTime('1980-01-01')->getTimestamp(),
-    ])
-      ->activate()
-      ->save();
+      'field_person_navn' => 'The first person',
+      'status' => 1,
+    ], [
+      'field_person_kommune' => $this->getReference('kommune:Aarhus'),
+      'field_person_phone' => '00000000',
+    ]);
 
     // Create the latest user.
-    $this->createUser([
+    $this->createPerson([
       'mail' => 'latest@example.com',
-      'field_navn' => 'The latest person',
-      'field_kommune' => $this->getReference('kommune:Aarhus'),
+      'field_person_navn' => 'The latest person',
       'created' => new DrupalDateTime('2030-01-01')->getTimestamp(),
-    ])
-      ->activate()
-      ->save();
+      'status' => 1,
+    ], [
+      'field_person_kommune' => $this->getReference('kommune:Aarhus'),
+      'field_person_phone' => '00000000',
+    ]);
+  }
+
+  /**
+   * Create person with user and profiles values.
+   */
+  protected function createPerson(array $userValues, array $profileValues): array {
+    $user = $this->createUser($userValues);
+    $user->save();
+    $profile = $this->createProfile($user, $profileValues);
+    $profile->save();
+
+    return [$user, $profile];
   }
 
   /**
@@ -275,6 +292,22 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
   protected function createUser(array $values = []): UserInterface {
     return parent::createUser($values)
       ->addRole(self::ROLE_PERSON_ID);
+  }
+
+  /**
+   * Create person profile for a person.
+   */
+  private function createProfile(UserInterface $user, array $values) {
+    if (empty($user->id())) {
+      throw new \LogicException('User must have an ID.');
+    }
+    return $this->profileStorage
+      ->create([
+        'type' => Helper::PROFILE_PERSON,
+        'uid' => $user->id(),
+      ] + $values
+      )
+      ->setDefault(TRUE);
   }
 
   /**
@@ -299,20 +332,19 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
     $erfarings = $this->taxonomyTermStorage->loadTree(ErfaringTermFixture::$vocabularyId, load_entities: TRUE);
     foreach ($funktions as $funktion) {
       foreach ($erfarings as $erfaring) {
-        $this->createUser([
+        $this->createPerson([
           'mail' => sprintf('person-f%d-e%d@example.com', $funktion->id(), $erfaring->id()),
-          'field_navn' => sprintf('Person %s %s', $funktion->label(), $erfaring->label()),
-          'field_kommune' => $this->getReference('kommune:Aarhus'),
-          'field_funktion_erfaring' => [
+          'status' => 1,
+        ], [
+          'field_person_navn' => sprintf('Person %s %s', $funktion->label(), $erfaring->label()),
+          'field_person_kommune' => $this->getReference('kommune:Aarhus'),
+          'field_person_funktion_erfaring' => [
             [
-              // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $funktion->id(),
               FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $erfaring->id(),
             ],
           ],
-        ])
-          ->activate()
-          ->save();
+        ]);
       }
     }
   }

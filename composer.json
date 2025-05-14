@@ -19,6 +19,7 @@
         "drupal/core-recommended": "^11.1",
         "drupal/hook_event_dispatcher": "^4.2",
         "drupal/password_strength": "^2.0@beta",
+        "drupal/profile": "^1.12",
         "drupal/recreate_block_content": "^3.0",
         "drupal/registration_role": "^2.0",
         "drupal/remove_username": "^1.5",
@@ -31,6 +32,7 @@
         "drupal/content_fixtures": "^3.2",
         "drupal/examples": "^4.0",
         "drupal/twig_xdebug": "^1.4",
+        "drupal/webprofiler": "^11.1",
         "ergebnis/composer-normalize": "^2.45",
         "palantirnet/drupal-rector": "^0.20.3",
         "vincentlanglet/twig-cs-fixer": "^3.5"

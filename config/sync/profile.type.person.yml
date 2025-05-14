@@ -1,0 +1,13 @@
+uuid: da6e8306-9fc9-4ad6-b3fd-c1822b4150b0
+langcode: da
+status: true
+dependencies: {  }
+id: person
+label: person
+display_label: ''
+multiple: false
+registration: true
+roles:
+  person: person
+allow_revisions: false
+new_revision: false
