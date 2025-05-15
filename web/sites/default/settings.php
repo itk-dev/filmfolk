@@ -873,6 +873,7 @@ $settings['config_exclude_modules'] = [
   'views_ui',
   // https://www.drupal.org/project/twig_xdebug
   'twig_xdebug',
+  'webprofiler', 'devel', 'tracer',
 ];
 
 /**

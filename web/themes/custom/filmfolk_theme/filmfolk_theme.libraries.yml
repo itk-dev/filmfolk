@@ -14,5 +14,6 @@ global:
       css/component/social-media-menu.css: { weight: 1 }
       css/component/site-branding.css: { weight: 1 }
       css/component/user.css: { weight: 1 }
+      css/component/views.css: { weight: 1 }
     layout:
       css/layout/layout.css: { weight: 1 }

@@ -1,0 +1,19 @@
+uuid: 97e6a00b-69c9-40c7-8dc9-77c34e52c9ee
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+    - text
+id: profile.field_person_education_interest
+field_name: field_person_education_interest
+entity_type: profile
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

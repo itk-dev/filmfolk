@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-52](https://github.com/itk-dev/filmfolk/pull/52)
+  Styling Person user profile
+* [PR-50](https://github.com/itk-dev/filmfolk/pull/50)
+  Added Person user profile
 * [PR-47](https://github.com/itk-dev/filmfolk/pull/47)
   Sorted persons by creation time (descending)
 * [PR-43](https://github.com/itk-dev/filmfolk/pull/43)

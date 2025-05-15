@@ -1,0 +1,24 @@
+uuid: d047bfbd-95b5-49f9-bfac-20ed845775ac
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_about
+    - filter.format.simple
+    - profile.type.person
+  module:
+    - text
+id: profile.person.field_person_about
+field_name: field_person_about
+entity_type: profile
+bundle: person
+label: about
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple
+field_type: text_long

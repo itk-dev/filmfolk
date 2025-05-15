@@ -8,15 +8,18 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config_translation: 0
+  content_fixtures: 0
   contextual: 0
   core_event_dispatcher: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   field: 0
   file: 0
   filmfolk: 0
+  filmfolk_fixtures: 0
   filter: 0
   hook_event_dispatcher: 0
   image: 0
@@ -32,6 +35,7 @@ module:
   page_cache: 0
   password_strength: 0
   path_alias: 0
+  profile: 0
   recreate_block_content: 0
   registration_role: 0
   remove_username: 0
@@ -42,6 +46,7 @@ module:
   taxonomy: 0
   text: 0
   toolbar: 0
+  twig_tweak: 0
   update: 0
   user: 0
   web_accessibility_statement: 0

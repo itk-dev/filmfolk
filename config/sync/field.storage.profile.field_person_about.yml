@@ -1,0 +1,19 @@
+uuid: 5e548393-8930-4a4d-8cd8-273ac6497bf0
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+    - text
+id: profile.field_person_about
+field_name: field_person_about
+entity_type: profile
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

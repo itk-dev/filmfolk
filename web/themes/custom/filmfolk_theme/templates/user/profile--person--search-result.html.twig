@@ -1,0 +1,21 @@
+<a href="{{ profile|entity_url }}" class="user-search-result-image-wrapper">
+  {% if not profile.field_person_image.isEmpty() %}
+    {{ content.field_person_image }}
+  {% else %}
+    <span>{{ 'Profile picture not uploaded'|t }}</span>
+  {% endif %}
+</a>
+
+<div class="user-search-result-content-wrapper">
+  {% if profile.field_person_name.entity.label %}
+    <h3 class="user-search-result-name">{{ profile.field_person_name.entity.label }}</h3>
+  {% endif %}
+
+  {# @TODO Link to search with this kommune as filter #}
+  {{ profile.field_person_kommune.entity.label }}
+  {# {{ content.field_kommune }} #}
+
+  {{ content.field_person_funktion_erfaring }}
+
+  <a href="{{ profile|entity_url }}" class="button user-search-result-profile-button">{{ 'View Profile'|t }}</a>
+</div>
