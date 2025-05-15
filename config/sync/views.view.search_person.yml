@@ -532,7 +532,7 @@ display:
               person_manager: '0'
               content_block_editor: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Text search'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
           is_grouped: false
