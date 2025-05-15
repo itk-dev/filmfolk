@@ -1,10 +1,15 @@
-<fieldset>
-  <legend><pre>web/themes/custom/filmfolk_theme/templates/user/profile--person--full</pre></legend>
-  {{ dump() }}
-  {{ content.field_person_kommune }}
-
-  {# @TODO Link to search with this kommune as filter #}
-  {{ profile.field_person_kommune.entity.label }}
-
-  {# {{ content }} #}
-</fieldset>
+<article{{ attributes.addClass('user-profile') }}>
+  <div class="user-image-wrapper">
+    {% if not profile.field_person_image.isEmpty() %}
+      <img src="{{ profile.field_person_image|file_url }}" alt="{{ profile.field_person_name.entity.label }}">
+    {% else %}
+      <span>{{ 'Profile picture not uploaded'|t }}</span>
+    {% endif %}
+  </div>
+  <div class="user-info-wrapper">
+    {% if profile.field_person_name.entity.label %}
+      <h3 class="user-search-result-name">{{ profile.field_person_name.entity.label }}</h3>
+    {% endif %}
+    {{ content|without('field_person_image') }}
+  </div>
+</article>
