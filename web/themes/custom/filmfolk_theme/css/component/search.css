@@ -13,6 +13,10 @@
       grid-template-columns: repeat(3, 1fr); /* for desktop devices */
     }
   }
+
+  .pager {
+    margin-top: var(--sp2);
+  }
 }
 
 .user-search-result {
