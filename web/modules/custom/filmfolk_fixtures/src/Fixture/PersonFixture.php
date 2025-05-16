@@ -2,6 +2,8 @@
 
 namespace Drupal\filmfolk_fixtures\Fixture;
 
+use Faker\Factory;
+use Faker\Generator;
 use Drupal\content_fixtures\Fixture\DependentFixtureInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -27,10 +29,16 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
    */
   private ProfileStorage $profileStorage;
 
+  /**
+   * The faker generator.
+   */
+  private Generator $faker;
+
   public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($entityTypeManager);
     $this->taxonomyTermStorage = $entityTypeManager->getStorage('taxonomy_term');
     $this->profileStorage = $entityTypeManager->getStorage('profile');
+    $this->faker = Factory::create('da');
   }
 
   /**
@@ -38,7 +46,6 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
    */
   #[\Override]
   public function load() {
-
     // Get the pre-created media entity using the reference key we set.
     $default_person_picture_media = $this->getReference('media:profile_picture:default');
 
@@ -46,25 +53,25 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
       'mail' => 'person@example.com',
       'status' => 1,
     ], [
-      'field_person_name' => 'Navn Navnesen',
+      'field_person_name' => $this->faker->name(),
       'field_person_kommune' => $this->getReference('kommune:Aarhus'),
       'field_person_image' => [
         $this->getReference(ImageFileFixture::getImageReferenceName(0)),
       ],
       'field_person_title' => [
-        'value' => 'Kulturformidler | Forfatter | Underviser ved Horsens Professionshøjskole',
+        'value' => $this->faker->text(48),
         'format' => 'simple',
       ],
       'field_person_education_interest' => [
-        'value' => 'Kandidat i Nordiske Studier fra Horsens Universitet med speciale i moderne dansk litteratur. Efteruddannelse i kreativ skrivning fra Forfatterskolen. Forsker i folkeeventyr og mundtlige fortælletraditioner i Skandinavien.',
+        'value' => $this->faker->text(),
         'format' => 'simple',
       ],
       'field_person_about' => [
-        'value' => 'Jeg har arbejdet med litteratur og kulturformidling i 20 år, først som bibliotekar og senere som forfatter og underviser. Min passion er at gøre dansk kulturarv tilgængelig for nye generationer gennem moderne fortælleformer. Jeg har udgivet tre romaner og en samling noveller, der alle er inspireret af nordisk mytologi og historie.',
+        'value' => $this->faker->text(),
         'format' => 'simple',
       ],
       'field_person_additional_info' => [
-        'value' => 'Født og opvokset i Middelfart, nu bosiddende i Horsens. Bestyrelsesmedlem i Dansk Forfatterforening. Afholder skriveworkshops for unge og voksne. Aktiv i lokale litteraturklubber og kulturforeninger. I fritiden samler jeg på førsteoplag af H.C. Andersens eventyr og arrangerer litteraturvandringer i hovedstaden.',
+        'value' => $this->faker->text(),
         'format' => 'simple',
       ],
     ]);
@@ -325,7 +332,7 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
           'mail' => sprintf('person-f%d-e%d@example.com', $funktion->id(), $erfaring->id()),
           'status' => 1,
         ], [
-          'field_person_navn' => sprintf('Person %s %s', $funktion->label(), $erfaring->label()),
+          'field_person_navn' => $this->faker->name(),
           'field_person_kommune' => $this->getReference('kommune:Aarhus'),
           'field_person_funktion_erfaring' => [
             [
