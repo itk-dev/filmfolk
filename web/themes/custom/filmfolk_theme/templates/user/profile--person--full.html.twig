@@ -1,15 +1,31 @@
 <article{{ attributes.addClass('user-profile') }}>
-  <div class="user-image-wrapper">
+  <div class="user-profile-image-wrapper">
     {% if not profile.field_person_image.isEmpty() %}
       <img src="{{ profile.field_person_image|file_url }}" alt="{{ profile.field_person_name.entity.label }}">
     {% else %}
       <span>{{ 'Profile picture not uploaded'|t }}</span>
     {% endif %}
   </div>
-  <div class="user-info-wrapper">
-    {% if profile.field_person_name.entity.label %}
-      <h3 class="user-search-result-name">{{ profile.field_person_name.entity.label }}</h3>
+  <div class="user-profile-info-wrapper">
+    {% if content.field_person_name %}
+      <h1>{{ content.field_person_name }}</h1>
     {% endif %}
-    {{ content|without('field_person_image') }}
+    {{ content.field_person_kommune }}
+    {{ content.field_person_phone }}
+
+    {% if content.field_person_title %}
+      <h2>{{ content.field_person_title }}</h2>
+    {% endif %}
+
+    {{ content|without
+      (
+        'field_person_name',
+        'field_person_kommune',
+        'field_person_phone',
+        'field_person_title',
+        'field_person_image',
+        'field_person_consent_site_terms',
+      )
+    }}
   </div>
 </article>
