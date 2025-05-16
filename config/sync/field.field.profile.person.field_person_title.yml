@@ -9,7 +9,7 @@ id: profile.person.field_person_title
 field_name: field_person_title
 entity_type: profile
 bundle: person
-label: title
+label: Profiloverskrift
 description: ''
 required: true
 translatable: false

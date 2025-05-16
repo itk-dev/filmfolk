@@ -12,7 +12,7 @@ id: profile.person.field_person_about
 field_name: field_person_about
 entity_type: profile
 bundle: person
-label: about
+label: 'Profil  - Om dig'
 description: ''
 required: true
 translatable: false

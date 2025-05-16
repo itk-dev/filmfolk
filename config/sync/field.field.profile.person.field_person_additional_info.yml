@@ -12,7 +12,7 @@ id: profile.person.field_person_additional_info
 field_name: field_person_additional_info
 entity_type: profile
 bundle: person
-label: additional_info
+label: 'Profil - Andet info'
 description: ''
 required: false
 translatable: false

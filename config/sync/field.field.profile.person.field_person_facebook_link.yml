@@ -11,7 +11,7 @@ id: profile.person.field_person_facebook_link
 field_name: field_person_facebook_link
 entity_type: profile
 bundle: person
-label: 'facebook link'
+label: 'Facebook link'
 description: ''
 required: false
 translatable: false
