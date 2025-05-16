@@ -15,13 +15,7 @@ final class FilmfolkController extends ControllerBase {
    * Builds the response.
    */
   public function __invoke(): array {
-
-    $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
-    ];
-
-    return $build;
+    return [];
   }
 
 }
