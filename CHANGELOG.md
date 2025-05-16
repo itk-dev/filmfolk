@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-57](https://github.com/itk-dev/filmfolk/pull/57)
+  * Restored content blocks
+  * Allowed anonymoues users to see person profile
+  * Added [Faker](https://fakerphp.org/) in fixtures
 * [PR-56](https://github.com/itk-dev/filmfolk/pull/56)
   * Remove link on kommune field
   * Adjust grid
