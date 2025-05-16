@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-58](https://github.com/itk-dev/filmfolk/pull/58)
+  * Allow anonymous user to view profiles.
 * [PR-57](https://github.com/itk-dev/filmfolk/pull/57)
   * Restored content blocks
   * Allowed anonymoues users to see person profile
