@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-56](https://github.com/itk-dev/filmfolk/pull/56)
+  * Remove link on kommune field
+  * Adjust grid
+  * Cleanup styling
 * [PR-54](https://github.com/itk-dev/filmfolk/pull/54)
   Person full user profile fields styling
 * [PR-52](https://github.com/itk-dev/filmfolk/pull/52)
