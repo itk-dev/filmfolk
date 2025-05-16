@@ -7,15 +7,17 @@ dependencies:
   module:
     - filter
     - media
+    - profile
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'Anonymous user'
+label: 'Anonym bruger'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
   - 'access user profiles'
   - 'use text format simple'
+  - 'view any profile'
   - 'view media'
