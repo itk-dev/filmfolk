@@ -9,6 +9,7 @@ dependencies:
     - field.storage.profile.field_person_funktion_erfaring
     - field.storage.profile.field_person_kommune
     - field.storage.profile.field_person_name
+    - field.storage.profile.field_person_phone
     - field.storage.profile.field_person_title
     - search_api.server.local
   module:
@@ -79,6 +80,16 @@ field_settings:
         - field.storage.profile.field_person_name
       module:
         - profile
+  field_person_phone:
+    label: 'person profiles » Profile » Telefon'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_phone'
+    type: string
+    dependencies:
+      config:
+        - field.storage.profile.field_person_phone
+      module:
+        - profile
   field_person_title:
     label: 'person profiles » Profil » title'
     datasource_id: 'entity:user'
@@ -131,6 +142,7 @@ processor_settings:
       - additional_info
       - education_interest
       - field_person_name
+      - field_person_phone
       - field_person_title
       - processed
   language_with_fallback: {  }
