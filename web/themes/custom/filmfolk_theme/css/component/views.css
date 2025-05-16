@@ -1,9 +1,3 @@
 .view {
   display: block;
 }
-.view-content {
-  display: grid;
-  gap: var(--sp2);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
-  grid-template-rows: max-content;
-}

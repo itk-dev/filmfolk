@@ -7,10 +7,3 @@
   @media (min-width: 62.5rem) {
     grid-template-columns: 4fr 8fr;
   }
-
-  .user-profile-image-wrapper {
-  }
-
-  .user-profile-info-wrapper {
-  }
-}
