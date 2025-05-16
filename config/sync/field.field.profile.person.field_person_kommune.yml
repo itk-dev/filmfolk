@@ -10,7 +10,7 @@ id: profile.person.field_person_kommune
 field_name: field_person_kommune
 entity_type: profile
 bundle: person
-label: kommune
+label: Kommune
 description: ''
 required: true
 translatable: false
@@ -21,4 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       kommune: kommune
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

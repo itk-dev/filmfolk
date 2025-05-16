@@ -9,7 +9,7 @@ id: profile.person.field_person_phone
 field_name: field_person_phone
 entity_type: profile
 bundle: person
-label: phone
+label: Telefon
 description: ''
 required: true
 translatable: false

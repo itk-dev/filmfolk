@@ -32,14 +32,14 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 4
     region: content
   field_person_additional_info:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 6
     region: content
   field_person_consent_site_terms:
     type: boolean
@@ -49,14 +49,14 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 12
     region: content
   field_person_education_interest:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 5
     region: content
   field_person_facebook_link:
     type: link
@@ -68,14 +68,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 8
     region: content
   field_person_funktion_erfaring:
     type: filmfolk_funktion_erfaring
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 7
     region: content
   field_person_image:
     type: image
@@ -86,7 +86,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 16
+    weight: 11
     region: content
   field_person_imdb_link:
     type: link
@@ -98,7 +98,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 9
     region: content
   field_person_kommune:
     type: entity_reference_label
@@ -106,7 +106,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_person_linkedin_link:
     type: link
@@ -118,15 +118,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 10
     region: content
   field_person_name:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 0
     region: content
   field_person_phone:
     type: string
@@ -134,15 +134,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_person_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
 hidden:
   search_api_excerpt: true

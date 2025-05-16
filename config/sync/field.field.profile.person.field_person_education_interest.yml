@@ -12,7 +12,7 @@ id: profile.person.field_person_education_interest
 field_name: field_person_education_interest
 entity_type: profile
 bundle: person
-label: education_interest
+label: 'Profil - Uddannelse og interesser'
 description: 'Hvad er din baggrund? Hvad interesserer dig? Hvad vil du gerne arbejde med?'
 required: true
 translatable: false

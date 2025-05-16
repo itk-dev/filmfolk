@@ -11,8 +11,8 @@ id: profile.person.field_person_funktion_erfaring
 field_name: field_person_funktion_erfaring
 entity_type: profile
 bundle: person
-label: funktion_erfaring
-description: ''
+label: 'Funktioner og erfaring'
+description: 'Vælg hvilke funktioner du har udført og på hvilket erfaringsniveau. Du kan tilføje flere.'
 required: true
 translatable: false
 default_value: {  }

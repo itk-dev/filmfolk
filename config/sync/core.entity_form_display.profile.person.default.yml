@@ -30,7 +30,7 @@ mode: default
 content:
   field_person_about:
     type: text_textarea
-    weight: 35
+    weight: 4
     region: content
     settings:
       rows: 5
@@ -38,7 +38,7 @@ content:
     third_party_settings: {  }
   field_person_additional_info:
     type: text_textarea
-    weight: 38
+    weight: 6
     region: content
     settings:
       rows: 5
@@ -46,14 +46,14 @@ content:
     third_party_settings: {  }
   field_person_consent_site_terms:
     type: boolean_checkbox
-    weight: 39
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_person_education_interest:
     type: text_textarea
-    weight: 40
+    weight: 5
     region: content
     settings:
       rows: 5
@@ -61,7 +61,7 @@ content:
     third_party_settings: {  }
   field_person_facebook_link:
     type: link_default
-    weight: 32
+    weight: 9
     region: content
     settings:
       placeholder_url: ''
@@ -69,13 +69,13 @@ content:
     third_party_settings: {  }
   field_person_funktion_erfaring:
     type: filmfolk_funktion_erfaring
-    weight: 41
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_person_image:
     type: image_image
-    weight: 42
+    weight: 7
     region: content
     settings:
       progress_indicator: throbber
@@ -83,7 +83,7 @@ content:
     third_party_settings: {  }
   field_person_imdb_link:
     type: link_default
-    weight: 33
+    weight: 8
     region: content
     settings:
       placeholder_url: ''
@@ -91,13 +91,13 @@ content:
     third_party_settings: {  }
   field_person_kommune:
     type: options_select
-    weight: 28
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_person_linkedin_link:
     type: link_default
-    weight: 34
+    weight: 10
     region: content
     settings:
       placeholder_url: ''
@@ -105,7 +105,7 @@ content:
     third_party_settings: {  }
   field_person_name:
     type: string_textfield
-    weight: 30
+    weight: 0
     region: content
     settings:
       size: 60
@@ -113,7 +113,7 @@ content:
     third_party_settings: {  }
   field_person_phone:
     type: string_textfield
-    weight: 29
+    weight: 2
     region: content
     settings:
       size: 60
@@ -121,7 +121,7 @@ content:
     third_party_settings: {  }
   field_person_title:
     type: string_textfield
-    weight: 31
+    weight: 3
     region: content
     settings:
       size: 60
