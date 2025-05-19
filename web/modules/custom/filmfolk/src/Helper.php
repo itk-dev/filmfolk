@@ -12,6 +12,8 @@ class Helper {
   const string TAXONOMY_ERFARING = 'erfaring';
 
   const string PROFILE_PERSON = 'person';
+  const string ROLE_PERSON = 'person';
+  const string ROLE_PERSON_MANAGER = 'person_manager';
 
   /**
    * Load terms from a vocabulary.
