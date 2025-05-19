@@ -868,9 +868,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $settings['skip_permissions_hardening'] = TRUE;
 
+// https://www.drupal.org/node/3079028
 $settings['config_exclude_modules'] = [
   'field_ui',
   'views_ui',
+  'content_fixtures', 'filmfolk_fixtures',
   // https://www.drupal.org/project/twig_xdebug
   'twig_xdebug',
   'webprofiler', 'devel', 'tracer',
