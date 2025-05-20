@@ -8,7 +8,15 @@ services:
     tags:
       - { name: event_subscriber }
 
+  Drupal\filmfolk\EventSubscriber\FieldEventSubscriber:
+    tags:
+      - { name: event_subscriber }
+
   Drupal\filmfolk\EventSubscriber\FormEventSubscriber:
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\filmfolk\EventSubscriber\ThemeEventSubscriber:
     tags:
       - { name: event_subscriber }
 
