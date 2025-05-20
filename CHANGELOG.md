@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-60](https://github.com/itk-dev/filmfolk/pull/60)
+  Change :focus color from primary to a dark color to preserve contrast.
 * [PR-59](https://github.com/itk-dev/filmfolk/pull/59)
   Person management
 * [PR-58](https://github.com/itk-dev/filmfolk/pull/58)
