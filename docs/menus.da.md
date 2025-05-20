@@ -3,8 +3,8 @@
 For at oprette menuer skal du være logget ind i Drupals administrationssystem
 som en bruger med rettigheder til at redigere menuer. [Se mulige roller](roles.da.md)
 
-Log ind ved at skrive "/admin" i addresselinjen efter den addresse du normalt ser siden på.
-For eksempel `https://filmfolk.dk/admin`
+Log ind ved at skrive "/user/login" i addresselinjen efter den addresse du normalt ser siden på.
+For eksempel `https://filmfolk.dk/user/login`
 
 ## Oprettelse af Hovedmenu
 
