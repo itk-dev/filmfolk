@@ -1,0 +1,12 @@
+uuid: 52f25f0a-baed-4878-b877-54492bc023a1
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+id: menu_manager
+label: 'menu manager'
+weight: 6
+is_admin: false
+permissions:
+  - 'administer menu'

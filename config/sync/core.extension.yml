@@ -8,7 +8,6 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config_translation: 0
-  content_fixtures: 0
   contextual: 0
   core_event_dispatcher: 0
   datetime: 0
@@ -20,7 +19,6 @@ module:
   field_event_dispatcher: 0
   file: 0
   filmfolk: 0
-  filmfolk_fixtures: 0
   filter: 0
   hook_event_dispatcher: 0
   image: 0
