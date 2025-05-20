@@ -6,7 +6,7 @@ Blokkene kan se fra oversigten på siden "Administration" > "Indhold" ved at væ
 
 ## Forside introduktion
 
-På forsiden er det muligt at lave en introdution til siden. Denne er placeret over søge filtrene.
+På forsiden er det muligt at lave en introdution til siden. Denne er placeret over søgefiltrene.
 
 Tilføj eller rediger indhold ved at gå til "Adminitration" > "Indhold" og vælg fanen "Blokke" og vælg "Rediger"
 ud for "Indledning på forsiden" i listen.
