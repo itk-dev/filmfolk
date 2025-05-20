@@ -56,3 +56,27 @@ textarea,
 select {
   width: 100%;
 }
+
+:is(
+    [type="color"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="email"],
+    [type="file"],
+    [type="month"],
+    [type="number"],
+    [type="password"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="time"],
+    [type="url"],
+    [type="week"],
+    [type="submit"],
+    textarea,
+    select,
+    .button
+  ):focus {
+  border-color: var(--color--gray-5);
+  outline-color: var(--color--gray-5);
+}
