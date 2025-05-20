@@ -17,6 +17,7 @@ module:
   editor: 0
   entity: 0
   field: 0
+  field_event_dispatcher: 0
   file: 0
   filmfolk: 0
   filmfolk_fixtures: 0
