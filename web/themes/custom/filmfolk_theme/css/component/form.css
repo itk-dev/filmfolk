@@ -80,3 +80,73 @@ select {
   border-color: var(--color--gray-5);
   outline-color: var(--color--gray-5);
 }
+
+/*
+** Make some visual changes to the funktion-erfaring part of the form.
+** Drupal shows Row weight and Row drag by default which we do not want.
+*/
+.field--type-filmfolk-funktion-erfaring {
+  /* Add space at the end of the section */
+  margin-block-end: var(--sp3);
+
+  /* Add small border at the bottom to visually end the section */
+  border-block-end: 1px solid var(--color--gray-90);
+
+  /* Hide Row weight */
+  .tabledrag-toggle-weight-wrapper {
+    display: none;
+  }
+
+  /* Hide Tabledrag function */
+  td.field-multiple-drag {
+    display: none;
+  }
+
+  /* Inline the form inputs when the space allows for it. */
+  tr {
+    display: flex;
+    flex-wrap: no-wrap;
+    th {
+      flex-basis: 100%;
+    }
+    th:nth-child(2) {
+      display: none;
+    }
+  }
+
+  td:nth-child(2) {
+    padding-inline-start: var(--sp1);
+    display: flex;
+    flex-wrap: no-wrap;
+    gap: var(--sp1);
+  }
+  td:nth-child(2) .ajax-new-content {
+    display: flex;
+    flex-wrap: no-wrap;
+    gap: var(--sp1);
+  }
+
+  td:nth-child(3) {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .ajax-new-content {
+    width: 100%;
+  }
+
+  /* Hide label to align input and submit */
+  tbody .form-item {
+    flex-basis: 50%;
+
+    .form-item__label {
+      visibility: hidden;
+      margin-block: 0;
+
+      /* Hide the asterisk */
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
