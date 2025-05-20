@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:a37f6120-4559-404f-a6bd-aec1c1b3da00'
 settings:
   id: 'block_content:a37f6120-4559-404f-a6bd-aec1c1b3da00'
-  label: 'Footer kontakt'
+  label: 'Sidefod kontakt oplysninger'
   label_display: '0'
   provider: block_content
   status: true
