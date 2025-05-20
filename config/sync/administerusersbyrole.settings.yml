@@ -4,3 +4,4 @@ roles:
   person: perm
   person_manager: unsafe
   content_block_editor: perm
+  menu_manager: unsafe
