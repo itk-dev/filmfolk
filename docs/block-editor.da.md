@@ -2,7 +2,7 @@
 
 Der findes forskellige indholdsblokke på siden som det er muligt at udskifte indholdet i.
 
-Blokkene kan se fra oversigten på siden "Adminitration" > "Indhold" og vælg fanen "Blokke"
+Blokkene kan se fra oversigten på siden "Administration" > "Indhold" ved at vælge fanen "Blokke"
 
 ## Forside introduktion
 
