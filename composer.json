@@ -18,6 +18,7 @@
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
         "drupal/hook_event_dispatcher": "^4.2",
+        "drupal/masquerade": "^2.0",
         "drupal/password_strength": "^2.0@beta",
         "drupal/profile": "^1.12",
         "drupal/recreate_block_content": "^3.0",

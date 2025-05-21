@@ -876,6 +876,7 @@ $settings['config_exclude_modules'] = [
   // https://www.drupal.org/project/twig_xdebug
   'twig_xdebug',
   'webprofiler', 'devel', 'tracer',
+  'masquerade',
 ];
 
 // https://github.com/itk-dev/drupal_admin_message?tab=readme-ov-file#installation
