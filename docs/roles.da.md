@@ -5,4 +5,4 @@ Brugere kan have følgende roller.
 
 - Personadministrator
 - Indholdsredaktør
-- Menuredaktør
+- Side administrator

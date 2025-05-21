@@ -43,5 +43,5 @@ Der skal være flueben i afkrydsninsfeltet "Aktiveret".
 
 Tryk "Gem"
 
-> [INFO] Ikoner
+> [!TIP] Ikoner
 > Der er som udgangspunkt lavet så ikoner vises automatisk for menupunkter med navnene Facebook og LinkedIn

@@ -1,4 +1,4 @@
-uuid: 396a5b46-d9f9-4dc8-9296-b99ac6e96ab1
+uuid: bd7704d5-4f71-48b2-82ca-eaa77d49264e
 langcode: da
 status: true
 dependencies:
@@ -9,9 +9,9 @@ dependencies:
     - contextual
     - system
     - toolbar
-id: content_block_editor
-label: 'content block editor'
-weight: 5
+id: content_editor
+label: 'Content editor'
+weight: 7
 is_admin: false
 permissions:
   - 'access administration pages'
