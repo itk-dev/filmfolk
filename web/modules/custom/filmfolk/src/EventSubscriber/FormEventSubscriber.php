@@ -134,6 +134,7 @@ final class FormEventSubscriber implements EventSubscriberInterface {
       $form = &$event->getForm();
       // Hide password.
       $form['account']['pass']['#access'] = FALSE;
+      $form['account']['pass']['#required'] = FALSE;
       // Hide language selector.
       $form['language']['#access'] = FALSE;
     }
