@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3881c0d2ecd4c2b9e662ce964307044b",
+    "content-hash": "834e718936591bc61e01034be3cea8fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3054,6 +3054,46 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "itk-dev/drupal_admin_message",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/drupal_admin_message.git",
+                "reference": "ab692587b6445f8dfbcc13f434da4a96ed63116b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/drupal_admin_message/zipball/ab692587b6445f8dfbcc13f434da4a96ed63116b",
+                "reference": "ab692587b6445f8dfbcc13f434da4a96ed63116b",
+                "shasum": ""
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "ergebnis/composer-normalize": "^2.47",
+                "mglaman/phpstan-drupal": "^1.2",
+                "palantirnet/drupal-rector": "^0.20.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "Drupal admin message",
+            "support": {
+                "issues": "https://github.com/itk-dev/drupal_admin_message/issues",
+                "source": "https://github.com/itk-dev/drupal_admin_message/tree/1.1.0"
+            },
+            "time": "2025-05-21T07:39:28+00:00"
         },
         {
             "name": "itk-dev/web_accessibility_statement",

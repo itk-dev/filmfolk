@@ -878,6 +878,9 @@ $settings['config_exclude_modules'] = [
   'webprofiler', 'devel', 'tracer',
 ];
 
+// https://github.com/itk-dev/drupal_admin_message?tab=readme-ov-file#installation
+$settings['config_exclude_modules'][] = 'drupal_admin_message';
+
 /**
  * Load local development override configuration, if available.
  *

@@ -27,6 +27,7 @@
         "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.5",
         "fakerphp/faker": "^1.24",
+        "itk-dev/drupal_admin_message": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.3"
     },
     "require-dev": {
