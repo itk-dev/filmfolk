@@ -137,6 +137,8 @@ final class FormEventSubscriber implements EventSubscriberInterface {
       $form['account']['pass']['#required'] = FALSE;
       // Hide language selector.
       $form['language']['#access'] = FALSE;
+      // Hide roles selector.
+      $form['account']['roles']['#access'] = FALSE;
     }
   }
 
