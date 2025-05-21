@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-73](https://github.com/itk-dev/filmfolk/pull/73)
+  Change roles update documentation
 * [PR-72](https://github.com/itk-dev/filmfolk/pull/72)
   Added admin message and masquerade modules
 * [PR-61](https://github.com/itk-dev/filmfolk/pull/61)
