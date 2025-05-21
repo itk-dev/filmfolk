@@ -7,6 +7,7 @@ dependencies:
   module:
     - filter
     - media
+    - profile
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -18,4 +19,5 @@ permissions:
   - 'access content'
   - 'access user profiles'
   - 'use text format simple'
+  - 'view any profile'
   - 'view media'
