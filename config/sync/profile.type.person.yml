@@ -3,8 +3,8 @@ langcode: da
 status: true
 dependencies: {  }
 id: person
-label: person
-display_label: ''
+label: Person
+display_label: Profil
 multiple: false
 registration: true
 roles:
