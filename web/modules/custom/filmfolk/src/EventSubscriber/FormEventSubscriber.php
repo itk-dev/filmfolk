@@ -130,13 +130,17 @@ final class FormEventSubscriber implements EventSubscriberInterface {
    * User form alter.
    */
   private function userFormAlter(FormAlterEvent $event) {
+    $form = &$event->getForm();
+
+    // Hide language selector for all users but user 1 (and 0).
+    if ($this->account->isAnonymous() || $this->account->id() > 1) {
+      $form['language']['#access'] = FALSE;
+    }
+
     if (in_array(Helper::ROLE_PERSON_MANAGER, $this->account->getRoles())) {
-      $form = &$event->getForm();
       // Hide password.
       $form['account']['pass']['#access'] = FALSE;
       $form['account']['pass']['#required'] = FALSE;
-      // Hide language selector.
-      $form['language']['#access'] = FALSE;
       // Hide roles selector.
       $form['account']['roles']['#access'] = FALSE;
     }
