@@ -1,9 +1,12 @@
 uuid: a4a67999-cdc5-4fc8-8c41-0ec7f950c96f
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - profile
 id: person
 label: Person
 weight: 2
 is_admin: false
-permissions: {  }
+permissions:
+  - 'update own person profile'
