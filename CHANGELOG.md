@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-81](https://github.com/itk-dev/filmfolk/pull/81)
+  Update fixtures for Function, experience and person
 * [PR-75](https://github.com/itk-dev/filmfolk/pull/75)
   Let authenticated user see person profile details
 * [PR-77](https://github.com/itk-dev/filmfolk/pull/77)
