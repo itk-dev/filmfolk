@@ -86,11 +86,11 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             [
               // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Nogen erfaring fra professionelle produktioner (5-10 produktioner)')->id(),
             ],
             [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Animator')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Lidt erfaring fra professionelle produktioner (1-4 produktioner)')->id(),
             ],
       ],
       'field_person_title' => [
@@ -121,11 +121,11 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             [
               // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Nogen erfaring fra professionelle produktioner (5-10 produktioner)')->id(),
             ],
             [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Animator')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Lidt erfaring fra professionelle produktioner (1-4 produktioner)')->id(),
             ],
       ],
       'field_person_title' => [
@@ -156,11 +156,11 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             [
               // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Nogen erfaring fra professionelle produktioner (5-10 produktioner)')->id(),
             ],
             [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Animator')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Lidt erfaring fra professionelle produktioner (1-4 produktioner)')->id(),
             ],
       ],
       'field_person_title' => [
@@ -190,11 +190,11 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             [
               // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Nogen erfaring fra professionelle produktioner (5-10 produktioner)')->id(),
             ],
             [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Animator')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Lidt erfaring fra professionelle produktioner (1-4 produktioner)')->id(),
             ],
       ],
       'field_person_title' => [
@@ -224,11 +224,11 @@ final class PersonFixture extends UserFixture implements DependentFixtureInterfa
             [
               // Important: We must use “…_TARGET_ID” to make this work.
               FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Runner')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:7 produktioner')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Nogen erfaring fra professionelle produktioner (5-10 produktioner)')->id(),
             ],
             [
-              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Advokat')->id(),
-              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:1 produktion')->id(),
+              FunktionErfaringItem::PROPERTY_FUNKTION_TARGET_ID => $this->getReference('funktion:Animator')->id(),
+              FunktionErfaringItem::PROPERTY_ERFARING_TARGET_ID => $this->getReference('erfaring:Lidt erfaring fra professionelle produktioner (1-4 produktioner)')->id(),
             ],
       ],
       'field_person_title' => [
