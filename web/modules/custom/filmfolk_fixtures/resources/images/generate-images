@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+cd "$script_dir" || exit
+
+width=800
+height=1000
+number_of_images=17
+
+# Clean up
+rm -f image-*.png
+
+for i in $(seq 1 $number_of_images); do
+  image_name=$(printf "image-%03d.png" $((i - 1)))
+  # Use "seed" to get the same image each tine (cf. https://picsum.photos/)
+  curl --silent --location "https://picsum.photos/seed/$i/$width/$height" --output "$image_name"
+  echo "$image_name"
+done

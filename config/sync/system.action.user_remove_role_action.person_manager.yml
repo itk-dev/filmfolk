@@ -1,0 +1,14 @@
+uuid: 1aa7ffcc-d8b1-49c9-bdcc-b6cc7fcf7eac
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.person_manager
+  module:
+    - user
+id: user_remove_role_action.person_manager
+label: 'Remove the person manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: person_manager

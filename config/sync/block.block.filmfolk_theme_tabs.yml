@@ -1,0 +1,20 @@
+uuid: af02649f-df05-4a25-8e7b-f51a53018dcd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_tabs
+theme: filmfolk_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

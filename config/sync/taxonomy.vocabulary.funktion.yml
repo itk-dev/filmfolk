@@ -1,0 +1,9 @@
+uuid: 3da3670b-d688-4d3e-9abe-3c78e3e8e069
+langcode: en
+status: true
+dependencies: {  }
+name: funktion
+vid: funktion
+description: null
+weight: 0
+new_revision: false

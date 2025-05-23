@@ -1,0 +1,9 @@
+uuid: 3f1c00a0-f834-44df-b740-0d3cad074f72
+langcode: da
+status: true
+dependencies: {  }
+id: en
+label: Engelsk
+direction: ltr
+weight: 2
+locked: false

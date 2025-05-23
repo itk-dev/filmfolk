@@ -1,0 +1,7 @@
+<div class="user-search-result">
+  {% set profile_id = content.person_profiles['#items'].target_id|default(null) %}
+  {% if profile_id %}
+    {# https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md#drupal-entity #}
+    {{ drupal_entity('profile', profile_id, 'search_result') }}
+  {% endif %}
+</div>

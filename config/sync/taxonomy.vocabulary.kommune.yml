@@ -1,0 +1,9 @@
+uuid: 51ede6fb-e607-4a6e-816c-3871774793ce
+langcode: en
+status: true
+dependencies: {  }
+name: kommune
+vid: kommune
+description: null
+weight: 0
+new_revision: false

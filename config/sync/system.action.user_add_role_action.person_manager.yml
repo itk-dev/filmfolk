@@ -1,0 +1,14 @@
+uuid: 14100aba-8c64-4134-a076-f197d57bff30
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.person_manager
+  module:
+    - user
+id: user_add_role_action.person_manager
+label: 'Add the person manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: person_manager

@@ -1,0 +1,23 @@
+uuid: 98288e8e-14b1-4ab3-aa50-df312269bff8
+langcode: en
+status: true
+dependencies: {  }
+name: simple
+format: simple
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <h1> <h2 id="jump-*"> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol type="1 A I" reversed start> <h3 id> <h4 id> <h5 id> <h6 id> <strong> <em> <code> <li>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

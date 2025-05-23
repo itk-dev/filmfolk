@@ -1,0 +1,13 @@
+diff --git a/core/modules/taxonomy/src/Entity/Term.php b/core/modules/taxonomy/src/Entity/Term.php
+index d96aaa8..ce43333 100644
+--- a/core/modules/taxonomy/src/Entity/Term.php
++++ b/core/modules/taxonomy/src/Entity/Term.php
+@@ -270,7 +270,7 @@ class Term extends EditorialContentEntityBase implements TermInterface {
+    * {@inheritdoc}
+    */
+   public function getName() {
+-    return $this->label() ?? '';
++    return $this->get('name')->value;
+   }
+ 
+   /**

@@ -1,0 +1,23 @@
+uuid: 1256aaea-0de2-456a-bb0e-0f5bf4929693
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.simple
+  module:
+    - filter
+    - media
+    - profile
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access user profiles'
+  - 'use text format simple'
+  - 'view any profile'
+  - 'view media'

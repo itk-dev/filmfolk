@@ -1,0 +1,25 @@
+.site-footer {
+  --logo-text: var(--color--white);
+
+  color: var(--color--white);
+
+  .region--footer_top__inner {
+    margin-block-end: 0;
+  }
+
+  .text-content {
+    color: inherit;
+  }
+
+  .site-branding {
+    background: none;
+    min-height: initial;
+    height: auto;
+    align-items: flex-start;
+
+    svg {
+      width: 250px;
+      height: auto;
+    }
+  }
+}

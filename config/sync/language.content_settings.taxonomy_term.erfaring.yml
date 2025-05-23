@@ -1,0 +1,11 @@
+uuid: c3d7c77d-a04e-4647-92ce-247d15c16675
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.erfaring
+id: taxonomy_term.erfaring
+target_entity_type_id: taxonomy_term
+target_bundle: erfaring
+default_langcode: site_default
+language_alterable: false

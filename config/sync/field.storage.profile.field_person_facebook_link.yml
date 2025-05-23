@@ -1,0 +1,19 @@
+uuid: d92edb44-bbfd-40e1-be30-7cc812b882ab
+langcode: da
+status: true
+dependencies:
+  module:
+    - link
+    - profile
+id: profile.field_person_facebook_link
+field_name: field_person_facebook_link
+entity_type: profile
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

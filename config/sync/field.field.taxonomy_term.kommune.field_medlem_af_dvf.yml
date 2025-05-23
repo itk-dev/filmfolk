@@ -1,0 +1,21 @@
+uuid: ba08b464-56dd-4e98-8e21-111e037a50c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_medlem_af_dvf
+    - taxonomy.vocabulary.kommune
+id: taxonomy_term.kommune.field_medlem_af_dvf
+field_name: field_medlem_af_dvf
+entity_type: taxonomy_term
+bundle: kommune
+label: 'Medlem af DVF'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Ja
+  off_label: Nej
+field_type: boolean
