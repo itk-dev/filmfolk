@@ -32,3 +32,15 @@ To make this work, i.e. not break editing terms, we apply [a patch](patches/drup
 * The search include only active users with the role Person (`person`)
 * We use [the Profile module](https://www.drupal.org/project/profile) to add fields to people.
 * Users with the role Person manager (`person_manager`) can approve people and create new people.
+
+## Github pages for Docs
+
+We use Github Pages to create a static site for our documentation.
+
+### Documentation in `/docs`
+
+The documentation site will be created from the `/docs` folder.
+
+### Urls for different environments
+
+We set urls in `_config.yml` to show the correct url for the environment.

@@ -31,3 +31,24 @@ search:
   button: false
 
 aux_links_new_tab: true
+
+# Environment configurations
+environments:
+  - name: production
+    url: https://www.filmfolk.dk
+    label: Production
+    color: "#28a745"
+  - name: staging
+    url: https://staging.filmfolk.dk
+    label: Staging
+    color: "#ffc107"
+  - name: test
+    url: https://test.filmfolk.dk
+    label: Test
+    color: "#17a2b8"
+
+# Default environment
+default_environment: production
+
+# Enable environment selector in the navigation
+show_environment_selector: true
