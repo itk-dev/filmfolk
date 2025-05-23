@@ -5,7 +5,7 @@ Test af [Filmfolk] foregår på <https://filmfolk.srvitkstgweb02.itkdev.dk/>. In
 ## Test af e-mails
 
 Testsystemet udsender ikke "rigtige" e-mails, så du skal læse mails på
-<https://itk:itk@filmfolk.srvitkstgweb02.itkdev.dk/>.
+<https://itk:itk@mail.filmfolk.srvitkstgweb02.itkdev.dk/>.
 
 ## Releases
 
