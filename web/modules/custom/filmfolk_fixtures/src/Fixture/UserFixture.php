@@ -55,7 +55,9 @@ class UserFixture extends AbstractFixture {
    * Create a user.
    */
   protected function createUser(array $values = []): UserInterface {
-    return $this->userStorage->create($values);
+    return $this->userStorage->create($values + [
+        'preferred_langcode' => 'da',
+      ]);
   }
 
   /**
