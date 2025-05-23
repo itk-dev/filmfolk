@@ -85,7 +85,7 @@ select {
 ** Make some visual changes to the funktion-erfaring part of the form.
 ** Drupal shows Row weight and Row drag by default which we do not want.
 */
-.field--type-filmfolk-funktion-erfaring {
+.path-user .field--type-filmfolk-funktion-erfaring {
   /* Add space at the end of the section */
   margin-block-end: var(--sp3);
 
