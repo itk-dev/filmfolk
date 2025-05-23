@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - config_translation
     - system
     - toolbar
 id: site_administrator
@@ -12,5 +13,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access toolbar'
+  - 'administer account settings'
   - 'administer menu'
+  - 'translate configuration'
   - 'view the administration theme'
