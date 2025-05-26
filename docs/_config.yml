@@ -1,7 +1,11 @@
 title: Filmfolk
 
 # Theme
-theme: just-the-docs
+remote-theme: just-the-docs/just-the-docs
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
 
 # Environment configurations for showing different Urls depening on the context.
 environments_contexts:
