@@ -13,15 +13,24 @@ plugins:
 callouts:
   note:
     title: Note
-    color: blue
+    color: purple
+  note-title:
+    color: purple
   warning:
     title: Warning
-    color: blue
+    color: yellow
+  warning-title:
+    color: yellow
+  danger:
+    title: Danger
+    color: red
+  danger-title:
+    color: red
   important:
-    title: Warning
-    color: yellow
+    title: Important
+    color: blue
   important-title:
-    color: yellow
+    color: blue
 
 # Environment configurations for showing different Urls depening on the context.
 environments_contexts:

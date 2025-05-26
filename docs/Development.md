@@ -27,7 +27,7 @@ admin messages
 drush pm:install masquerade
 ```
 
-{: .warning }
+{: .important-title }
 > TIP
 >
 > If you're masquerading as a user that doesn't have access to the admin menu, go to `/unmasquerade` to unmasquerade.
