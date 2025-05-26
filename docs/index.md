@@ -9,4 +9,4 @@ nav_order: 1
 
 - [Brugervejledning](/user-guide/)
 - [Testvejledning](/test-guide/)
-- [Udvikler dokumentation](Development.md)
+- [Udvikler dokumentation](development.md)
