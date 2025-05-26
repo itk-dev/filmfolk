@@ -8,7 +8,7 @@ nav_order: 2
 
 På siderne herunder finder du vejledning til redigering og oprettelse af indhold, brugere mm. i projektet.
 
-{: .warning }
-> My note title
+{: .note-title }
+> Drupal
 >
-> A paragraph with a custom title callout
+> Vejledningen på disse sider henvender sig til brugere med adgang til Drupal administrationen.
