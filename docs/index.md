@@ -1,6 +1,6 @@
 ---
 title: Filmfolk dokumentation
-has_children: true
+nav_order: 1
 ---
 
 # Dokumentation for Projekt "Filmfolk"

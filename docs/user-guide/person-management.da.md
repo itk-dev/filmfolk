@@ -3,7 +3,7 @@ title: Personvejledning
 parent: Brugervejledning
 ---
 
-# Personvejledning
+# {{ page.title }}
 
 ## Oprettelse af person
 

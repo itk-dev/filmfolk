@@ -3,7 +3,7 @@ title: Profiloprettelse
 parent: Brugervejledning
 ---
 
-# Profiloprettelse
+# {{ page.title }}
 
 ## Oprettelse af profil
 

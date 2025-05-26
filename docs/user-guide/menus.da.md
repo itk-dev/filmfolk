@@ -3,7 +3,7 @@ title: Menuvejledning
 parent: Brugervejledning
 ---
 
-# Menuvejledning
+# {{ page.title }}
 
 For at oprette menuer skal du være logget ind i Drupals administrationssystem
 som en bruger med rettigheder til at redigere menuer. [Se mulige roller](roles.da.md)

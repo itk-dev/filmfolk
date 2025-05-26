@@ -1,9 +1,10 @@
 ---
 title: Brugervejledning
 has_children: true
+nav_order: 2
 ---
 
-# Brugervejledning
+# {{ page.title }}
 
 På siderne herunder finder du vejledning til redigering og oprettelse af indhold, brugere mm. i projektet.
 

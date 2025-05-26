@@ -1,9 +1,8 @@
 ---
 title: Development
-parent: Filmfolk dokumentation
 ---
 
-# Development
+# {{ page.title }}
 
 For development and testing, a couple of useful modules con be installed. The modules are [excluded from the
 configuration synchronization](https://www.drupal.org/node/3079028).
@@ -28,5 +27,7 @@ admin messages
 drush pm:install masquerade
 ```
 
-> [!TIP]
+{: .warning }
+> TIP
+>
 > If you're masquerading as a user that doesn't have access to the admin menu, go to `/unmasquerade` to unmasquerade.

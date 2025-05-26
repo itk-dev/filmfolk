@@ -3,7 +3,7 @@ title: Block redigering
 parent: Brugervejledning
 ---
 
-# Block redigering
+# {{ page.title }}
 
 Der findes forskellige indholdsblokke på siden som det er muligt at udskifte indholdet i.
 

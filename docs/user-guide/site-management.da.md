@@ -3,7 +3,7 @@ title: Siteadministration
 parent: Brugervejledning
 ---
 
-# Siteadministration
+# {{ page.title }}
 
 ## E-mailskabeloner
 

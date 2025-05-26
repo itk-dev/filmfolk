@@ -1,9 +1,10 @@
 ---
 title: Testvejledning
 has_children: true
+nav_order: 3
 ---
 
-# Testvejledning
+# {{ page.title }}
 
 Test af [Filmfolk] foregår på <https://filmfolk.srvitkstgweb02.itkdev.dk/>. Indtast `itk/itk` i den lille popup.
 
