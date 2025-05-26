@@ -1,4 +1,10 @@
+---
+title: Testvejledning (release 0.1.0)
+parent: Testvejledning
+---
+
 # Testvejledning (release 0.1.0)
+
 
 Se [Testvejledning](README.da.md) for generelle oplysninger om test af [Filmfolk].
 

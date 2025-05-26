@@ -1,3 +1,8 @@
+---
+title: Siteadministration
+parent: Brugervejledning
+---
+
 # Siteadministration
 
 ## E-mailskabeloner

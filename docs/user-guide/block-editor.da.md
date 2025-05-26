@@ -1,3 +1,8 @@
+---
+title: Block redigering
+parent: Brugervejledning
+---
+
 # Block redigering
 
 Der findes forskellige indholdsblokke på siden som det er muligt at udskifte indholdet i.

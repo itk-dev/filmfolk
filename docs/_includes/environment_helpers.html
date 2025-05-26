@@ -1,7 +1,0 @@
-{% comment %} Environment helper functions {% endcomment %} {% assign current_env = page.environment | default:
-site.default_environment %} {% comment %} Get the current environment configuration {% endcomment %} {% for env in
-site.environments %} {% if env.name == current_env %} {% assign current_env_config = env %} {% break %} {% endif %} {%
-endfor %} {% comment %} Check if the current environment matches a specific value {% endcomment %} {% assign
-is_production = current_env == "production" %} {% assign is_staging = current_env == "staging" %} {% assign is_test =
-current_env == "test" %} {% comment %} Get the current environment URL {% endcomment %} {% assign env_url =
-current_env_config.url %}

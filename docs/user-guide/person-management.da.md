@@ -1,3 +1,8 @@
+---
+title: Personvejledning
+parent: Brugervejledning
+---
+
 # Personvejledning
 
 ## Oprettelse af person

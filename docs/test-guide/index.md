@@ -1,3 +1,8 @@
+---
+title: Testvejledning
+has_children: true
+---
+
 # Testvejledning
 
 Test af [Filmfolk] foregår på <https://filmfolk.srvitkstgweb02.itkdev.dk/>. Indtast `itk/itk` i den lille popup.
@@ -9,6 +14,6 @@ Testsystemet udsender ikke "rigtige" e-mails, så du skal læse mails på
 
 ## Releases
 
-* [Release 0.1.0](Release-0.1.0.da.md)
+- [Release 0.1.0](Release-0.1.0.da.md)
 
 [Filmfolk]: https://filmfolk.srvitkstgweb02.itkdev.dk/

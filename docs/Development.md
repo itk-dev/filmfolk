@@ -1,3 +1,8 @@
+---
+title: Development
+parent: Filmfolk dokumentation
+---
+
 # Development
 
 For development and testing, a couple of useful modules con be installed. The modules are [excluded from the
