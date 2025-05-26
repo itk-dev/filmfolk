@@ -1,6 +1,6 @@
 # Development
 
-For development and testing, a couple of useful modules con be installed. The modules are [excluded from the
+For development and testing, a couple of useful modules can be installed. The modules are [excluded from the
 configuration synchronization](https://www.drupal.org/node/3079028).
 
 ## Drupal admin message
