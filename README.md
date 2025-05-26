@@ -40,7 +40,3 @@ We use Github Pages to create a static site for our documentation.
 ### Documentation in `/docs`
 
 The documentation site will be created from the `/docs` folder.
-
-### Urls for different environments
-
-We set urls in `_config.yml` to show the correct url for the environment.
