@@ -5,7 +5,6 @@ parent: Testvejledning
 
 # {{ page.title }}
 
-
 Se [Testvejledning](README.da.md) for generelle oplysninger om test af [Filmfolk].
 
 Dette er den første release af Filmfolk, så derfor skal "det hele testes". Det er generelt en god ide at teste "det
