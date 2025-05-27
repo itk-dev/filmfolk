@@ -13,5 +13,3 @@ permissions:
   - 'cancel users by role'
   - 'cancel users with role person'
   - 'update own person profile'
-  - 'view own person profile'
-  - 'view own profile'
