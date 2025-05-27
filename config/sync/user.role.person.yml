@@ -9,4 +9,5 @@ label: Person
 weight: 2
 is_admin: false
 permissions:
+  - 'cancel account'
   - 'update own person profile'

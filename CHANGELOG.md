@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-84](https://github.com/itk-dev/filmfolk/pull/84)
   * Added documentation
   * Minor fixes
+* [PR-85](https://github.com/itk-dev/filmfolk/pull/85)
+  Giving person role permisions to cancel their own account and to view their own info.
 * [PR-81](https://github.com/itk-dev/filmfolk/pull/81)
   Update fixtures for Function, experience and person
 * [PR-75](https://github.com/itk-dev/filmfolk/pull/75)
