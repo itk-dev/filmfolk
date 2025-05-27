@@ -11,4 +11,4 @@ På siderne herunder finder du vejledning til redigering og oprettelse af indhol
 {: .note-title }
 > Drupal
 >
-> Vejledningen på disse sider henvender sig til brugere med adgang til Drupal administrationen.
+> Vejledningen på disse sider henvender sig til brugere med adgang til Drupal-administrationen.
