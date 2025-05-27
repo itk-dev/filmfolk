@@ -6,7 +6,6 @@ remote_theme: just-the-docs/just-the-docs
 # Plugins
 plugins:
   - jekyll-remote-theme
-  -
 
 # Configure callouts for Just-the-docs theme
 # Common kinds of callouts include highlight, important, new, note, and warning.
