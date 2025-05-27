@@ -31,18 +31,6 @@ callouts:
   important-title:
     color: blue
 
-# Environment configurations for showing different Urls depening on the context.
-environments_contexts:
-  - name: production
-    url: https://www.filmfolk.dk
-    label: Production
-  - name: staging
-    url: https://staging.filmfolk.dk
-    label: Staging
-  - name: test
-    url: https://test.filmfolk.dk
-    label: Test
-
 # Default environment
 default_environment_context: production
 
