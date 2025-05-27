@@ -35,11 +35,7 @@ To make this work, i.e. not break editing terms, we apply [a patch](patches/drup
 
 ## Github pages for Docs
 
-We use Github Pages to create a static site for our documentation.
-
-https://pages.github.com/
-
-See the option "Project site"
+We use [Github Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll) to create a static site for our documentation.
 
 ### Documentation in `/docs`
 
