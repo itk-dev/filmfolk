@@ -3,13 +3,11 @@ langcode: da
 status: true
 dependencies:
   module:
-    - administerusersbyrole
     - profile
 id: person
 label: Person
 weight: 2
 is_admin: false
 permissions:
-  - 'cancel users by role'
-  - 'cancel users with role person'
+  - 'cancel account'
   - 'update own person profile'
