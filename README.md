@@ -37,6 +37,22 @@ To make this work, i.e. not break editing terms, we apply [a patch](patches/drup
 
 We use Github Pages to create a static site for our documentation.
 
+https://pages.github.com/
+
+See the option "Project site"
+
 ### Documentation in `/docs`
 
 The documentation site will be created from the `/docs` folder.
+
+### Testing your GitHub Pages site locally with Jekyll
+
+Check the [GitHub documentation](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) on how to setup Jekyll
+
+Then from the `/docs` folder run the command
+
+```sh
+bundle exec jekyll serve
+```
+
+This will build and serve the site locally.
