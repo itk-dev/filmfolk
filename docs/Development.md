@@ -1,4 +1,8 @@
-# Development
+---
+title: Development
+---
+
+# {{ page.title }}
 
 For development and testing, a couple of useful modules can be installed. The modules are [excluded from the
 configuration synchronization](https://www.drupal.org/node/3079028).
@@ -23,5 +27,7 @@ admin messages
 drush pm:install masquerade
 ```
 
-> [!TIP]
+{: .important-title }
+> TIP
+>
 > If you're masquerading as a user that doesn't have access to the admin menu, go to `/unmasquerade` to unmasquerade.

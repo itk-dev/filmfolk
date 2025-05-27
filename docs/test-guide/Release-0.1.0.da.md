@@ -1,4 +1,9 @@
-# Testvejledning (release 0.1.0)
+---
+title: Test release 0.1.0
+parent: Testvejledning
+---
+
+# {{ page.title }}
 
 Se [Testvejledning](README.da.md) for generelle oplysninger om test af [Filmfolk].
 
@@ -24,7 +29,7 @@ Test at brugeren kan redigere sin profil.
 
 ## Visning af profiler
 
-Test at
+Test af
 
 1. nye profiler dukker op på profillisten (<https://filmfolk.srvitkstgweb02.itkdev.dk/>)
 2. kun aktive profiler vises på profillisten (<https://filmfolk.srvitkstgweb02.itkdev.dk/>)

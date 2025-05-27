@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-92](https://github.com/itk-dev/filmfolk/pull/92)
+  Documentation deployment on github pages
 * [PR-88](https://github.com/itk-dev/filmfolk/pull/88)
   Site admin config
 * [PR-84](https://github.com/itk-dev/filmfolk/pull/84)

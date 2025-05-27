@@ -1,4 +1,9 @@
-# Brugervejledning
+---
+title: Profiloprettelse
+parent: Brugervejledning
+---
+
+# {{ page.title }}
 
 ## Oprettelse af profil
 

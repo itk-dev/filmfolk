@@ -32,3 +32,25 @@ To make this work, i.e. not break editing terms, we apply [a patch](patches/drup
 * The search include only active users with the role Person (`person`)
 * We use [the Profile module](https://www.drupal.org/project/profile) to add fields to people.
 * Users with the role Person manager (`person_manager`) can approve people and create new people.
+
+## Github pages for Docs
+
+We use [Github Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)
+to create a static site for our documentation.
+
+### Documentation in `/docs`
+
+The documentation site will be created from the `/docs` folder.
+
+### Testing your GitHub Pages site locally with Jekyll
+
+Check the [GitHub documentation](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+on how to setup Jekyll locally
+
+Then from the `/docs` folder run the command
+
+```sh
+bundle exec jekyll serve
+```
+
+This will build and serve the site locally.

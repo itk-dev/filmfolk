@@ -93,3 +93,7 @@ node_modules/
 /playwright/.cache/
 
 *.*.mo
+
+# Ignore local docs sites
+docs/_site/
+docs/Gemfile.lock
