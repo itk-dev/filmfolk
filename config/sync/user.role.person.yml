@@ -10,10 +10,8 @@ label: Person
 weight: 2
 is_admin: false
 permissions:
-  - 'update own person profile'
   - 'cancel users by role'
   - 'cancel users with role person'
-  - 'delete own person profile'
   - 'update own person profile'
   - 'view own person profile'
   - 'view own profile'
