@@ -12,6 +12,8 @@ use Drupal\core_event_dispatcher\Event\Form\FormAlterEvent;
 use Drupal\core_event_dispatcher\FormHookEvents;
 use Drupal\filmfolk\Helper;
 use Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem;
+use Drupal\user\ProfileForm;
+use Drupal\user\UserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -137,10 +139,17 @@ final class FormEventSubscriber implements EventSubscriberInterface {
       $form['language']['#access'] = FALSE;
     }
 
+    // Hide password if not editing own account.
+    $formObject = $event->getFormState()->getFormObject();
+    if ($formObject instanceof ProfileForm) {
+      $user = $formObject->getEntity();
+      if ($user instanceof UserInterface && $this->account->id() !== $user->id()) {
+        $form['account']['pass']['#access'] = FALSE;
+        $form['account']['pass']['#required'] = FALSE;
+      }
+    }
+
     if (in_array(Helper::ROLE_PERSON_MANAGER, $this->account->getRoles())) {
-      // Hide password.
-      $form['account']['pass']['#access'] = FALSE;
-      $form['account']['pass']['#required'] = FALSE;
       // Hide roles selector.
       $form['account']['roles']['#access'] = FALSE;
     }
