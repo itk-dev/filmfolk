@@ -139,17 +139,17 @@ final class FormEventSubscriber implements EventSubscriberInterface {
       $form['language']['#access'] = FALSE;
     }
 
-    if (in_array(Helper::ROLE_PERSON_MANAGER, $this->account->getRoles())) {
-      // Hide password if not editing own account.
-      $formObject = $event->getFormState()->getFormObject();
-      if ($formObject instanceof ProfileForm) {
-        $user = $formObject->getEntity();
-        if ($user instanceof UserInterface && $this->account->id() !== $user->id()) {
-          $form['account']['pass']['#access'] = FALSE;
-          $form['account']['pass']['#required'] = FALSE;
-        }
+    // Hide password if not editing own account.
+    $formObject = $event->getFormState()->getFormObject();
+    if ($formObject instanceof ProfileForm) {
+      $user = $formObject->getEntity();
+      if ($user instanceof UserInterface && $this->account->id() !== $user->id()) {
+        $form['account']['pass']['#access'] = FALSE;
+        $form['account']['pass']['#required'] = FALSE;
       }
+    }
 
+    if (in_array(Helper::ROLE_PERSON_MANAGER, $this->account->getRoles())) {
       // Hide roles selector.
       $form['account']['roles']['#access'] = FALSE;
     }
