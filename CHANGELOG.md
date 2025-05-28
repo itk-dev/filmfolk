@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-96](https://github.com/itk-dev/filmfolk/pull/96)
+  Cleaned up tasks
 * [PR-92](https://github.com/itk-dev/filmfolk/pull/92)
   Documentation deployment on github pages
 * [PR-88](https://github.com/itk-dev/filmfolk/pull/88)

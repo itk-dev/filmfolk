@@ -24,7 +24,6 @@ tasks:
       - task drush -- --yes site:install --existing-config
       # - task: translations:import
       - task drush -- --yes cache:rebuild
-      - task assets-build
       - task site-open
       - task site-open-admin
     silent: true
@@ -34,7 +33,6 @@ tasks:
       - task compose -- pull
       - task compose-up
       - task composer-install
-      - task assets-build
       - task drush -- deploy
       # - task: translations:import
       - task: search-index:update
@@ -58,16 +56,6 @@ tasks:
       URL:
         sh: task drush -- user:login --no-browser
     silent: true
-
-  assets-build:
-    cmds:
-      - |
-        if [[ -z "{{.SKIP_BUILD}}" ]]; then
-          echo {{.DOCKER_COMPOSE}} run --rm node npm install --prefix web/themes/custom/filmfolk_theme
-          echo {{.DOCKER_COMPOSE}} run --rm node npm run build --prefix web/themes/custom/filmfolk_theme
-        fi
-    vars:
-      SKIP_BUILD: '{{.ASSETS_SKIP_BUILD | default .TASK_ASSETS_SKIP_BUILD}}'
 
   compose:
     cmds:
