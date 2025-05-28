@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-99](https://github.com/itk-dev/filmfolk/pull/99)
+  * Updated itk-dev/drupal_admin_message and itk-dev/web_accessibility_statement
+  * Applied secutry updates
 * [PR-96](https://github.com/itk-dev/filmfolk/pull/96)
   Cleaned up tasks
 * [PR-97](https://github.com/itk-dev/filmfolk/pull/97)
