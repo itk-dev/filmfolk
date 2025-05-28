@@ -24,18 +24,12 @@ jobs:
       - name: Composer install
         run: |
           docker network create frontend
-          docker compose run --rm --user=root phpfpm composer install --no-dev -o --classmap-authoritative
-          docker compose run --rm --user=root phpfpm composer clear-cache
+          docker compose run --rm phpfpm composer install --no-dev --classmap-authoritative
+          docker compose run --rm phpfpm composer clear-cache
 
-#      - name: Building assets for the frontend
-#        run: |
-#          docker compose run --rm node npm install --prefix web/themes/custom/filmfolk_theme
-#          docker compose run --rm node node npm run build --prefix web/themes/custom/filmfolk_theme
-#
-#      - name: Clean up
-#        run: |
-#          sudo chown -R runner:runner ./
-#          rm -rf web/themes/custom/filmfolk_theme/node_modules
+      - name: Clean up
+        run: |
+          sudo chown -R runner:runner ./
 
       - name: Make assets dir
         run: |
@@ -43,13 +37,11 @@ jobs:
 
       - name: Create archive
         run: |
-          sudo chown -R runner:runner ./
-          tar --exclude='.git' --exclude='node_modules' -zcf ../assets/${{ github.event.repository.name }}-${{ github.ref_name }}.tar.gz ./
+          tar --exclude='.git' -zcf ../assets/${{ github.event.repository.name }}-${{ github.ref_name }}.tar.gz ./
 
       - name: Create checksum
         run: |
-          cd ../assets
-          sha256sum ${{ github.event.repository.name }}-${{ github.ref_name }}.tar.gz > ../assets/checksum.txt
+          sha256sum ../assets/${{ github.event.repository.name }}-${{ github.ref_name }}.tar.gz > ../assets/checksum.txt
 
       - name: Create a release in GitHub and uploads assets
         run: gh release create ${{ github.ref_name }} --verify-tag --generate-notes ../assets/*.*
