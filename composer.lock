@@ -3188,16 +3188,16 @@
         },
         {
             "name": "itk-dev/drupal_admin_message",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/drupal_admin_message.git",
-                "reference": "ab692587b6445f8dfbcc13f434da4a96ed63116b"
+                "reference": "0c2ba5c692f9e4a98a1c68c78c7fb73f0e01b785"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/drupal_admin_message/zipball/ab692587b6445f8dfbcc13f434da4a96ed63116b",
-                "reference": "ab692587b6445f8dfbcc13f434da4a96ed63116b",
+                "url": "https://api.github.com/repos/itk-dev/drupal_admin_message/zipball/0c2ba5c692f9e4a98a1c68c78c7fb73f0e01b785",
+                "reference": "0c2ba5c692f9e4a98a1c68c78c7fb73f0e01b785",
                 "shasum": ""
             },
             "require-dev": {
@@ -3222,9 +3222,9 @@
             "description": "Drupal admin message",
             "support": {
                 "issues": "https://github.com/itk-dev/drupal_admin_message/issues",
-                "source": "https://github.com/itk-dev/drupal_admin_message/tree/1.1.0"
+                "source": "https://github.com/itk-dev/drupal_admin_message/tree/1.2.0"
             },
-            "time": "2025-05-21T07:39:28+00:00"
+            "time": "2025-05-28T10:40:59+00:00"
         },
         {
             "name": "itk-dev/web_accessibility_statement",
