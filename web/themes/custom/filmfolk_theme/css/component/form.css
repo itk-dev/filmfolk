@@ -150,3 +150,8 @@ select {
     }
   }
 }
+
+/* Let the help text lines follow the with of the form elements */
+.form-item__description {
+  max-width: 100%;
+}
