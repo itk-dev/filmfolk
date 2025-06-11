@@ -10,7 +10,7 @@ id: profile.person.field_person_kommune
 field_name: field_person_kommune
 entity_type: profile
 bundle: person
-label: Kommune
+label: Bopælskommune
 description: ''
 required: true
 translatable: false
