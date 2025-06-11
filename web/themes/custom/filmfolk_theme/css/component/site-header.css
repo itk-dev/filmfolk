@@ -12,7 +12,6 @@
     opacity: 1;
   }
   .site-header__fixable .site-header__inner {
-      box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
-    }
+    box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
   }
 }
