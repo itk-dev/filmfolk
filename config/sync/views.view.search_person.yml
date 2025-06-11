@@ -530,9 +530,10 @@ display:
               anonymous: '0'
               person: '0'
               person_manager: '0'
-              content_block_editor: '0'
+              content_editor: '0'
+              site_administrator: '0'
             expose_fields: false
-            placeholder: 'Text search'
+            placeholder: 'Søg i databasen'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
           is_grouped: false
