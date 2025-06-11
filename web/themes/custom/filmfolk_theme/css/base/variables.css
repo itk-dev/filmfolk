@@ -1,0 +1,5 @@
+:root {
+  --form-gap: var(--sp1);
+  --rounded-cornors: 25px;
+  --font-serif: "metropolis", sans-serif;
+}

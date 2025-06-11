@@ -71,4 +71,5 @@
 
 .user-search-result-profile-button {
   margin-top: auto;
+  border-radius: var(--rounded-cornors);
 }
