@@ -74,7 +74,7 @@ field_settings:
     label: 'person profiles » Profil » name'
     datasource_id: 'entity:user'
     property_path: 'person_profiles:entity:field_person_name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.profile.field_person_name
