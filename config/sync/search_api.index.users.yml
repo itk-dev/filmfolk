@@ -9,8 +9,6 @@ dependencies:
     - field.storage.profile.field_person_funktion_erfaring
     - field.storage.profile.field_person_kommune
     - field.storage.profile.field_person_name
-    - field.storage.profile.field_person_phone
-    - field.storage.profile.field_person_title
     - search_api.server.local
   module:
     - profile
@@ -80,32 +78,22 @@ field_settings:
         - field.storage.profile.field_person_name
       module:
         - profile
-  field_person_phone:
-    label: 'person profiles » Profile » Telefon'
-    datasource_id: 'entity:user'
-    property_path: 'person_profiles:entity:field_person_phone'
-    type: string
-    dependencies:
-      config:
-        - field.storage.profile.field_person_phone
-      module:
-        - profile
-  field_person_title:
-    label: 'person profiles » Profil » title'
-    datasource_id: 'entity:user'
-    property_path: 'person_profiles:entity:field_person_title'
-    type: text
-    boost: 2.0
-    dependencies:
-      config:
-        - field.storage.profile.field_person_title
-      module:
-        - profile
   funktion_id:
     label: 'person profiles » Profil » funktion_erfaring » Funktion » Term ID'
     datasource_id: 'entity:user'
     property_path: 'person_profiles:entity:field_person_funktion_erfaring:funktion:tid'
     type: integer
+    dependencies:
+      config:
+        - field.storage.profile.field_person_funktion_erfaring
+      module:
+        - profile
+        - taxonomy
+  name:
+    label: 'Person profiles » Profil » Funktioner og erfaringsniveau »  » Navn'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_funktion_erfaring:funktion:name'
+    type: text
     dependencies:
       config:
         - field.storage.profile.field_person_funktion_erfaring
@@ -142,8 +130,7 @@ processor_settings:
       - additional_info
       - education_interest
       - field_person_name
-      - field_person_phone
-      - field_person_title
+      - name
       - processed
   language_with_fallback: {  }
   rendered_item: {  }
