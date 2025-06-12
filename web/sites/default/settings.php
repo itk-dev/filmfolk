@@ -882,6 +882,20 @@ $settings['config_exclude_modules'] = [
 // https://github.com/itk-dev/drupal_admin_message?tab=readme-ov-file#installation
 $settings['config_exclude_modules'][] = 'drupal_admin_message';
 
+$settings['twig_sandbox_allowed_methods'] = [
+  // Defaults (cf. Drupal\Core\Template\TwigSandboxPolicy::__construct()).
+  'id',
+  'label',
+  'bundle',
+  'get',
+  'loadProjectTracks',
+  'loadTools',
+  '__toString',
+  'toString',
+  // Additions
+  'referencedEntities'
+];
+
 /**
  * Load local development override configuration, if available.
  *
