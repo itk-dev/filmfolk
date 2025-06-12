@@ -38,11 +38,24 @@ final class ThemeEventSubscriber implements EventSubscriberInterface {
   public function themeSuggestionsAlter(ThemeSuggestionsAlterEvent $event): void {
     $variables = $event->getVariables();
     $hook = $event->getHook();
-    if ('details' === $hook) {
-      if ($key = $variables['element']['#parents'][0] ?? NULL) {
-        $suggestions = &$event->getSuggestions();
-        $suggestions[] = $hook . '__' . $key;
-      }
+    $suggestions = &$event->getSuggestions();
+    switch ($hook) {
+      case 'details':
+        if ($key = $variables['element']['#parents'][0] ?? NULL) {
+          $suggestions[] = $hook . '__' . $key;
+        }
+        break;
+
+      case 'table':
+        if ($id = $variables['attributes']['id'] ?? NULL) {
+          // Strip away stuff add in AJAX calls, e.g.
+          // field-person-funktion-erfaring-values--2nJGGvU3mLE →
+          // field-person-funktion-erfaring-values.
+          $id = preg_replace('/--.+$/', '', $id);
+          $suggestions[] = $hook . '__' . preg_replace('/[^[:alnum:]]+/', '_', $id);
+        }
+        break;
+
     }
   }
 

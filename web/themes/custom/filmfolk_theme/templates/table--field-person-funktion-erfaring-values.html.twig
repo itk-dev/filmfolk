@@ -1,0 +1,15 @@
+{#
+  A custom table template (cf. \Drupal\filmfolk\EventSubscriber\ThemeEventSubscriber::themeSuggestionsAlter)
+#}
+{% set label = header|first.content['#value']|default('Funktioner og erfaringsniveau') %}
+<label class="form-item__label form-required">
+  {{ label }}
+</label>
+
+<div class="form-item__description">
+  {{ 'Add your functions and experiences'|t }}
+</div>
+
+{# Prevent "parent" template to from rendering a header #}
+{% set header = null %}
+{{ include('core/modules/system/templates/table.html.twig') }}

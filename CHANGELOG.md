@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
+  Added custom template for "Funktioner og erfaringsniveau"
 * [PR-110](https://github.com/itk-dev/filmfolk/pull/110)
   Added sorting to view
 * [PR-108](https://github.com/itk-dev/filmfolk/pull/108)
