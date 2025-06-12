@@ -135,19 +135,31 @@ select {
     width: 100%;
   }
 
-  /* Hide label to align input and submit */
-  tbody .form-item {
-    flex-basis: 50%;
+  tbody {
+    /* Hide "remove" button from last item */
+    tr:last-child .form-submit {
+      display: none;
+    }
 
-    .form-item__label {
-      visibility: hidden;
-      margin-block: 0;
+    /* Hide label to align input and submit */
+    .form-item {
+      flex-basis: 50%;
 
-      /* Hide the asterisk */
-      &:after {
-        display: none;
+      .form-item__label {
+        visibility: hidden;
+        margin-block: 0;
+
+        /* Hide the asterisk */
+        &:after {
+          display: none;
+        }
       }
     }
+  }
+
+  /* Less space after table */
+  table {
+    margin-block-end: var(--sp0-5);
   }
 }
 
