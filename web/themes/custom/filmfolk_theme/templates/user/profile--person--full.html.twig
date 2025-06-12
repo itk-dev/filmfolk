@@ -12,6 +12,15 @@
       <h1>{{ content.field_person_name }}</h1>
     {% endif %}
     {{ content.field_person_kommune }}
+
+    {% set user = profile.uid.referencedEntities|first %}
+    {% if user.email is defined %}
+      <div class="field field--name-field-mail field--label-above">
+        <div class="field__label">{{ 'Email address'|t }}</div>
+        <div class="field__item"><a href="mailto:{{ user.email }}">{{ user.email }}</a></div>
+      </div>
+    {% endif %}
+
     {{ content.field_person_phone }}
     {{ content.field_person_imdb_link }}
     {{ content.field_person_facebook_link }}
