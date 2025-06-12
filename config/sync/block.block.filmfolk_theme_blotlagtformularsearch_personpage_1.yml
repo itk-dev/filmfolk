@@ -12,7 +12,7 @@ dependencies:
 id: filmfolk_theme_blotlagtformularsearch_personpage_1
 theme: filmfolk_theme
 region: content
-weight: 0
+weight: -7
 provider: null
 plugin: 'views_exposed_filter_block:search_person-page_1'
 settings:
