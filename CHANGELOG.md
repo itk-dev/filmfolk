@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-107](https://github.com/itk-dev/filmfolk/pull/107)
   * Updated “Alle kommuner“ placeholder text
   * Adde search description content block
+  * Disabled alt text on profile image
 * [PR-105](https://github.com/itk-dev/filmfolk/pull/105)
   * Implement testfeedback [#101](https://github.com/itk-dev/filmfolk/issues/101)
 * [PR-100](https://github.com/itk-dev/filmfolk/pull/100)
