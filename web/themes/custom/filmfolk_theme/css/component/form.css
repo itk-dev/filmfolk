@@ -39,14 +39,16 @@
 }
 
 /* Remove spacing between search form and description */
-/* @FIXME Using ID selectors may not be the best wayt to do this – but it works! */
-#block-filmfolk-theme-blotlagtformularsearch-personpage-1 {
+.views-exposed-form {
   margin-block-end: 0;
 
-  + #block-filmfolk-theme-beskrivelseafsogning {
-    p {
-      margin-block-start: 0;
-    }
+  /* Make the text look like form descriptions */
+  + .block p {
+    margin-inline-start: var(--sp1);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
   }
 }
 
