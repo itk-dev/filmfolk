@@ -497,7 +497,18 @@ display:
       cache:
         type: search_api_none
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'Ingen filmfolk fundet. <a href="[view:url]">Nulstil søgning</a>.'
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:
