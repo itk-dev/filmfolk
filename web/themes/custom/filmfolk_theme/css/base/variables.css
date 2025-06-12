@@ -1,0 +1,8 @@
+:root {
+  --form-gap: var(--sp1);
+  --rounded-cornors: 25px;
+  --font-serif: "metropolis", sans-serif;
+  --color-filmfolk-lightgray: #d9e2f7;
+  --color-filmfolk-darkgray: #253539;
+  --color--gray-90: var(--color-filmfolk-lightgray);
+}

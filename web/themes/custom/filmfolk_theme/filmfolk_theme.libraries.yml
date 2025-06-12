@@ -5,12 +5,16 @@ global:
   css:
     base:
       css/base/base.css: { weight: 1 }
+      css/base/variables.css: {}
     component:
       css/component/block.css: { weight: 1 }
+      css/component/experience.css: { weight: 1 }
       css/component/field.css: { weight: 1 }
       css/component/footer.css: { weight: 1 }
       css/component/form.css: { weight: 1 }
       css/component/search.css: { weight: 1 }
+      css/component/site-header.css: { weight: 1 }
+      css/component/social-bar.css: { weight: 1 }
       css/component/social-media-menu.css: { weight: 1 }
       css/component/site-branding.css: { weight: 1 }
       css/component/user.css: { weight: 1 }

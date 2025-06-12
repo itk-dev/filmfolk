@@ -1,0 +1,19 @@
+{# @var items \Drupal\filmfolk\Plugin\Field\FieldType\FunktionErfaringItem[] #}
+{% set items = element['#items']|default([]) %}
+{% if items %}
+  <table class="table-funktion-erfaring">
+    <thead>
+      <tr>
+        <th>{{ 'Funktion'|t }}</th>
+        <th>{{ 'Erfaring'|t }}</th>
+    </thead>
+    <tbody>
+    {% for item in items %}
+      <tr>
+        <td class="field__label">{{ item.funktion.label }}</td>
+        <td>{{ item.erfaring.label }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endif %}

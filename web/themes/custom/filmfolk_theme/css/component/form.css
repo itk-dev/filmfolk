@@ -1,7 +1,5 @@
 /* Inline form */
 .views-exposed-form.form--inline form {
-  --form-gap: var(--sp1);
-
   display: flex;
   flex-wrap: wrap;
   gap: var(--form-gap);
@@ -12,6 +10,7 @@
     input,
     select {
       width: 100%;
+      border-radius: var(--rounded-cornors);
     }
   }
 
@@ -21,6 +20,7 @@
 
     .button {
       margin-block: 0;
+      border-radius: var(--rounded-cornors);
     }
   }
 
@@ -85,7 +85,7 @@ select {
 ** Make some visual changes to the funktion-erfaring part of the form.
 ** Drupal shows Row weight and Row drag by default which we do not want.
 */
-.field--type-filmfolk-funktion-erfaring {
+.path-user .field--type-filmfolk-funktion-erfaring {
   /* Add space at the end of the section */
   margin-block-end: var(--sp3);
 
@@ -135,18 +135,35 @@ select {
     width: 100%;
   }
 
-  /* Hide label to align input and submit */
-  tbody .form-item {
-    flex-basis: 50%;
+  tbody {
+    /* Hide "remove" button from last item */
+    tr:last-child .form-submit {
+      display: none;
+    }
 
-    .form-item__label {
-      visibility: hidden;
-      margin-block: 0;
+    /* Hide label to align input and submit */
+    .form-item {
+      flex-basis: 50%;
 
-      /* Hide the asterisk */
-      &:after {
-        display: none;
+      .form-item__label {
+        visibility: hidden;
+        margin-block: 0;
+
+        /* Hide the asterisk */
+        &:after {
+          display: none;
+        }
       }
     }
   }
+
+  /* Less space after table */
+  table {
+    margin-block-end: var(--sp0-5);
+  }
+}
+
+/* Let the help text lines follow the width of the form elements */
+.form-item__description {
+  max-width: 100%;
 }

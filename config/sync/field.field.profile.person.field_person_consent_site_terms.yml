@@ -9,8 +9,8 @@ id: profile.person.field_person_consent_site_terms
 field_name: field_person_consent_site_terms
 entity_type: profile
 bundle: person
-label: Samtykke
-description: 'Jeg giver tilladelse/samtykke til, at mine oplysninger må bruges af Den Vestdanske Filmpulje til deres databaseformål'
+label: 'Jeg giver tilladelse/samtykke til, at mine oplysninger må bruges af Den Vestdanske Filmpulje til deres databaseformål'
+description: '<a href="#">Læs vores betingelser</a>'
 required: true
 translatable: false
 default_value: {  }

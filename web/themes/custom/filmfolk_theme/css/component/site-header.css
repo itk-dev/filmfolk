@@ -1,0 +1,17 @@
+.site-header__initial {
+  display: none;
+}
+
+/* Dont hide the desktop nav, it's fixed */
+
+@media (min-width: 75rem) {
+  body:not(.is-always-mobile-nav)
+    .site-header__fixable.is-fixed:not(.is-expanded)
+    .site-header__inner {
+    transform: translateX(0%); /* LTR */
+    opacity: 1;
+  }
+  .site-header__fixable .site-header__inner {
+    box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
+  }
+}

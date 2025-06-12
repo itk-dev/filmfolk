@@ -15,10 +15,10 @@ class ErfaringTermFixture extends AbstractTaxonomyTermFixture {
    * {@inheritdoc}
    */
   protected static array $terms = [
-    'Ingen erfaring fra professionelle produktioner',
-    'Lidt erfaring fra professionelle produktioner (1-4 produktioner)',
-    'Nogen erfaring fra professionelle produktioner (5-10 produktioner)',
-    'Meget erfaring fra professionelle produktioner (10+ produktioner)',
+    'Ingen erfaring',
+    'Lidt erfaring (1-4 produktioner)',
+    'Nogen erfaring (5-10 produktioner)',
+    'Meget erfaring (10+ produktioner)',
   ];
 
 }
