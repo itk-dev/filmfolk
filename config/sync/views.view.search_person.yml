@@ -443,7 +443,7 @@ display:
           bef:
             general:
               autosubmit: true
-              autosubmit_exclude_textfield: false
+              autosubmit_exclude_textfield: true
               autosubmit_textfield_delay: 500
               autosubmit_textfield_minimum_length: 3
               autosubmit_hide: false
@@ -497,7 +497,18 @@ display:
       cache:
         type: search_api_none
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'Ingen filmfolk fundet. <a href="[view:url]">Nulstil søgning</a>.'
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:
