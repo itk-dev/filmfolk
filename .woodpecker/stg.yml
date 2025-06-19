@@ -32,7 +32,7 @@ steps:
         - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes cache:rebuild
         - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes deploy
         # Build assets
-        - itkdev-docker-compose-server run --rm node npm install --prefix web/themes/custom/filmfolk_theme
-        - itkdev-docker-compose-server run --rm node npm run build --prefix web/themes/custom/filmfolk_theme
-        - sudo chown -R deploy:deploy eb/themes/custom/
-        - rm -rf web/themes/custom/filmfolk_theme/node_modules
+#        - itkdev-docker-compose-server run --rm node npm install --prefix web/themes/custom/filmfolk_theme
+#        - itkdev-docker-compose-server run --rm node npm run build --prefix web/themes/custom/filmfolk_theme
+#        - sudo chown -R deploy:deploy eb/themes/custom/
+#        - rm -rf web/themes/custom/filmfolk_theme/node_modules

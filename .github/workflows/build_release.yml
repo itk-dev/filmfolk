@@ -27,15 +27,15 @@ jobs:
           docker compose run --rm --user=root phpfpm composer install --no-dev -o --classmap-authoritative
           docker compose run --rm --user=root phpfpm composer clear-cache
 
-      - name: Building assets for the frontend
-        run: |
-          docker compose run --rm node npm install --prefix web/themes/custom/filmfolk_theme
-          docker compose run --rm node node npm run build --prefix web/themes/custom/filmfolk_theme
-
-      - name: Clean up
-        run: |
-          sudo chown -R runner:runner ./
-          rm -rf web/themes/custom/filmfolk_theme/node_modules
+#      - name: Building assets for the frontend
+#        run: |
+#          docker compose run --rm node npm install --prefix web/themes/custom/filmfolk_theme
+#          docker compose run --rm node node npm run build --prefix web/themes/custom/filmfolk_theme
+#
+#      - name: Clean up
+#        run: |
+#          sudo chown -R runner:runner ./
+#          rm -rf web/themes/custom/filmfolk_theme/node_modules
 
       - name: Make assets dir
         run: |
