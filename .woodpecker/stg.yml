@@ -1,0 +1,38 @@
+when:
+  - branch: release/*
+    event: push
+
+skip_clone: true
+
+labels:
+  zone: CLOUD
+
+steps:
+  - name: Run test site update
+    image: itkdev/ansible-plugin:1
+    pull: true
+    settings:
+      id:
+        from_secret: id
+      secret:
+        from_secret: secret
+      host:
+        from_secret: stg_host
+      path:
+        from_secret: stg_path
+      user:
+        from_secret: user
+      actions:
+        - git reset --hard
+        - git fetch origin ${CI_COMMIT_BRANCH}
+        - git checkout ${CI_COMMIT_BRANCH}
+        - git pull
+        - itkdev-docker-compose-server up -d --force-recreate
+        - itkdev-docker-compose-server exec phpfpm composer install --no-dev -o --classmap-authoritative
+        - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes cache:rebuild
+        - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes deploy
+        # Build assets
+        - itkdev-docker-compose-server run --rm node npm install --prefix web/themes/custom/filmfolk_theme
+        - itkdev-docker-compose-server run --rm node npm run build --prefix web/themes/custom/filmfolk_theme
+        - sudo chown -R deploy:deploy eb/themes/custom/
+        - rm -rf web/themes/custom/filmfolk_theme/node_modules
