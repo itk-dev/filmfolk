@@ -198,3 +198,8 @@ select {
 .form-item__description {
   max-width: 100%;
 }
+
+/* HACK! Image helptext on one line */
+.field--type-image .form-item__description br {
+  position: absolute;
+}
