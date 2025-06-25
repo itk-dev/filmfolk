@@ -12,7 +12,7 @@ field_name: field_person_funktion_erfaring
 entity_type: profile
 bundle: person
 label: 'Funktioner og erfaringsniveau'
-description: ''
+description: 'Tilføj de funktioner, du kan varetage på et filmhold, og dit erfaringsgrundlag fra professionelle produktioner. Med professionel produktion menes, at du har fået løn, og at filmen, serien eller dokumentarfilmen har haft national distribution (biograf, tv, streaming). Vælg hvilke funktioner du har udført, og hvor meget erfaring du har med de funktioner. Du kan tilføje flere funktioner.'
 required: true
 translatable: false
 default_value: {  }

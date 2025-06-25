@@ -26,6 +26,22 @@
   border: 1px solid var(--color--gray-90);
   border-radius: var(--border-radius);
   text-decoration: none;
+
+  .table-funktion-erfaring {
+    thead {
+      display: none;
+    }
+    td {
+      padding: var(--sp0-25) var(--sp0-25) var(--sp0-25) 0;
+    }
+    .field__function {
+      font-size: var(--font-size-s);
+      font-weight: initial;
+    }
+    .field__experience {
+      display: none;
+    }
+  }
 }
 
 .user-search-result-image-wrapper {
@@ -72,4 +88,8 @@
 .user-search-result-profile-button {
   margin-top: auto;
   border-radius: var(--rounded-cornors);
+}
+
+.field--name-field-person-image .field__label {
+  display: none;
 }

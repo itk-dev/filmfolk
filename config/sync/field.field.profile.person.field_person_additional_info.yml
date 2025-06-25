@@ -13,7 +13,7 @@ field_name: field_person_additional_info
 entity_type: profile
 bundle: person
 label: 'Profil - Andet info'
-description: ''
+description: 'Øvrig information'
 required: false
 translatable: false
 default_value: {  }

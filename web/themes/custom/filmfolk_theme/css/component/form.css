@@ -72,25 +72,25 @@ select {
 }
 
 :is(
-    [type="color"],
-    [type="date"],
-    [type="datetime-local"],
-    [type="email"],
-    [type="file"],
-    [type="month"],
-    [type="number"],
-    [type="password"],
-    [type="search"],
-    [type="tel"],
-    [type="text"],
-    [type="time"],
-    [type="url"],
-    [type="week"],
-    [type="submit"],
-    textarea,
-    select,
-    .button
-  ):focus {
+  [type="color"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="email"],
+  [type="file"],
+  [type="month"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="time"],
+  [type="url"],
+  [type="week"],
+  [type="submit"],
+  textarea,
+  select,
+  .button
+):focus {
   border-color: var(--color--gray-5);
   outline-color: var(--color--gray-5);
 }
@@ -197,4 +197,9 @@ select {
 /* Let the help text lines follow the width of the form elements */
 .form-item__description {
   max-width: 100%;
+}
+
+/* HACK! Image helptext on one line */
+.field--type-image .form-item__description br {
+  position: absolute;
 }

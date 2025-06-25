@@ -31,3 +31,9 @@
       var(--color-filmfolk-darkgray);
   }
 }
+
+@media (min-width: 75rem) {
+  .site-footer__inner {
+    padding-block: inherit;
+  }
+}
