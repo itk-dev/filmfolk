@@ -11,7 +11,7 @@ id: profile.person.field_person_linkedin_link
 field_name: field_person_linkedin_link
 entity_type: profile
 bundle: person
-label: 'LinkedIn link'
+label: 'Link til LinkedIn'
 description: ''
 required: false
 translatable: false

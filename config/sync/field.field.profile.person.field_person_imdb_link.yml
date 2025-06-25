@@ -11,7 +11,7 @@ id: profile.person.field_person_imdb_link
 field_name: field_person_imdb_link
 entity_type: profile
 bundle: person
-label: 'IMDb link'
+label: 'Link til IMDb'
 description: 'Din IMDb er dit film CV. For at du ikke skal holde din filmfolk-profil up to date med de produktioner, du har lavet, beder vi dig i stedet om at linke til din IMDb profil, og at du holder denne opdateret. <a href="https://imdb.com">Opret profil på IMDb her.</a>'
 required: false
 translatable: false
