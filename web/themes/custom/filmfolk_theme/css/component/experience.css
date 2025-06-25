@@ -3,6 +3,7 @@
 
   th {
     max-width: 40%;
+    font-size: var(--font-size-l);
   }
 
   th,
