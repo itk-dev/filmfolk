@@ -27,12 +27,10 @@ steps:
         - git fetch origin ${CI_COMMIT_BRANCH}
         - git checkout ${CI_COMMIT_BRANCH}
         - git pull
-        - itkdev-docker-compose-server up -d --force-recreate
-        - itkdev-docker-compose-server exec phpfpm composer install --no-dev -o --classmap-authoritative
+        - itkdev-docker-compose-server up --detach --force-recreate
+        # Using --classmap-authoritative will break something ('Drupal\mysql\Driver\Database\mysql\Connection' not found)
+        # @todo Investigate how to fix this (see https://www.drupal.org/project/drupal/issues/3334213)
+        - itkdev-docker-compose-server exec phpfpm composer install --no-dev --optimize-autoloader
         - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes cache:rebuild
         - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes deploy
-        # Build assets
-#        - itkdev-docker-compose-server run --rm node npm install --prefix web/themes/custom/filmfolk_theme
-#        - itkdev-docker-compose-server run --rm node npm run build --prefix web/themes/custom/filmfolk_theme
-#        - sudo chown -R deploy:deploy eb/themes/custom/
-#        - rm -rf web/themes/custom/filmfolk_theme/node_modules
+        # Note: We don't need to build theme assets.
