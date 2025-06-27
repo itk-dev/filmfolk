@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-118](https://github.com/itk-dev/filmfolk/pull/118)
+  * 4822: Disabled auto-submit on filters
+  * 4822: Updated stg deployment
 * [PR-117](https://github.com/itk-dev/filmfolk/pull/117)
   Implements custormer feedback
 * [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
