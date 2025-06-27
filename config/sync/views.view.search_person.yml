@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.profile.field_person_kommune
     - field.storage.profile.field_person_name
-    - field.storage.profile.field_person_title
     - search_api.index.users
     - taxonomy.vocabulary.kommune
   module:
@@ -442,7 +441,7 @@ display:
           text_input_required_format: simple
           bef:
             general:
-              autosubmit: true
+              autosubmit: false
               autosubmit_exclude_textfield: true
               autosubmit_textfield_delay: 500
               autosubmit_textfield_minimum_length: 3
@@ -758,7 +757,6 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'
   block_1:
@@ -785,7 +783,6 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'
   page_1:
@@ -807,6 +804,5 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'
