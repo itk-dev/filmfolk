@@ -10,7 +10,7 @@
     input,
     select {
       width: 100%;
-      border-radius: var(--rounded-cornors);
+      border-radius: var(--rounded-corners);
     }
   }
 
@@ -20,7 +20,7 @@
 
     .button {
       margin-block: 0;
-      border-radius: var(--rounded-cornors);
+      border-radius: var(--rounded-corners);
     }
   }
 
@@ -36,6 +36,13 @@
       flex-basis: calc(25% - var(--form-gap));
     }
   }
+}
+
+/* Pill buttons */
+.button,
+.form-actions [type="submit"],
+.field--type-filmfolk-funktion-erfaring .form-select {
+  border-radius: var(--rounded-corners);
 }
 
 /* Remove spacing between search form and description */
@@ -72,25 +79,25 @@ select {
 }
 
 :is(
-  [type="color"],
-  [type="date"],
-  [type="datetime-local"],
-  [type="email"],
-  [type="file"],
-  [type="month"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="time"],
-  [type="url"],
-  [type="week"],
-  [type="submit"],
-  textarea,
-  select,
-  .button
-):focus {
+    [type="color"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="email"],
+    [type="file"],
+    [type="month"],
+    [type="number"],
+    [type="password"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="time"],
+    [type="url"],
+    [type="week"],
+    [type="submit"],
+    textarea,
+    select,
+    .button
+  ):focus {
   border-color: var(--color--gray-5);
   outline-color: var(--color--gray-5);
 }
@@ -201,5 +208,5 @@ select {
 
 /* HACK! Image helptext on one line */
 .field--type-image .form-item__description br {
-  position: absolute;
+  display: none;
 }
