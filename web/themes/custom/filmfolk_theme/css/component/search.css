@@ -32,11 +32,12 @@
       display: none;
     }
     td {
-      padding: var(--sp0-25) var(--sp0-25) var(--sp0-25) 0;
+      padding: var(--sp0-25) var(--sp0-25) 0 0;
     }
     .field__function {
       font-size: var(--font-size-s);
       font-weight: initial;
+      line-height: 1.25;
     }
     .field__experience {
       display: none;
@@ -87,7 +88,7 @@
 
 .user-search-result-profile-button {
   margin-top: auto;
-  border-radius: var(--rounded-cornors);
+  border-radius: var(--rounded-corners);
 }
 
 .field--name-field-person-image .field__label {

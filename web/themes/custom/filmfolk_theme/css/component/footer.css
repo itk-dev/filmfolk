@@ -34,6 +34,6 @@
 
 @media (min-width: 75rem) {
   .site-footer__inner {
-    padding-block: inherit;
+    padding-block: var(--sp2);
   }
 }

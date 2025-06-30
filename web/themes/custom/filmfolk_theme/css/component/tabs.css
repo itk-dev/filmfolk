@@ -1,0 +1,18 @@
+/* Tabs */
+
+/* Rounded corners */
+.tabs {
+  .tabs__tab:first-child {
+    .tabs__link {
+      border-top-left-radius: var(--rounded-corners);
+      border-bottom-left-radius: var(--rounded-corners);
+    }
+  }
+
+  .tabs__tab:last-child {
+    .tabs__link {
+      border-top-right-radius: var(--rounded-corners);
+      border-bottom-right-radius: var(--rounded-corners);
+    }
+  }
+}
