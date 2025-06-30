@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-119](https://github.com/itk-dev/filmfolk/pull/119)
+  4867: Fixed check of boolean value
 * [PR-118](https://github.com/itk-dev/filmfolk/pull/118)
   * 4822: Disabled auto-submit on filters
   * 4822: Updated stg deployment
