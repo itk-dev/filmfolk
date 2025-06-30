@@ -11,7 +11,7 @@ id: profile.person.field_person_image
 field_name: field_person_image
 entity_type: profile
 bundle: person
-label: 'Profil billede'
+label: Profilbillede
 description: ''
 required: false
 translatable: false
