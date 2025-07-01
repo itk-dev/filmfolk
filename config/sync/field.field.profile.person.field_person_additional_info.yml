@@ -12,8 +12,8 @@ id: profile.person.field_person_additional_info
 field_name: field_person_additional_info
 entity_type: profile
 bundle: person
-label: 'Profil - Andet info'
-description: 'Øvrig information'
+label: 'Profiltekst – Øvrig information'
+description: ''
 required: false
 translatable: false
 default_value: {  }
