@@ -1,0 +1,62 @@
+<article{{ attributes.addClass('user-profile') }}>
+  <div class="user-profile-image-wrapper">
+    {% if not profile.field_person_image.isEmpty() %}
+      <img src="{{ profile.field_person_image|file_url }}" alt="{{ profile.field_person_name.entity.label }}">
+    {% else %}
+      <span>{{ 'Profile picture not uploaded'|t }}</span>
+    {% endif %}
+  </div>
+
+  <div class="user-profile-info-wrapper">
+    {% if content.field_person_name %}
+      <h1>{{ content.field_person_name }}</h1>
+    {% endif %}
+    {{ content.field_person_kommune }}
+
+    {% set user = profile.uid.referencedEntities|first %}
+    {% if user.email is defined %}
+      <div class="field field--name-field-mail field--label-above">
+        <div class="field__label">{{ 'Email address'|t }}</div>
+        <div class="field__item"><a href="mailto:{{ user.email }}">{{ user.email }}</a></div>
+      </div>
+    {% endif %}
+
+    {{ content.field_person_phone }}
+    {{ content.field_person_imdb_link }}
+    {{ content.field_person_facebook_link }}
+    {{ content.field_person_linkedin_link }}
+
+  </div>
+
+  <div class="user-profile-content">
+    <div class="user-profile-content-experience">
+      {{ content.field_person_funktion_erfaring }}
+    </div>
+
+    {% if content.field_person_title %}
+      <h2>{{ content.field_person_title }}</h2>
+    {% endif %}
+
+    {{ content.field_person_about }}
+    {{ content.field_person_education_interest }}
+    {{ content.field_person_additional_info }}
+
+    {{ content|without
+      (
+        'field_person_name',
+        'field_person_kommune',
+        'field_person_phone',
+        'field_person_title',
+        'field_person_image',
+        'field_person_consent_site_terms',
+        'field_person_imdb_link',
+        'field_person_facebook_link',
+        'field_person_linkedin_link',
+        'field_person_funktion_erfaring',
+        'field_person_education_interest',
+        'field_person_additional_info',
+        'field_person_about',
+      )
+    }}
+  </div>
+</article>

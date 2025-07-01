@@ -1,0 +1,25 @@
+uuid: ffbd8500-6b14-49e8-b6a5-174cc13aec88
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:content:b5e224c4-4ea1-426b-b3a4-469bf3f9733f'
+  module:
+    - block_content
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_sidefodnyhedsbrev
+theme: filmfolk_theme
+region: footer_top
+weight: -5
+provider: null
+plugin: 'block_content:b5e224c4-4ea1-426b-b3a4-469bf3f9733f'
+settings:
+  id: 'block_content:b5e224c4-4ea1-426b-b3a4-469bf3f9733f'
+  label: 'Sidefod - Nyhedsbrev'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: e7f92066-36a5-442f-bda4-f3556b3fd151
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_additional_info
+    - filter.format.simple
+    - profile.type.person
+  module:
+    - text
+id: profile.person.field_person_additional_info
+field_name: field_person_additional_info
+entity_type: profile
+bundle: person
+label: 'Profiltekst – Øvrig information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple
+field_type: text_long

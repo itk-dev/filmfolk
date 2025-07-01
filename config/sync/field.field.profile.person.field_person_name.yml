@@ -1,0 +1,19 @@
+uuid: 669542b4-2050-47e3-a985-bdc47ad62e92
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_name
+    - profile.type.person
+id: profile.person.field_person_name
+field_name: field_person_name
+entity_type: profile
+bundle: person
+label: 'Fulde navn'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

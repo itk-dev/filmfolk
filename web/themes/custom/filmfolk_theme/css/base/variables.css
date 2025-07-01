@@ -1,0 +1,13 @@
+:root {
+  --form-gap: var(--sp1);
+  --rounded-corners: 25px;
+  --font-serif: "metropolis", sans-serif;
+  --color-filmfolk-orange: #df4126;
+  --color-filmfolk-lightgray: #d9e2f7;
+  --color-filmfolk-darkgray: #253539;
+  --font-size-s: calc(var(--font-size-base) * 0.9);
+
+  /* Override variabels with custom colors */
+  --color--gray-90: var(--color-filmfolk-lightgray);
+  --color-text-primary-medium: var(--color--primary-50);
+}

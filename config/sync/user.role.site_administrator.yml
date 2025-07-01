@@ -1,0 +1,19 @@
+uuid: 1f77d032-14d4-422c-8782-d842a44a0580
+langcode: da
+status: true
+dependencies:
+  module:
+    - config_translation
+    - system
+    - toolbar
+id: site_administrator
+label: 'Site administrator'
+weight: 8
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'administer account settings'
+  - 'administer menu'
+  - 'translate configuration'
+  - 'view the administration theme'

@@ -1,0 +1,4 @@
+services:
+  phpfpm:
+    environment:
+      - PHP_SENDMAIL_PATH=/usr/bin/msmtp --host=mail --port=1025 --read-recipients

@@ -1,0 +1,22 @@
+uuid: 7e4f46e9-3c2c-48d9-b73d-2c024f49a109
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - filmfolk_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: filmfolk_theme_content
+theme: filmfolk_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

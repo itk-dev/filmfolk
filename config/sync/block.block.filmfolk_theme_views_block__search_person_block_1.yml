@@ -1,0 +1,29 @@
+uuid: 9d840cbf-b92e-4c41-86d6-4dc0b0e941b8
+langcode: da
+status: true
+dependencies:
+  config:
+    - views.view.search_person
+  module:
+    - system
+    - views
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_views_block__search_person_block_1
+theme: filmfolk_theme
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:search_person-block_1'
+settings:
+  id: 'views_block:search_person-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

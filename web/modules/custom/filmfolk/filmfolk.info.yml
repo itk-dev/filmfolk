@@ -1,0 +1,11 @@
+name: "Filmfolk"
+type: module
+description: "Filmfolk"
+package: "Filmfolk"
+core_version_requirement: ^11
+
+dependencies:
+  - core_event_dispatcher:core_event_dispatcher
+  - drupal:taxonomy
+  - field_event_dispatcher:field_event_dispatcher
+  - hook_event_dispatcher:hook_event_dispatcher

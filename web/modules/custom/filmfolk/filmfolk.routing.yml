@@ -1,0 +1,7 @@
+filmfolk.frontpage:
+  path: "/frontpage"
+  defaults:
+    _title: "Frontpage"
+    _controller: '\Drupal\filmfolk\Controller\FilmfolkController'
+  requirements:
+    _permission: "access content"

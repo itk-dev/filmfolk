@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: UiTY9bhUKWJOIWDlOKM3akeeyHuJJRspXETsv3SY6jw
+roles:
+  person: perm
+  person_manager: unsafe
+  content_editor: unsafe
+  site_administrator: unsafe

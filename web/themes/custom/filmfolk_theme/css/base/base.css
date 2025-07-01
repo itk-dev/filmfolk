@@ -1,0 +1,20 @@
+body {
+  background-image: url("../../logo-symbol.svg");
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.site-branding {
+  padding-block: var(--sp0-5) var(--sp0-5);
+}

@@ -1,0 +1,12 @@
+.social-media-menu {
+  display: flex;
+  gap: var(--sp1);
+
+  a:hover {
+    color: var(--color--primary-50);
+  }
+
+  svg {
+    width: 35px;
+  }
+}

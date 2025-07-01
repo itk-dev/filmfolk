@@ -1,0 +1,8 @@
+uuid: f874430b-da9a-462b-8f64-e1b8e884815a
+langcode: da
+status: true
+dependencies: {  }
+id: content
+label: Content
+revision: false
+description: 'Create a piece of content that can be placed from the block layout "/admin/structure/block"'

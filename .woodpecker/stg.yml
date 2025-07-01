@@ -1,0 +1,40 @@
+when:
+  - branch: release/*
+    event: push
+
+skip_clone: true
+
+labels:
+  zone: CLOUD
+
+steps:
+  - name: Run stg site update
+    image: itkdev/ansible-plugin:1
+    pull: true
+    settings:
+      id:
+        from_secret: id
+      secret:
+        from_secret: secret
+      host:
+        from_secret: stg_host
+      path:
+        from_secret: stg_path
+      user:
+        from_secret: user
+      actions:
+        - git fetch origin ${CI_COMMIT_BRANCH}
+        - git checkout --force ${CI_COMMIT_BRANCH}
+        - git reset --hard origin/${CI_COMMIT_BRANCH}
+        - itkdev-docker-compose-server up --detach --force-recreate --remove-orphans
+        # Using --classmap-authoritative will break Drupal
+        # ('Drupal\mysql\Driver\Database\mysql\Connection' not found), cf.
+        # https://getcomposer.org/doc/articles/autoloader-optimization.md#trade-offs-2
+        - itkdev-docker-compose-server exec phpfpm composer install --no-dev --optimize-autoloader
+        - itkdev-docker-compose-server exec phpfpm composer clear-cache
+        - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes cache:rebuild
+        - itkdev-docker-compose-server exec phpfpm vendor/bin/drush --yes deploy
+        # Note: We don't need to build theme assets.
+        # Re-index all content in case some search configuration has been changed.
+        - itkdev-docker-compose-server run --rm phpfpm vendor/bin/drush --yes search-api:index
+        - itkdev-docker-compose-server run --rm phpfpm vendor/bin/drush --yes cache:rebuild

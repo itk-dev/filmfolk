@@ -1,0 +1,149 @@
+uuid: 56bd4e40-6000-41b2-aff8-0dccca118703
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_about
+    - field.storage.profile.field_person_additional_info
+    - field.storage.profile.field_person_education_interest
+    - field.storage.profile.field_person_funktion_erfaring
+    - field.storage.profile.field_person_kommune
+    - field.storage.profile.field_person_name
+    - search_api.server.local
+  module:
+    - profile
+    - taxonomy
+    - user
+id: users
+name: users
+description: ''
+read_only: false
+field_settings:
+  additional_info:
+    label: 'person profiles » Profil » additional_info » Behandlet tekst'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_additional_info:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_person_additional_info
+      module:
+        - profile
+  created:
+    label: Oprettet
+    datasource_id: 'entity:user'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - user
+  education_interest:
+    label: 'person profiles » Profil » education_interest » Behandlet tekst'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_education_interest:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_person_education_interest
+      module:
+        - profile
+  erfaring_id:
+    label: 'person profiles » Profil » funktion_erfaring » Erfaring » Term ID'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_funktion_erfaring:erfaring:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.profile.field_person_funktion_erfaring
+      module:
+        - profile
+        - taxonomy
+  field_person_kommune:
+    label: 'person profiles » Profil » kommune'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_kommune'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.profile.field_person_kommune
+      module:
+        - profile
+  field_person_name:
+    label: 'person profiles » Profil » name'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_person_name
+      module:
+        - profile
+  funktion_id:
+    label: 'person profiles » Profil » funktion_erfaring » Funktion » Term ID'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_funktion_erfaring:funktion:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.profile.field_person_funktion_erfaring
+      module:
+        - profile
+        - taxonomy
+  name:
+    label: 'Person profiles » Profil » Funktioner og erfaringsniveau »  » Navn'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_funktion_erfaring:funktion:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_person_funktion_erfaring
+      module:
+        - profile
+        - taxonomy
+  processed:
+    label: 'person profiles » Profil » about » Behandlet tekst'
+    datasource_id: 'entity:user'
+    property_path: 'person_profiles:entity:field_person_about:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.profile.field_person_about
+      module:
+        - profile
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_status: {  }
+  entity_type: {  }
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: true
+    fields:
+      - additional_info
+      - education_interest
+      - field_person_name
+      - name
+      - processed
+  language_with_fallback: {  }
+  rendered_item: {  }
+  role_filter:
+    default: false
+    roles:
+      - person
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: local

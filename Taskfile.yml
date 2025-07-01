@@ -1,0 +1,193 @@
+version: "3"
+
+# https://taskfile.dev/usage/#env-files
+dotenv: [".env.local", ".env"]
+
+vars:
+  # https://taskfile.dev/reference/templating/
+  DOCKER_COMPOSE: '{{.TASK_DOCKER_COMPOSE | default "docker compose"}}'
+  COMPOSER_INSTALL_ARGUMENTS: '{{.TASK_COMPOSER_INSTALL_ARGUMENTS | default ""}}'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+    silent: true
+
+  site-install:
+    prompt: "This will reset your setup. Continue?"
+    cmds:
+      - task compose -- down
+      - task compose -- pull
+      - task compose-up
+      - task composer-install
+      - task drush -- --yes site:install --existing-config
+      # - task: translations:import
+      - task drush -- --yes cache:rebuild
+      - task site-open
+      - task site-open-admin
+    silent: true
+
+  site-update:
+    cmds:
+      - task compose -- pull
+      - task compose-up
+      - task composer-install
+      - task drush -- deploy
+      # - task: translations:import
+      - task: search-index:update
+      - task drush -- --yes cache:rebuild
+    silent: true
+
+  site-url:
+    cmds:
+      - task drush -- browse --no-browser
+    silent: true
+
+  site-open:
+    cmds:
+      - if command -v open 2>&1 >/dev/null; then open "$(task site-url)"; else echo "$(task site-url)"; fi
+    silent: true
+
+  site-open-admin:
+    cmds:
+      - if command -v open 2>&1 >/dev/null; then open "{{.URL}}"; else echo "{{.URL}}"; fi
+    vars:
+      URL:
+        sh: task drush -- user:login --no-browser
+    silent: true
+
+  compose:
+    cmds:
+      - '{{.DOCKER_COMPOSE}} {{if .DOCKER_COMPOSE_PROFILES}}--profile {{.DOCKER_COMPOSE_PROFILES | splitList "," |join " --profile " }}{{end}} {{.CLI_ARGS}}'
+    vars:
+      DOCKER_COMPOSE_PROFILES: "{{.PROFILES | default .DOCKER_COMPOSE_PROFILES}}"
+
+  compose-up:
+    cmds:
+      - task compose -- up --detach --remove-orphans {{if .COMPOSE_UP_WAIT}}--wait{{end}}
+    silent: true
+
+  composer:
+    cmds:
+      - task compose -- exec phpfpm composer {{.CLI_ARGS}}
+    silent: true
+
+  composer-install:
+    cmds:
+      - task composer -- install {{.COMPOSER_INSTALL_ARGUMENTS}} {{.CLI_ARGS}}
+    silent: true
+
+  drush:
+    cmds:
+      # Check if we have content on stdin (cf.
+      # https://unix.stackexchange.com/questions/762992/bash-check-if-the-standard-input-contains-anything)
+      - >-
+        if [[ ! -t 0 ]]; then
+          task compose -- exec --no-TTY phpfpm {{.DRUSH_SCRIPT}} {{.CLI_ARGS}};
+        else
+          task compose -- exec phpfpm {{.DRUSH_SCRIPT}} {{.CLI_ARGS}};
+        fi
+    vars:
+      # Note: We use vendor/bin/drush.php (rather than vendor/bin/drush, say) to
+      # make debugging work for Drush commands.
+      DRUSH_SCRIPT: vendor/bin/drush.php
+    silent: true
+
+  coding-standards:apply:
+    desc: "Apply coding standards"
+    cmds:
+      - task: coding-standards:assets:apply
+      - task: coding-standards:markdown:apply
+      - task: coding-standards:php:apply
+      - task: coding-standards:twig:apply
+    silent: true
+
+  coding-standards:check:
+    desc: "Apply coding standards"
+    cmds:
+      - task: coding-standards:assets:check
+      - task: coding-standards:markdown:check
+      - task: coding-standards:php:check
+      - task: coding-standards:twig:check
+    silent: true
+
+  coding-standards:assets:apply:
+    desc: "Apply coding standards for assets"
+    cmds:
+      - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --write
+
+  coding-standards:assets:check:
+    desc: "Apply and check coding standards for assets"
+    cmds:
+      - task: coding-standards:assets:apply
+      - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --check
+
+  coding-standards:markdown:apply:
+    desc: "Apply coding standards for Markdown"
+    cmds:
+      - task compose -- run --rm markdownlint markdownlint '**/*.md' --fix
+
+  coding-standards:markdown:check:
+    desc: "Apply and check coding standards for Markdown"
+    cmds:
+      - task: coding-standards:markdown:apply
+      - task compose -- run --rm markdownlint markdownlint '**/*.md'
+
+  coding-standards:php:apply:
+    desc: "Apply coding standards for PHP"
+    cmds:
+      - task compose -- exec phpfpm vendor/bin/phpcbf
+    silent: true
+
+  coding-standards:php:check:
+    desc: "Apply and check coding standards for PHP"
+    cmds:
+      - task: coding-standards:php:apply
+      - task compose -- exec phpfpm vendor/bin/phpcs
+    silent: true
+
+  coding-standards:twig:apply:
+    desc: "Apply coding standards for Twig"
+    cmds:
+      - task compose -- exec phpfpm vendor/bin/twig-cs-fixer fix
+    silent: true
+
+  coding-standards:twig:check:
+    desc: "Apply and check coding standards for Twig"
+    cmds:
+      - task: coding-standards:twig:apply
+      - task compose -- exec phpfpm vendor/bin/twig-cs-fixer lint
+    silent: true
+
+  code-analysis:
+    cmds:
+      - task composer -- code-analysis
+      # Check some modules with a higher level.
+      #
+      # Note: The second `--` is needed to pass command line arguments (starting with `--`) to the composer script
+      # `code-analysis`
+      #
+      # @todo Update all our custom modules to resolve ‘level 6 (or 5) errors“
+      - task composer -- code-analysis -- --level=6 web/modules/custom/hoeringsportal_audit_log/
+
+  fixtures:load:
+    desc: "Load all fixtures"
+    prompt: "This will reset your content. Continue?"
+    cmds:
+      - task drush -- --yes pm:enable {{.FIXTURE_MODULES}}
+      - task drush -- --yes content-fixtures:load
+      - task drush -- --yes pm:uninstall content_fixtures
+      - task: search-index:update
+    vars:
+      # A list of all module system names the depend on the content_fixtures modules.
+      FIXTURE_MODULES:
+        sh: |
+          find web/modules/custom -type f -name '*.info.yml' | xargs grep -l content_fixtures:content_fixtures | xargs basename  -s .info.yml
+    silent: true
+
+  search-index:update:
+    desc: "Clear and rebuild search index"
+    cmds:
+      - task drush -- search-api:clear
+      - task drush -- search-api:index

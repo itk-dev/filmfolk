@@ -1,0 +1,96 @@
+.view-search-person {
+  .view-content {
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--sp1);
+
+    grid-template-columns: repeat(1, 1fr); /* for mobile devices */
+
+    @media (min-width: 43.75rem) {
+      grid-template-columns: repeat(2, 1fr); /* for desktop devices */
+    }
+    @media (min-width: 62.5rem) {
+      grid-template-columns: repeat(3, 1fr); /* for desktop devices */
+    }
+  }
+
+  .pager {
+    margin-top: var(--sp2);
+  }
+}
+
+.user-search-result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--color--gray-90);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+
+  .table-funktion-erfaring {
+    thead {
+      display: none;
+    }
+    td {
+      padding: var(--sp0-25) var(--sp0-25) 0 0;
+    }
+    .field__function {
+      font-size: var(--font-size-s);
+      font-weight: initial;
+      line-height: 1.25;
+    }
+    .field__experience {
+      display: none;
+    }
+  }
+}
+
+.user-search-result-image-wrapper {
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.user-search-result-image-wrapper,
+.field--name-field-profile-picture {
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  background-color: var(--color--gray-90);
+  text-decoration: none;
+  color: var(--color--gray-45);
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: auto;
+  }
+}
+
+.user-search-result-content-wrapper {
+  padding: var(--sp1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp1);
+  flex-grow: 1;
+}
+
+.user-search-result-name {
+  margin-top: var(--sp1);
+  margin-bottom: 0;
+}
+
+.user-search-result-kommune {
+  margin-top: 0;
+  margin-bottom: var(--sp1);
+}
+
+.user-search-result-profile-button {
+  margin-top: auto;
+  border-radius: var(--rounded-corners);
+}
+
+.field--name-field-person-image .field__label {
+  display: none;
+}

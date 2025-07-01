@@ -1,0 +1,212 @@
+/* Inline form */
+.views-exposed-form.form--inline form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--form-gap);
+
+  .form-item {
+    flex-basis: 100%;
+    margin: 0;
+    input,
+    select {
+      width: 100%;
+      border-radius: var(--rounded-corners);
+    }
+  }
+
+  .form-actions {
+    margin-top: 0;
+    flex-wrap: nowrap;
+
+    .button {
+      margin-block: 0;
+      border-radius: var(--rounded-corners);
+    }
+  }
+
+  @media (min-width: 43.75rem) {
+    .form-item {
+      flex-basis: calc(33% - var(--form-gap));
+    }
+  }
+  @media (min-width: 62.5rem) {
+    flex-wrap: nowrap;
+
+    .form-item {
+      flex-basis: calc(25% - var(--form-gap));
+    }
+  }
+}
+
+/* Pill buttons */
+.button,
+.form-actions [type="submit"],
+.field--type-filmfolk-funktion-erfaring .form-select {
+  border-radius: var(--rounded-corners);
+}
+
+/* Remove spacing between search form and description */
+.views-exposed-form {
+  margin-block-end: 0;
+
+  /* Make the text look like form descriptions */
+  + .block p {
+    margin-inline-start: var(--sp1);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+  }
+}
+
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="file"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea,
+select {
+  width: 100%;
+}
+
+:is(
+  [type="color"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="email"],
+  [type="file"],
+  [type="month"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="time"],
+  [type="url"],
+  [type="week"],
+  [type="submit"],
+  textarea,
+  select,
+  .button
+):focus {
+  border-color: var(--color--gray-5);
+  outline-color: var(--color--gray-5);
+}
+
+/*
+** Make some visual changes to the funktion-erfaring part of the form.
+** Drupal shows Row weight and Row drag by default which we do not want.
+*/
+.path-user .field--type-filmfolk-funktion-erfaring {
+  /* Add space at the end of the section */
+  margin-block-end: var(--sp3);
+
+  /* Add small border at the bottom to visually end the section */
+  border-block-end: 1px solid var(--color--gray-90);
+
+  /* Hide Row weight */
+  .tableresponsive-toggle-columns,
+  .tabledrag-toggle-weight-wrapper {
+    display: none;
+  }
+
+  table {
+    /* Small margin at the start of the section */
+    margin-block-start: var(--sp0-5);
+    /* Less space after table */
+    margin-block-end: var(--sp0-5);
+
+    /* Add small border at the start */
+    border-block-start: 2px solid var(--color-text-primary-medium);
+
+    /* Set background color */
+    background-color: var(--color--gray-100);
+    &.draggable:hover {
+      background-color: var(--color--gray-90);
+    }
+  }
+
+  /* Hide Tabledrag function */
+  td.field-multiple-drag {
+    display: none;
+  }
+
+  /* Inline the form inputs when the space allows for it. */
+  tr {
+    display: flex;
+    flex-wrap: no-wrap;
+    th {
+      flex-basis: 100%;
+    }
+    th:nth-child(2) {
+      display: none;
+    }
+  }
+
+  td:nth-child(2) {
+    padding-inline-start: var(--sp1);
+    display: flex;
+    flex-wrap: no-wrap;
+    gap: var(--sp1);
+  }
+  td:nth-child(2) .ajax-new-content {
+    display: flex;
+    flex-wrap: no-wrap;
+    gap: var(--sp1);
+  }
+
+  td:nth-child(3) {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .ajax-new-content {
+    width: 100%;
+  }
+
+  tbody {
+    /* Hide "remove" button from last item */
+    tr:last-child .form-submit {
+      display: none;
+    }
+
+    /* Hide label to align input and submit */
+    .form-item {
+      flex-basis: 50%;
+
+      .form-item__label {
+        visibility: hidden;
+        margin-block: 0;
+
+        /* Hide the asterisk */
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Simpler border between elements */
+:is(.text-content table, .views-table, .draggable-table) td {
+  border-block-end: 1px solid var(--color--gray-90);
+}
+
+/* Let the help text lines follow the width of the form elements */
+.form-item__description {
+  max-width: 100%;
+}
+
+/* HACK! Image helptext on one line */
+.field--type-image .form-item__description br {
+  display: none;
+}

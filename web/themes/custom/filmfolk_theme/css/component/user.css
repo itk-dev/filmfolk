@@ -1,0 +1,32 @@
+.user-profile {
+  display: grid;
+  gap: var(--sp3);
+  grid-template-columns: 1fr;
+
+  /* Use more of the available width on the page */
+  @media (min-width: 62.5rem) {
+    grid-template-columns: 4fr 8fr;
+    grid-template-areas:
+      "image info"
+      "content content";
+  }
+
+  .user-profile-image-wrapper {
+    grid-area: image;
+  }
+  .user-profile-info-wrapper {
+    grid-area: info;
+
+    .field {
+      margin-block-end: var(--sp1);
+    }
+  }
+  .user-profile-content {
+    grid-area: content;
+  }
+
+  .user-profile-content-experience {
+    padding: var(--sp2);
+    background-color: var(--color--gray-90);
+  }
+}

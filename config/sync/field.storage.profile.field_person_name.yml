@@ -1,0 +1,21 @@
+uuid: 6c5cb346-b2b5-46a1-a045-2d6fc2b067a2
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_person_name
+field_name: field_person_name
+entity_type: profile
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

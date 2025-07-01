@@ -1,0 +1,23 @@
+uuid: 4d220634-311f-4eef-910c-829395c22a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.simple
+  module:
+    - filter
+    - media
+    - profile
+    - system
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonym bruger'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access user profiles'
+  - 'use text format simple'
+  - 'view any profile'
+  - 'view media'

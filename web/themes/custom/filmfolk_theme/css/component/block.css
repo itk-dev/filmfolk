@@ -1,0 +1,24 @@
+.block__title {
+  margin-block: 0 var(--sp);
+  letter-spacing: 0.02em;
+  color: var(--color-text-neutral-medium);
+  font-size: calc(var(--font-size-l) * 2);
+  line-height: var(--sp2);
+}
+
+.block__content {
+  width: 100%;
+
+  .text-content,
+  .cke_editable {
+    color: initial;
+    font-family: var(--font-sans-serif);
+    line-height: var(--sp1-5);
+  }
+
+  .text-content p,
+  .cke_editable p {
+    margin-block-start: var(--sp1);
+    margin-block-end: var(--sp1);
+  }
+}

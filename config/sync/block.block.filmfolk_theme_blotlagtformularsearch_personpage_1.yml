@@ -1,0 +1,28 @@
+uuid: 700b1838-53f9-447e-b7aa-6b6dcd7274e0
+langcode: da
+status: true
+dependencies:
+  config:
+    - views.view.search_person
+  module:
+    - system
+    - views
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_blotlagtformularsearch_personpage_1
+theme: filmfolk_theme
+region: content
+weight: -7
+provider: null
+plugin: 'views_exposed_filter_block:search_person-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_person-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/people\r\n"

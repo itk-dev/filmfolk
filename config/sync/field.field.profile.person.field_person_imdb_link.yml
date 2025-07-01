@@ -1,0 +1,23 @@
+uuid: 76b49157-c467-41f9-9298-74550412c72b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_imdb_link
+    - profile.type.person
+  module:
+    - link
+id: profile.person.field_person_imdb_link
+field_name: field_person_imdb_link
+entity_type: profile
+bundle: person
+label: 'Link til IMDb'
+description: 'Din IMDb er dit film CV. For at du ikke skal holde din filmfolk-profil up to date med de produktioner, du har lavet, beder vi dig i stedet om at linke til din IMDb profil, og at du holder denne opdateret. <a href="https://imdb.com">Opret profil på IMDb her.</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

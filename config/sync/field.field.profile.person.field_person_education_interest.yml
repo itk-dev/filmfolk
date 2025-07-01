@@ -1,0 +1,24 @@
+uuid: fc016118-f6a5-4779-88f8-84016068c04c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_education_interest
+    - filter.format.simple
+    - profile.type.person
+  module:
+    - text
+id: profile.person.field_person_education_interest
+field_name: field_person_education_interest
+entity_type: profile
+bundle: person
+label: 'Profiltekst – Fortæl hvad du er interesseret i at arbejde med i fremtiden, og hvilke typer projekter du er på udkig efter'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple
+field_type: text_long

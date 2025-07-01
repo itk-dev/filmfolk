@@ -1,0 +1,23 @@
+{# Adapted from web/core/themes/olivero/templates/form/details.html.twig to not wrap in details element #}
+{%
+  set classes = [
+    'filmfolk-details',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if errors %}
+  <div class="form-item form-item--error-message">
+    {{ errors }}
+  </div>
+{% endif %}
+{%- if description -%}
+  <div class="olivero-details__description">{{ description }}</div>
+{%- endif -%}
+{%- if children -%}
+  {{ children }}
+{%- endif -%}
+{%- if value -%}
+  {{ value }}
+{%- endif -%}
+</div>

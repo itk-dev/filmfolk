@@ -1,0 +1,24 @@
+uuid: bd7704d5-4f71-48b2-82ca-eaa77d49264e
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.content
+  module:
+    - block_content
+    - contextual
+    - node
+    - system
+    - toolbar
+id: content_editor
+label: 'Content editor'
+weight: 7
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'edit any content block content'
+  - 'view the administration theme'

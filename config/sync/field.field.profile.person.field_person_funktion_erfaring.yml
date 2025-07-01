@@ -1,0 +1,21 @@
+uuid: 9a6f55e1-5d98-43af-b60e-eb74625a4ac2
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_funktion_erfaring
+    - profile.type.person
+  module:
+    - filmfolk
+id: profile.person.field_person_funktion_erfaring
+field_name: field_person_funktion_erfaring
+entity_type: profile
+bundle: person
+label: 'Funktioner og erfaringsniveau'
+description: ' '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: filmfolk_funktion_erfaring

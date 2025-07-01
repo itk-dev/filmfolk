@@ -1,0 +1,14 @@
+.table-funktion-erfaring {
+  text-align: left;
+
+  th {
+    max-width: 40%;
+    font-size: var(--font-size-l);
+  }
+
+  th,
+  td {
+    padding: var(--sp0-5) var(--sp0-5) var(--sp0-5) 0;
+    vertical-align: top;
+  }
+}

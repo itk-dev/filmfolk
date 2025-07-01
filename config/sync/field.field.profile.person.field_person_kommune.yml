@@ -1,0 +1,29 @@
+uuid: 7842b71c-5a42-4141-b675-bcbba00d82f6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_person_kommune
+    - profile.type.person
+    - taxonomy.vocabulary.kommune
+id: profile.person.field_person_kommune
+field_name: field_person_kommune
+entity_type: profile
+bundle: person
+label: Bopælskommune
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      kommune: kommune
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
