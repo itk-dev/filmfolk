@@ -1,7 +1,7 @@
-name: 'Filmfolk'
+name: "Filmfolk"
 type: module
-description: 'Filmfolk'
-package: 'Filmfolk'
+description: "Filmfolk"
+package: "Filmfolk"
 core_version_requirement: ^11
 
 dependencies:

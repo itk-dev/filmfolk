@@ -1,7 +1,7 @@
-version: '3'
+version: "3"
 
 # https://taskfile.dev/usage/#env-files
-dotenv: ['.env.local', '.env']
+dotenv: [".env.local", ".env"]
 
 vars:
   # https://taskfile.dev/reference/templating/
@@ -61,7 +61,7 @@ tasks:
     cmds:
       - '{{.DOCKER_COMPOSE}} {{if .DOCKER_COMPOSE_PROFILES}}--profile {{.DOCKER_COMPOSE_PROFILES | splitList "," |join " --profile " }}{{end}} {{.CLI_ARGS}}'
     vars:
-      DOCKER_COMPOSE_PROFILES: '{{.PROFILES | default .DOCKER_COMPOSE_PROFILES}}'
+      DOCKER_COMPOSE_PROFILES: "{{.PROFILES | default .DOCKER_COMPOSE_PROFILES}}"
 
   compose-up:
     cmds:
@@ -161,15 +161,15 @@ tasks:
     silent: true
 
   code-analysis:
-     cmds:
-       - task composer -- code-analysis
-       # Check some modules with a higher level.
-       #
-       # Note: The second `--` is needed to pass command line arguments (starting with `--`) to the composer script
-       # `code-analysis`
-       #
-       # @todo Update all our custom modules to resolve ‘level 6 (or 5) errors“
-       - task composer -- code-analysis -- --level=6 web/modules/custom/hoeringsportal_audit_log/
+    cmds:
+      - task composer -- code-analysis
+      # Check some modules with a higher level.
+      #
+      # Note: The second `--` is needed to pass command line arguments (starting with `--`) to the composer script
+      # `code-analysis`
+      #
+      # @todo Update all our custom modules to resolve ‘level 6 (or 5) errors“
+      - task composer -- code-analysis -- --level=6 web/modules/custom/hoeringsportal_audit_log/
 
   fixtures:load:
     desc: "Load all fixtures"

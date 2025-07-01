@@ -10,3 +10,6 @@ web/*.md
 web/core/
 web/libraries/
 web/*/contrib/
+
+# Markdown for GitHub Pages are a little different …
+docs/
