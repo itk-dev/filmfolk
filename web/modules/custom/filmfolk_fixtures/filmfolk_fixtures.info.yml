@@ -1,6 +1,6 @@
-name: 'filmfolk_fixtures'
+name: "filmfolk_fixtures"
 type: module
-description: 'filmfolk_fixtures'
+description: "filmfolk_fixtures"
 package: Custom
 core_version_requirement: ^10 || ^11
 dependencies:

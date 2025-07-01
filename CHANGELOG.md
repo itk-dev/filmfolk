@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   * 4822: Updated stg deployment
 * [PR-117](https://github.com/itk-dev/filmfolk/pull/117)
   Implements custormer feedback
+* [PR-98](https://github.com/itk-dev/filmfolk/pull/98)
+  Added build and deployment scripts
 * [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
   Fix broken links on documentation.
 * [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
