@@ -12,8 +12,8 @@ id: profile.person.field_person_about
 field_name: field_person_about
 entity_type: profile
 bundle: person
-label: 'Profil  - Om dig'
-description: 'Fortæl f.eks. noget om, hvilke områder inden for film- og tv-branchen du tidligere har arbejdet med?'
+label: 'Profiltekst – Fortæl f.eks. hvilke områder inden for film- og tv-branchen du tidligere har arbejdet med'
+description: ''
 required: true
 translatable: false
 default_value: {  }

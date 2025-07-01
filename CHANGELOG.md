@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-05-27
 
+* [PR-122](https://github.com/itk-dev/filmfolk/pull/122)
+  4879: Updated field labels
 * [PR-121](https://github.com/itk-dev/filmfolk/pull/121)
   Styling - Fixes [#120](https://github.com/itk-dev/filmfolk/issues/120)
 * [PR-119](https://github.com/itk-dev/filmfolk/pull/119)
