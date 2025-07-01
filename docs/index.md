@@ -7,6 +7,6 @@ nav_order: 1
 
 ## Grundlæggende navigation
 
-- [Brugervejledning](/user-guide/)
-- [Testvejledning](/test-guide/)
-- [Udvikler dokumentation](development.md)
+- [Brugervejledning]({% link user-guide/index.md %})
+- [Testvejledning]({% link test-guide/index.md %})
+- [Udvikler dokumentation]({% link development.md %})

@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-05-27
+
+* [PR-122](https://github.com/itk-dev/filmfolk/pull/122)
+  4879: Updated field labels
+* [PR-121](https://github.com/itk-dev/filmfolk/pull/121)
+  Styling - Fixes [#120](https://github.com/itk-dev/filmfolk/issues/120)
+* [PR-119](https://github.com/itk-dev/filmfolk/pull/119)
+  4867: Fixed check of boolean value
+* [PR-118](https://github.com/itk-dev/filmfolk/pull/118)
+  * 4822: Disabled auto-submit on filters
+  * 4822: Updated stg deployment
+* [PR-117](https://github.com/itk-dev/filmfolk/pull/117)
+  Implements custormer feedback
+* [PR-98](https://github.com/itk-dev/filmfolk/pull/98)
+  Added build and deployment scripts
+* [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
+  Fix broken links on documentation.
+* [PR-109](https://github.com/itk-dev/filmfolk/pull/109)
+  Added custom template for "Funktioner og erfaringsniveau" and proper placeholder labels
+* [PR-110](https://github.com/itk-dev/filmfolk/pull/110)
+  Added sorting to view
+* [PR-108](https://github.com/itk-dev/filmfolk/pull/108)
+  Improved search
+* [PR-107](https://github.com/itk-dev/filmfolk/pull/107)
+  * Updated “Alle kommuner“ placeholder text
+  * Adde search description content block
+  * Disabled alt text on profile image
+  * Added user email to profile view
+* [PR-105](https://github.com/itk-dev/filmfolk/pull/105)
+  * Implement testfeedback [#101](https://github.com/itk-dev/filmfolk/issues/101)
+* [PR-100](https://github.com/itk-dev/filmfolk/pull/100)
+  * Fix minor styling issues [#87](https://github.com/itk-dev/filmfolk/issues/87)
+* [PR-99](https://github.com/itk-dev/filmfolk/pull/99)
+  * Updated itk-dev/drupal_admin_message and itk-dev/web_accessibility_statement
+  * Applied secutry updates
+* [PR-96](https://github.com/itk-dev/filmfolk/pull/96)
+  Cleaned up tasks
+* [PR-97](https://github.com/itk-dev/filmfolk/pull/97)
+  Fixed edit password visibility
 * [PR-92](https://github.com/itk-dev/filmfolk/pull/92)
   Documentation deployment on github pages
 * [PR-88](https://github.com/itk-dev/filmfolk/pull/88)
@@ -100,4 +139,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-3](https://github.com/itk-dev/filmfolk/pull/3)
   Development setup
 
-[Unreleased]: https://github.com/rimi-itk/filmfolk
+[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/rimi-itk/filmfolk/releases/tag/1.0.0

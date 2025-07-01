@@ -1,6 +1,6 @@
 .site-footer {
   --logo-text: var(--color--white);
-
+  background: var(--color-filmfolk-darkgray);
   color: var(--color--white);
 
   .region--footer_top__inner {
@@ -8,6 +8,7 @@
   }
 
   .text-content {
+    font-size: 1rem;
     color: inherit;
   }
 
@@ -18,8 +19,21 @@
     align-items: flex-start;
 
     svg {
-      width: 250px;
+      width: 230px;
       height: auto;
     }
+  }
+}
+
+@media (min-width: 75rem) {
+  body:not(.is-always-mobile-nav) .site-footer {
+    border-inline-start: solid var(--content-left)
+      var(--color-filmfolk-darkgray);
+  }
+}
+
+@media (min-width: 75rem) {
+  .site-footer__inner {
+    padding-block: var(--sp2);
   }
 }

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.profile.field_person_kommune
     - field.storage.profile.field_person_name
-    - field.storage.profile.field_person_title
     - search_api.index.users
     - taxonomy.vocabulary.kommune
   module:
@@ -431,9 +430,9 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Udfør
+          submit_button: Søg
           reset_button: true
-          reset_button_label: Gendan
+          reset_button_label: Nulstil
           exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
           sort_asc_label: Stigende
@@ -442,8 +441,8 @@ display:
           text_input_required_format: simple
           bef:
             general:
-              autosubmit: true
-              autosubmit_exclude_textfield: false
+              autosubmit: false
+              autosubmit_exclude_textfield: true
               autosubmit_textfield_delay: 500
               autosubmit_textfield_minimum_length: 3
               autosubmit_hide: false
@@ -469,8 +468,8 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
+                    filter_rewrite_values: 'All|Alle kommuner'
+                    filter_rewrite_values_key: true
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
@@ -497,8 +496,32 @@ display:
       cache:
         type: search_api_none
         options: {  }
-      empty: {  }
-      sorts: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'Ingen filmfolk fundet. <a href="[view:url]">Nulstil søgning</a>.'
+          tokenize: false
+      sorts:
+        created:
+          id: created
+          table: search_api_index_users
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         search_api_fulltext:
@@ -530,9 +553,10 @@ display:
               anonymous: '0'
               person: '0'
               person_manager: '0'
-              content_block_editor: '0'
+              content_editor: '0'
+              site_administrator: '0'
             expose_fields: false
-            placeholder: 'Text search'
+            placeholder: 'Søg i databasen'
             searched_fields_id: search_api_fulltext_searched_fields
             value_maxlength: 128
           is_grouped: false
@@ -733,7 +757,6 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'
   block_1:
@@ -760,7 +783,6 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'
   page_1:
@@ -782,6 +804,5 @@ display:
       tags:
         - 'config:field.storage.profile.field_person_kommune'
         - 'config:field.storage.profile.field_person_name'
-        - 'config:field.storage.profile.field_person_title'
         - 'config:search_api.index.users'
         - 'search_api_list:users'

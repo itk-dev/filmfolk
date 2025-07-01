@@ -1,0 +1,30 @@
+uuid: 4082f2a6-bc87-4aa9-9c92-e06c0fb1816e
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:content:43e90e5f-2bf6-4394-aca1-f284be2ac27b'
+  module:
+    - block_content
+    - system
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_beskrivelseafsogning
+theme: filmfolk_theme
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:43e90e5f-2bf6-4394-aca1-f284be2ac27b'
+settings:
+  id: 'block_content:43e90e5f-2bf6-4394-aca1-f284be2ac27b'
+  label: 'Beskrivelse af søgning'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/people\r\n"

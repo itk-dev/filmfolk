@@ -28,7 +28,6 @@
         "drupal/search_api": "^1.38",
         "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.5",
-        "fakerphp/faker": "^1.24",
         "itk-dev/drupal_admin_message": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.3"
     },
@@ -39,6 +38,7 @@
         "drupal/twig_xdebug": "^1.4",
         "drupal/webprofiler": "^11.1",
         "ergebnis/composer-normalize": "^2.45",
+        "fakerphp/faker": "^1.24",
         "palantirnet/drupal-rector": "^0.20.3",
         "vincentlanglet/twig-cs-fixer": "^3.5"
     },

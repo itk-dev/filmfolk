@@ -60,6 +60,8 @@
             <a href="{{ item.url }}">{{ source('@filmfolk_theme/img/square-facebook-brands.svg') }}<span class="visually-hidden">{{ item.title }}</span></a>
           {% elseif item.title == 'LinkedIN' %}
             <a href="{{ item.url }}">{{ source('@filmfolk_theme/img/linkedin-brands.svg') }}<span class="visually-hidden">{{ item.title }}</span></a>
+          {% elseif item.title == 'Instagram' %}
+            <a href="{{ item.url }}">{{ source('@filmfolk_theme/img/instagram-brands.svg') }}<span class="visually-hidden">{{ item.title }}</span></a>
           {% else %}
             {{ link(item.title, item.url, {class: link_classes}) }}
           {% endif %}

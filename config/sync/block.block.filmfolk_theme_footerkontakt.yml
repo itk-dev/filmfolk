@@ -10,8 +10,8 @@ dependencies:
     - filmfolk_theme
 id: filmfolk_theme_footerkontakt
 theme: filmfolk_theme
-region: footer_top
-weight: -5
+region: footer_bottom
+weight: -6
 provider: null
 plugin: 'block_content:a37f6120-4559-404f-a6bd-aec1c1b3da00'
 settings:

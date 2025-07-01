@@ -19,7 +19,7 @@ class Term extends BaseTerm {
     $label = parent::label();
 
     $fields = $this->getFields();
-    if (isset($fields['field_medlem_af_dvf']) && $fields['field_medlem_af_dvf']->getValue()) {
+    if (isset($fields['field_medlem_af_dvf']) && $fields['field_medlem_af_dvf']->getString()) {
       $label .= ' ' . $this->t('(member of DVF)');
     }
 
