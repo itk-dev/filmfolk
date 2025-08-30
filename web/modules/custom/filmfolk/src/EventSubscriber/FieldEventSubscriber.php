@@ -8,9 +8,11 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\field_event_dispatcher\Event\Field\WidgetSingleElementFormAlterEvent;
 use Drupal\field_event_dispatcher\FieldHookEvents;
 use Drupal\filmfolk\Helper;
+use Drupal\preprocess_event_dispatcher\Event\FieldPreprocessEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -35,7 +37,28 @@ final class FieldEventSubscriber implements EventSubscriberInterface {
     return [
       // We're awaiting https://www.drupal.org/project/drupal/issues/3323007
       FieldHookEvents::WIDGET_SINGLE_ELEMENT_FORM_ALTER => 'widgetSingleElementFormAlter',
+      FieldPreprocessEvent::name() => 'preprocessField',
     ];
+  }
+
+  /**
+   * Override link text on some fields.
+   */
+  public function preprocessField(FieldPreprocessEvent $event) {
+    // Field name => link text.
+    $fieldListTexts = [
+      'field_person_facebook_link' => new TranslatableMarkup('Link to Facebook'),
+      'field_person_imdb_link' => new TranslatableMarkup('Link to IMDb'),
+      'field_person_linkedin_link' => new TranslatableMarkup('Link to LinkedIn'),
+    ];
+
+    $variables = $event->getVariables();
+    $type = $variables->get('field_type');
+    $name = $variables->get('field_name');
+    if ('link' === $type && isset($fieldListTexts[$name])) {
+      $items = &$variables->getByReference('items');
+      $items[0]['content']['#title'] = $fieldListTexts[$name];
+    }
   }
 
   /**

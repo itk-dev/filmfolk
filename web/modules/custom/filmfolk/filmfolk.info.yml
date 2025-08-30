@@ -9,3 +9,4 @@ dependencies:
   - drupal:taxonomy
   - field_event_dispatcher:field_event_dispatcher
   - hook_event_dispatcher:hook_event_dispatcher
+  - preprocess_event_dispatcher:preprocess_event_dispatcher

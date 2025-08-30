@@ -60,7 +60,7 @@ content:
     region: content
   field_person_facebook_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -90,7 +90,7 @@ content:
     region: content
   field_person_imdb_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -110,7 +110,7 @@ content:
     region: content
   field_person_linkedin_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
