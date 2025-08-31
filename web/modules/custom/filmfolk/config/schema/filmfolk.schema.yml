@@ -1,0 +1,10 @@
+field.formatter.settings.filmfolk_link_with_overridden_text:
+  type: mapping
+  label: Link with overridden text settings
+  mapping:
+    use_field_label_as_link_text:
+      type: boolean
+      label: Use field label as link text
+    link_text:
+      type: string
+      label: Link text
