@@ -1,0 +1,30 @@
+uuid: 59a71ca6-0ffd-4bdb-94c6-df85857a2433
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:content:eec6c98a-0b78-4f0c-a43f-49fc1ada164e'
+  module:
+    - block_content
+    - system
+  theme:
+    - filmfolk_theme
+id: filmfolk_theme_searchheader
+theme: filmfolk_theme
+region: content
+weight: -4
+provider: null
+plugin: 'block_content:eec6c98a-0b78-4f0c-a43f-49fc1ada164e'
+settings:
+  id: 'block_content:eec6c98a-0b78-4f0c-a43f-49fc1ada164e'
+  label: 'Search header'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

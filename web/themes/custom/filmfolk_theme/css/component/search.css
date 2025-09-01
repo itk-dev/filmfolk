@@ -94,3 +94,18 @@
 .field--name-field-person-image .field__label {
   display: none;
 }
+
+/* Clear some margins on frontpage */
+#block-filmfolk-theme-beskrivelseafsogning:has(
+  + #block-filmfolk-theme-searchheader
+) {
+  margin-bottom: var(--sp1);
+}
+
+#block-filmfolk-theme-searchheader {
+  margin-bottom: 0;
+
+  h2 {
+    margin: 0;
+  }
+}

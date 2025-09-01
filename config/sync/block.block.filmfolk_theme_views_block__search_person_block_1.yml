@@ -12,7 +12,7 @@ dependencies:
 id: filmfolk_theme_views_block__search_person_block_1
 theme: filmfolk_theme
 region: content
-weight: -4
+weight: -3
 provider: null
 plugin: 'views_block:search_person-block_1'
 settings:
