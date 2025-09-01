@@ -82,8 +82,8 @@
 }
 
 .user-search-result-kommune {
-  margin-top: 0;
-  margin-bottom: var(--sp1);
+  margin-top: calc(-1 * var(--sp1));
+  margin-bottom: 0;
 }
 
 .user-search-result-profile-button {
