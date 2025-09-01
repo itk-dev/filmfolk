@@ -109,3 +109,7 @@
     margin: 0;
   }
 }
+
+.has_more {
+  cursor: pointer;
+}

@@ -8,7 +8,8 @@
         <th>{{ 'Erfaring'|t }}</th>
     </thead>
     <tbody>
-    {% set max_items = 4 %}
+    {# Limit displayed items in search result view #}
+    {% set max_items = element['#view_mode'] == 'search_result' ? 4 : 1000 %}
     {# if we have just one more item we show that item rather than “1 more item“ #}
     {% if items|length == max_items + 1 %}
       {% set max_items = max_items + 1 %}
