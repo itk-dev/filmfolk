@@ -12,7 +12,7 @@ id: profile.person.field_person_education_interest
 field_name: field_person_education_interest
 entity_type: profile
 bundle: person
-label: 'Profiltekst – Fortæl hvad du er interesseret i at arbejde med i fremtiden, og hvilke typer projekter du er på udkig efter'
+label: 'Profiltekst – Fortæl f.eks. hvad du er interesseret i at arbejde med i fremtiden, og hvilke typer projekter du er på udkig efter'
 description: ''
 required: true
 translatable: false

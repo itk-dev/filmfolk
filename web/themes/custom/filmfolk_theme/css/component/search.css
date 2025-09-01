@@ -82,8 +82,7 @@
 }
 
 .user-search-result-kommune {
-  margin-top: 0;
-  margin-bottom: var(--sp1);
+  margin-bottom: 0;
 }
 
 .user-search-result-profile-button {
@@ -93,4 +92,23 @@
 
 .field--name-field-person-image .field__label {
   display: none;
+}
+
+/* Clear some margins on frontpage */
+#block-filmfolk-theme-beskrivelseafsogning:has(
+  + #block-filmfolk-theme-searchheader
+) {
+  margin-bottom: var(--sp1);
+}
+
+#block-filmfolk-theme-searchheader {
+  margin-bottom: 0;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.has_more {
+  cursor: pointer;
 }

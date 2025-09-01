@@ -10,7 +10,7 @@ field_name: field_person_consent_site_terms
 entity_type: profile
 bundle: person
 label: 'Jeg giver tilladelse/samtykke til, at mine oplysninger må bruges af Den Vestdanske Filmpulje til deres databaseformål'
-description: '<a href="#">Læs vores betingelser</a>'
+description: '<a href="https://filmpuljen.dk/om-os/databeskyttelse">Læs vores betingelser</a>'
 required: true
 translatable: false
 default_value: {  }
