@@ -8,12 +8,42 @@
         <th>{{ 'Erfaring'|t }}</th>
     </thead>
     <tbody>
-    {% for item in items %}
+    {# Limit displayed items in search result view #}
+    {% set max_items = element['#view_mode'] == 'search_result' ? 4 : 1000 %}
+    {# if we have just one more item we show that item rather than “1 more item“ #}
+    {% if items|length == max_items + 1 %}
+      {% set max_items = max_items + 1 %}
+    {% endif %}
+    {% for item in items|slice(0, max_items) %}
       <tr>
         <td class="field__function field__label">{{ item.funktion.label }}</td>
         <td class="field__experience">{{ item.erfaring.label }}</td>
       </tr>
     {% endfor %}
+    </tbody>
+    {% if items|length > max_items %}
+      {% set count = items|length - max_items %}
+      <tbody onclick="this.hidden = true; this.nextElementSibling.hidden = false">
+      <tr>
+        <td class="field__function has_more" colspan="2">
+          {% trans %}
+            plus {{ count }} more function
+          {% plural count %}
+            plus {{ count }} more functions
+          {% endtrans %}
+        </td>
+      </tr>
+      </tbody>
+      <tbody hidden>
+          {% for item in items|slice(max_items) %}
+      <tr>
+        <td class="field__function field__label">{{ item.funktion.label }}</td>
+        <td class="field__experience">{{ item.erfaring.label }}</td>
+      </tr>
+    {% endfor %}
+
+      </tbody>
+    {% endif %}
     </tbody>
   </table>
 {% endif %}

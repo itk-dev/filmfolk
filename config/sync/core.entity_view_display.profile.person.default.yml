@@ -20,7 +20,6 @@ dependencies:
   module:
     - filmfolk
     - image
-    - link
     - text
 id: profile.person.default
 targetEntityType: profile
@@ -59,12 +58,14 @@ content:
     weight: 5
     region: content
   field_person_facebook_link:
-    type: link
-    label: above
+    type: filmfolk_link_with_overridden_text
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
+      use_field_label_as_link_text: true
+      link_text: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
       rel: ''
       target: ''
     third_party_settings: {  }
@@ -89,12 +90,14 @@ content:
     weight: 11
     region: content
   field_person_imdb_link:
-    type: link
-    label: above
+    type: filmfolk_link_with_overridden_text
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
+      use_field_label_as_link_text: true
+      link_text: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
       rel: ''
       target: ''
     third_party_settings: {  }
@@ -109,12 +112,14 @@ content:
     weight: 1
     region: content
   field_person_linkedin_link:
-    type: link
-    label: above
+    type: filmfolk_link_with_overridden_text
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
+      use_field_label_as_link_text: true
+      link_text: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
       rel: ''
       target: ''
     third_party_settings: {  }

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-09-01
+
+* [PR-123](https://github.com/itk-dev/filmfolk/pull/123)
+  Miscellaneous fixes and improvements
+
 ## [1.0.0] - 2025-07-01
 
 * [PR-122](https://github.com/itk-dev/filmfolk/pull/122)
@@ -139,5 +144,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-3](https://github.com/itk-dev/filmfolk/pull/3)
   Development setup
 
-[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/rimi-itk/filmfolk/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/rimi-itk/filmfolk/releases/tag/1.0.0
