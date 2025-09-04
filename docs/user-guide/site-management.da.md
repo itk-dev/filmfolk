@@ -11,7 +11,7 @@ En bruger med rollen Siteadministrator kan redigere e-mailskabeloner der bruges 
 glemt adgangskode mm.
 
 Skabelonerne findes via Indstillinger » Kontoindstillinger » Oversæt kontoindstillinger » Dansk » "Redigér" (alternativt
-`/config/people/accounts/translate/da/edit`).
+`/admin/config/people/accounts/translate/da/edit`).
 
 I skabelonerne kan følgende pladsholdere (Drupal kalder dem *tokens*) bruges
 
