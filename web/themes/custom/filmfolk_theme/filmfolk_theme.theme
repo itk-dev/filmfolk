@@ -11,19 +11,14 @@ declare(strict_types=1);
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function filmfolk_theme_preprocess_html(array &$variables): void {
-
-}
-
-/**
- * Implements hook_preprocess_HOOK() for page.html.twig.
- */
-function filmfolk_theme_preprocess_page(array &$variables): void {
-
-}
-
-/**
- * Implements hook_preprocess_HOOK() for node.html.twig.
- */
-function filmfolk_theme_preprocess_node(array &$variables): void {
-
+  $routeMatch = \Drupal::routeMatch();
+  if ('entity.profile.canonical' === $routeMatch->getRouteName()) {
+    $profile = $routeMatch->getParameter('profile');
+    if ($profile->hasField('field_person_name')) {
+      $name = trim($profile->get('field_person_name')->getString());
+      if (!empty($name)) {
+        $variables['head_title']['title'] = $name;
+      }
+    }
+  }
 }
