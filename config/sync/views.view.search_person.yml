@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'search person'
+      title: 'Search person'
       fields:
         field_person_name:
           id: field_person_name
