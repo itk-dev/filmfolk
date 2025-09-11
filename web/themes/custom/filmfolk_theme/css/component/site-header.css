@@ -1,6 +1,9 @@
 .site-header__initial {
   display: none;
 }
+.site-branding__inner {
+  padding-top: var(--sp1);
+}
 
 /* Dont hide the desktop nav, it's fixed */
 
