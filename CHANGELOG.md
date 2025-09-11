@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-126](https://github.com/itk-dev/filmfolk/pull/126)
+  * Set header height
+  * Only hide overflow on desktop
+  * Add spacing above logo on small devices
+  * Only enable grid view on larger screens
+  * Avoid column layout for experience on mobile.
+
 ## [1.2.0] - 2025-09-04
 
 * [PR-125](https://github.com/itk-dev/filmfolk/pull/125)
