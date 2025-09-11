@@ -6,6 +6,7 @@
   --color-filmfolk-lightgray: #d9e2f7;
   --color-filmfolk-darkgray: #253539;
   --font-size-s: calc(var(--font-size-base) * 0.9);
+  --site-header-height-wide: var(--sp4);
 
   /* Override variabels with custom colors */
   --color--gray-90: var(--color-filmfolk-lightgray);

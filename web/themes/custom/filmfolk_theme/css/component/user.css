@@ -1,16 +1,4 @@
 .user-profile {
-  display: grid;
-  gap: var(--sp3);
-  grid-template-columns: 1fr;
-
-  /* Use more of the available width on the page */
-  @media (min-width: 62.5rem) {
-    grid-template-columns: 4fr 8fr;
-    grid-template-areas:
-      "image info"
-      "content content";
-  }
-
   .user-profile-image-wrapper {
     grid-area: image;
   }
@@ -26,7 +14,22 @@
   }
 
   .user-profile-content-experience {
-    padding: var(--sp2);
+    padding: var(--sp1);
     background-color: var(--color--gray-90);
+  }
+
+  /* Use more of the available width on the page on larger screens */
+  @media (min-width: 43.75rem) {
+    display: grid;
+    gap: var(--sp3);
+    grid-template-columns: 1fr;
+    grid-template-columns: 4fr 8fr;
+    grid-template-areas:
+      "image info"
+      "content content";
+
+    .user-profile-content-experience {
+      padding: var(--sp2);
+    }
   }
 }
