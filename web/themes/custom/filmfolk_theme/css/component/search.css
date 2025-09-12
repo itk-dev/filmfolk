@@ -52,21 +52,32 @@
 }
 
 .user-search-result-image-wrapper,
-.field--name-field-profile-picture {
+.field--name-field-profile-picture,
+.user-profile-image-wrapper {
   height: auto;
-
-  aspect-ratio: 1/1;
   background-color: var(--color--gray-90);
   text-decoration: none;
   color: var(--color--gray-45);
+  text-align: center;
 
   img {
     object-fit: cover;
     object-position: center;
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
   }
+
+  span {
+    display: inline-block;
+    padding: var(--sp5) var(--sp1);
+  }
+
+  :has(.user-profile) {
+    overflow: auto;
+  }
+
   @media (min-width: 43.75rem) {
+    aspect-ratio: 1/1;
     overflow: hidden;
   }
 }
