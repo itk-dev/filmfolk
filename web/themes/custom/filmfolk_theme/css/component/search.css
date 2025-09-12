@@ -110,8 +110,8 @@
 
 /* Clear some margins on frontpage */
 #block-filmfolk-theme-beskrivelseafsogning:has(
-    + #block-filmfolk-theme-searchheader
-  ) {
+  + #block-filmfolk-theme-searchheader
+) {
   margin-bottom: var(--sp1);
 }
 
