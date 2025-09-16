@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-128](https://github.com/itk-dev/filmfolk/pull/128)
+  * Add space above profile image on desktop
+  * Only show background color on profile image wrapper when no image is uploaded
+
 ## [1.2.1] - 2025-09-11
 
 * [PR-126](https://github.com/itk-dev/filmfolk/pull/126)
