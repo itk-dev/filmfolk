@@ -33,5 +33,9 @@
     .user-profile-content-experience {
       padding: var(--sp2);
     }
+
+    .user-profile-image-wrapper {
+      margin-block-start: var(--sp2);
+    }
   }
 }
