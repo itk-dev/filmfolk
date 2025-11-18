@@ -1,5 +1,5 @@
 ---
-title: Filmfolk dokumentation
+title: Filmfolkdokumentation
 nav_order: 1
 ---
 
@@ -9,4 +9,4 @@ nav_order: 1
 
 - [Brugervejledning]({% link user-guide/index.md %})
 - [Testvejledning]({% link test-guide/index.md %})
-- [Udvikler dokumentation]({% link development.md %})
+- [Udviklerdokumentation]({% link development.md %})
