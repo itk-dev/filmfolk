@@ -7,6 +7,9 @@ nav_order: 1
 
 ## Grundlæggende navigation
 
-- [Brugervejledning]({% link user-guide/index.md %})
-- [Testvejledning]({% link test-guide/index.md %})
-- [Udviklerdokumentation]({% link development.md %})
+{% comment %}
+There must be a better way than manually adding {{ site.baseurl }}.
+{% endcomment %}
+- [Brugervejledning]({{ site.baseurl }}{% link user-guide/index.md %})
+- [Testvejledning]({{ site.baseurl }}{% link test-guide/index.md %})
+- [Udviklerdokumentation]({{ site.baseurl }}{% link development.md %})
