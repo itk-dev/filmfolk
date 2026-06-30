@@ -11,5 +11,5 @@ web/core/
 web/libraries/
 web/*/contrib/
 
-# Markdown for GitHub Pages are a little different …
+# Markdown for GitHub Pages is a little different …
 docs/
