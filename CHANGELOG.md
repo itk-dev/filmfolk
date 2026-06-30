@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-135](https://github.com/itk-dev/filmfolk/pull/135)
+  * Security update
+
 ## [1.3.3] - 2026-05-20
 
 * [PR-134](https://github.com/itk-dev/filmfolk/pull/134)

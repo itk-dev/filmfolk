@@ -1,12 +1,12 @@
-version: "3"
-
-# https://taskfile.dev/usage/#env-files
-dotenv: [".env.local", ".env"]
+version: '3'
 
 vars:
   # https://taskfile.dev/reference/templating/
   DOCKER_COMPOSE: '{{.TASK_DOCKER_COMPOSE | default "docker compose"}}'
   COMPOSER_INSTALL_ARGUMENTS: '{{.TASK_COMPOSER_INSTALL_ARGUMENTS | default ""}}'
+
+# https://taskfile.dev/usage/#env-files
+dotenv: ['.env.local', '.env']
 
 tasks:
   default:
@@ -15,7 +15,7 @@ tasks:
     silent: true
 
   site-install:
-    prompt: "This will reset your setup. Continue?"
+    prompt: 'This will reset your setup. Continue?'
     cmds:
       - task compose -- down
       - task compose -- pull
@@ -61,7 +61,7 @@ tasks:
     cmds:
       - '{{.DOCKER_COMPOSE}} {{if .DOCKER_COMPOSE_PROFILES}}--profile {{.DOCKER_COMPOSE_PROFILES | splitList "," |join " --profile " }}{{end}} {{.CLI_ARGS}}'
     vars:
-      DOCKER_COMPOSE_PROFILES: "{{.PROFILES | default .DOCKER_COMPOSE_PROFILES}}"
+      DOCKER_COMPOSE_PROFILES: '{{.PROFILES | default .DOCKER_COMPOSE_PROFILES}}'
 
   compose-up:
     cmds:
@@ -95,7 +95,7 @@ tasks:
     silent: true
 
   coding-standards:apply:
-    desc: "Apply coding standards"
+    desc: 'Apply coding standards'
     cmds:
       - task: coding-standards:assets:apply
       - task: coding-standards:markdown:apply
@@ -104,7 +104,7 @@ tasks:
     silent: true
 
   coding-standards:check:
-    desc: "Apply coding standards"
+    desc: 'Apply coding standards'
     cmds:
       - task: coding-standards:assets:check
       - task: coding-standards:markdown:check
@@ -113,48 +113,48 @@ tasks:
     silent: true
 
   coding-standards:assets:apply:
-    desc: "Apply coding standards for assets"
+    desc: 'Apply coding standards for assets'
     cmds:
       - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --write
 
   coding-standards:assets:check:
-    desc: "Apply and check coding standards for assets"
+    desc: 'Apply and check coding standards for assets'
     cmds:
       - task: coding-standards:assets:apply
       - task compose -- run --rm prettier 'web/themes/custom/**/css/**' --check
 
   coding-standards:markdown:apply:
-    desc: "Apply coding standards for Markdown"
+    desc: 'Apply coding standards for Markdown'
     cmds:
       - task compose -- run --rm markdownlint markdownlint '**/*.md' --fix
 
   coding-standards:markdown:check:
-    desc: "Apply and check coding standards for Markdown"
+    desc: 'Apply and check coding standards for Markdown'
     cmds:
       - task: coding-standards:markdown:apply
       - task compose -- run --rm markdownlint markdownlint '**/*.md'
 
   coding-standards:php:apply:
-    desc: "Apply coding standards for PHP"
+    desc: 'Apply coding standards for PHP'
     cmds:
       - task compose -- exec phpfpm vendor/bin/phpcbf
     silent: true
 
   coding-standards:php:check:
-    desc: "Apply and check coding standards for PHP"
+    desc: 'Apply and check coding standards for PHP'
     cmds:
       - task: coding-standards:php:apply
       - task compose -- exec phpfpm vendor/bin/phpcs
     silent: true
 
   coding-standards:twig:apply:
-    desc: "Apply coding standards for Twig"
+    desc: 'Apply coding standards for Twig'
     cmds:
       - task compose -- exec phpfpm vendor/bin/twig-cs-fixer fix
     silent: true
 
   coding-standards:twig:check:
-    desc: "Apply and check coding standards for Twig"
+    desc: 'Apply and check coding standards for Twig'
     cmds:
       - task: coding-standards:twig:apply
       - task compose -- exec phpfpm vendor/bin/twig-cs-fixer lint
@@ -172,8 +172,8 @@ tasks:
       - task composer -- code-analysis -- --level=6 web/modules/custom/hoeringsportal_audit_log/
 
   fixtures:load:
-    desc: "Load all fixtures"
-    prompt: "This will reset your content. Continue?"
+    desc: 'Load all fixtures'
+    prompt: 'This will reset your content. Continue?'
     cmds:
       - task drush -- --yes pm:enable {{.FIXTURE_MODULES}}
       - task drush -- --yes content-fixtures:load
@@ -187,7 +187,7 @@ tasks:
     silent: true
 
   search-index:update:
-    desc: "Clear and rebuild search index"
+    desc: 'Clear and rebuild search index'
     cmds:
       - task drush -- search-api:clear
       - task drush -- search-api:index
