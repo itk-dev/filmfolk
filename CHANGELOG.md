@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.5] - 2026-10-14
+
+* [PR-136](https://github.com/itk-dev/filmfolk/pull/136)
+  * Security update drupal core 11.3.13 => 11.4.10
+
 ## [1.3.4] - 2026-07-01
 
 * [PR-135](https://github.com/itk-dev/filmfolk/pull/135)
@@ -192,7 +197,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-3](https://github.com/itk-dev/filmfolk/pull/3)
   Development setup
 
-[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.3.4...HEAD
+[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.3.5...HEAD
+[1.3.5]: https://github.com/rimi-itk/filmfolk/compare/1.3.4...1.3.5
 [1.3.4]: https://github.com/rimi-itk/filmfolk/compare/1.3.3...1.3.4
 [1.3.3]: https://github.com/rimi-itk/filmfolk/compare/1.3.2...1.3.3
 [1.3.2]: https://github.com/rimi-itk/filmfolk/compare/1.3.1...1.3.2
