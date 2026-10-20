@@ -15,9 +15,9 @@
         "drupal/administerusersbyrole": "^3.5",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/config_ignore": "^3.3",
-        "drupal/core-composer-scaffold": "^11.1",
-        "drupal/core-project-message": "^11.1",
-        "drupal/core-recommended": "^11.1",
+        "drupal/core-composer-scaffold": "^11.4",
+        "drupal/core-project-message": "^11.4",
+        "drupal/core-recommended": "^11.4",
         "drupal/hook_event_dispatcher": "^4.2",
         "drupal/masquerade": "^2.0",
         "drupal/password_strength": "^2.0@beta",
@@ -61,7 +61,8 @@
             "drupal/core-project-message": true,
             "ergebnis/composer-normalize": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "symfony/runtime": true
         },
         "sort-packages": true
     },
