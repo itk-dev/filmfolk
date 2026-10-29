@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.4.0] - 2026-10-19
+## [1.4.0] - 2026-10-29
 
 - [PR-139](https://github.com/itk-dev/filmfolk/pull/139)
   - Update drupal core ^11.4
