@@ -3115,8 +3115,6 @@
         {
             "name": "justinrainbow/json-schema",
             "version": "6.8.2",
-<<<<<<< HEAD
-=======
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
@@ -3192,7 +3190,6 @@
         {
             "name": "laravel/prompts",
             "version": "v0.3.7",
->>>>>>> main
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
