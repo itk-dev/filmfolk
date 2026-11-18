@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- [PR-142](https://github.com/itk-dev/filmfolk/pull/142)
+  - Stop composer install when a patch does not apply
+    (`composer-exit-on-patch-failure`)
+
 ## [1.4.1] - 2026-11-18
 
 - [PR-141](https://github.com/itk-dev/filmfolk/pull/141)
