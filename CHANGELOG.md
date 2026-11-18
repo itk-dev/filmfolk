@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.4.1] - 2026-11-18
 
 - [PR-141](https://github.com/itk-dev/filmfolk/pull/141)
-  - Prepared the Drupal core security update ([PSA-2026-11-16](https://www.drupal.org/psa-2026-11-16))
+  - Security update drupal/core 11.4.11 => 11.4.13 ([PSA-2026-11-16](https://www.drupal.org/psa-2026-11-16),
+    SA-CORE-2026-017, SA-CORE-2026-018)
+  - Updated masterminds/html5 and symfony/* packages that drupal/core-recommended 11.4.13 requires
 
 ## [1.4.0] - 2026-10-29
 
