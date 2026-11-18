@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1] - 2026-11-18
+
+- [PR-141](https://github.com/itk-dev/filmfolk/pull/141)
+  - Prepared the Drupal core security update ([PSA-2026-11-16](https://www.drupal.org/psa-2026-11-16))
+
 ## [1.4.0] - 2026-10-29
 
 - [PR-139](https://github.com/itk-dev/filmfolk/pull/139)
@@ -208,7 +213,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [PR-3](https://github.com/itk-dev/filmfolk/pull/3)
   Development setup
 
-[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/rimi-itk/filmfolk/compare/1.4.1...HEAD
+[1.4.1]: https://github.com/rimi-itk/filmfolk/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/rimi-itk/filmfolk/compare/1.3.6...1.4.0
 [1.3.6]: https://github.com/rimi-itk/filmfolk/compare/1.3.5...1.3.6
 [1.3.5]: https://github.com/rimi-itk/filmfolk/compare/1.3.4...1.3.5
