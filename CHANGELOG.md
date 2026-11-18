@@ -20,13 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.6] - 2026-10-27
 
-* [PR-140](https://github.com/itk-dev/filmfolk/pull/140)
-  * Use maintained nginx/nginx-unprivileged image
+- [PR-140](https://github.com/itk-dev/filmfolk/pull/140)
+  - Use maintained nginx/nginx-unprivileged image
 
 ## [1.3.5] - 2026-10-14
 
-* [PR-136](https://github.com/itk-dev/filmfolk/pull/136)
-  * Security update drupal core 11.3.13 => 11.4.10
+- [PR-136](https://github.com/itk-dev/filmfolk/pull/136)
+  - Security update drupal core 11.3.13 => 11.4.10
 
 ## [1.3.4] - 2026-07-01
 
